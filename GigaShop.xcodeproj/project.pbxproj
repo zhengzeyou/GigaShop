@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D277046031F4DDFF6A256B6 /* Pods_GigaShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167DF4B174EDB0B54B84869 /* Pods_GigaShopTests.framework */; };
+		CF7B15FF7B1321EE45A736D4 /* Pods_GigaShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */; };
 		D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9421967281000C9E38 /* AppDelegate.swift */; };
 		D5F02B9721967281000C9E38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9621967281000C9E38 /* ViewController.swift */; };
 		D5F02B9A21967281000C9E38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F02B9821967281000C9E38 /* Main.storyboard */; };
@@ -14,6 +16,19 @@
 		D5F02B9F21967284000C9E38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F02B9D21967284000C9E38 /* LaunchScreen.storyboard */; };
 		D5F02BAA21967284000C9E38 /* GigaShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BA921967284000C9E38 /* GigaShopTests.swift */; };
 		D5F02BB521967284000C9E38 /* GigaShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BB421967284000C9E38 /* GigaShopUITests.swift */; };
+		D5F02BCB2196785B000C9E38 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BC32196785B000C9E38 /* Constant.swift */; };
+		D5F02BCC2196785B000C9E38 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BC42196785B000C9E38 /* BaseController.swift */; };
+		D5F02BCD2196785B000C9E38 /* GSAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BC52196785B000C9E38 /* GSAccount.swift */; };
+		D5F02BCE2196785B000C9E38 /* GSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BC62196785B000C9E38 /* GSTabBarController.swift */; };
+		D5F02BCF2196785B000C9E38 /* MoyaRequestResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BC82196785B000C9E38 /* MoyaRequestResource.swift */; };
+		D5F02BD02196785B000C9E38 /* MoyaTargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BC92196785B000C9E38 /* MoyaTargetType.swift */; };
+		D5F02BD12196785B000C9E38 /* ToModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BCA2196785B000C9E38 /* ToModelExtensions.swift */; };
+		D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BD321967951000C9E38 /* CMToolExtension.swift */; };
+		D5F02BDA21967AF8000C9E38 /* GSMineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BD921967AF8000C9E38 /* GSMineController.swift */; };
+		D5F02BDC21967B08000C9E38 /* GSCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BDB21967B08000C9E38 /* GSCartController.swift */; };
+		D5F02BDE21967B1C000C9E38 /* GSCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BDD21967B1C000C9E38 /* GSCategoryController.swift */; };
+		D5F02BE021967B2E000C9E38 /* GSHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BDF21967B2E000C9E38 /* GSHomeController.swift */; };
+		F967FC55A659408DA68E0217 /* Pods_GigaShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05738806FB8D5AD8FABD82A1 /* Pods-GigaShopUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShopUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShopUITests/Pods-GigaShopUITests.release.xcconfig"; sourceTree = "<group>"; };
+		122EE30EF15E77479B62E739 /* Pods-GigaShopTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShopTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShopTests/Pods-GigaShopTests.release.xcconfig"; sourceTree = "<group>"; };
+		2AA60EBEA02BE3D4249A84AF /* Pods-GigaShopUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShopUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShopUITests/Pods-GigaShopUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3776E0C2A4B45E0688DF0B44 /* Pods-GigaShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop.release.xcconfig"; sourceTree = "<group>"; };
+		6167DF4B174EDB0B54B84869 /* Pods_GigaShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95E8A0CF7351E6E59F2DDBA7 /* Pods-GigaShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShopTests/Pods-GigaShopTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F02B9121967281000C9E38 /* GigaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F02B9421967281000C9E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5F02B9621967281000C9E38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +69,20 @@
 		D5F02BB021967284000C9E38 /* GigaShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GigaShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F02BB421967284000C9E38 /* GigaShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigaShopUITests.swift; sourceTree = "<group>"; };
 		D5F02BB621967284000C9E38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5F02BC32196785B000C9E38 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		D5F02BC42196785B000C9E38 /* BaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		D5F02BC52196785B000C9E38 /* GSAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSAccount.swift; sourceTree = "<group>"; };
+		D5F02BC62196785B000C9E38 /* GSTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSTabBarController.swift; sourceTree = "<group>"; };
+		D5F02BC82196785B000C9E38 /* MoyaRequestResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaRequestResource.swift; sourceTree = "<group>"; };
+		D5F02BC92196785B000C9E38 /* MoyaTargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaTargetType.swift; sourceTree = "<group>"; };
+		D5F02BCA2196785B000C9E38 /* ToModelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToModelExtensions.swift; sourceTree = "<group>"; };
+		D5F02BD321967951000C9E38 /* CMToolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMToolExtension.swift; sourceTree = "<group>"; };
+		D5F02BD921967AF8000C9E38 /* GSMineController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineController.swift; sourceTree = "<group>"; };
+		D5F02BDB21967B08000C9E38 /* GSCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartController.swift; sourceTree = "<group>"; };
+		D5F02BDD21967B1C000C9E38 /* GSCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryController.swift; sourceTree = "<group>"; };
+		D5F02BDF21967B2E000C9E38 /* GSHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeController.swift; sourceTree = "<group>"; };
+		D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop.debug.xcconfig"; sourceTree = "<group>"; };
+		E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7B15FF7B1321EE45A736D4 /* Pods_GigaShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D277046031F4DDFF6A256B6 /* Pods_GigaShopTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +106,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F967FC55A659408DA68E0217 /* Pods_GigaShopUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D38EE74E1ADC035D10AEC7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */,
+				3776E0C2A4B45E0688DF0B44 /* Pods-GigaShop.release.xcconfig */,
+				95E8A0CF7351E6E59F2DDBA7 /* Pods-GigaShopTests.debug.xcconfig */,
+				122EE30EF15E77479B62E739 /* Pods-GigaShopTests.release.xcconfig */,
+				2AA60EBEA02BE3D4249A84AF /* Pods-GigaShopUITests.debug.xcconfig */,
+				05738806FB8D5AD8FABD82A1 /* Pods-GigaShopUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8DF6AA24A21CCBC53AA78B38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */,
+				6167DF4B174EDB0B54B84869 /* Pods_GigaShopTests.framework */,
+				BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D5F02B8821967281000C9E38 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +143,8 @@
 				D5F02BA821967284000C9E38 /* GigaShopTests */,
 				D5F02BB321967284000C9E38 /* GigaShopUITests */,
 				D5F02B9221967281000C9E38 /* Products */,
+				0D38EE74E1ADC035D10AEC7C /* Pods */,
+				8DF6AA24A21CCBC53AA78B38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +161,13 @@
 		D5F02B9321967281000C9E38 /* GigaShop */ = {
 			isa = PBXGroup;
 			children = (
+				D5F02BD221967951000C9E38 /* Extension */,
+				D5F02BC22196785B000C9E38 /* Base */,
+				D5F02BC72196785B000C9E38 /* NetWork */,
+				D5F02BD821967A96000C9E38 /* Mine */,
+				D5F02BD721967A72000C9E38 /* Cart */,
+				D5F02BD621967A59000C9E38 /* Category */,
+				D5F02BD521967A50000C9E38 /* Home */,
 				D5F02B9421967281000C9E38 /* AppDelegate.swift */,
 				D5F02B9621967281000C9E38 /* ViewController.swift */,
 				D5F02B9821967281000C9E38 /* Main.storyboard */,
@@ -125,6 +196,67 @@
 			path = GigaShopUITests;
 			sourceTree = "<group>";
 		};
+		D5F02BC22196785B000C9E38 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D5F02BC32196785B000C9E38 /* Constant.swift */,
+				D5F02BC42196785B000C9E38 /* BaseController.swift */,
+				D5F02BC52196785B000C9E38 /* GSAccount.swift */,
+				D5F02BC62196785B000C9E38 /* GSTabBarController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D5F02BC72196785B000C9E38 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				D5F02BC82196785B000C9E38 /* MoyaRequestResource.swift */,
+				D5F02BC92196785B000C9E38 /* MoyaTargetType.swift */,
+				D5F02BCA2196785B000C9E38 /* ToModelExtensions.swift */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		D5F02BD221967951000C9E38 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D5F02BD321967951000C9E38 /* CMToolExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D5F02BD521967A50000C9E38 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D5F02BDF21967B2E000C9E38 /* GSHomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D5F02BD621967A59000C9E38 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D5F02BDD21967B1C000C9E38 /* GSCategoryController.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D5F02BD721967A72000C9E38 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				D5F02BDB21967B08000C9E38 /* GSCartController.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		D5F02BD821967A96000C9E38 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				D5F02BD921967AF8000C9E38 /* GSMineController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +264,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5F02BB921967284000C9E38 /* Build configuration list for PBXNativeTarget "GigaShop" */;
 			buildPhases = (
+				555E3DF257F465845144EAB2 /* [CP] Check Pods Manifest.lock */,
 				D5F02B8D21967281000C9E38 /* Sources */,
 				D5F02B8E21967281000C9E38 /* Frameworks */,
 				D5F02B8F21967281000C9E38 /* Resources */,
+				17235DE716FE3B1FDEE824E8 /* [CP] Embed Pods Frameworks */,
+				232057D91BFFCCCE76B3FD79 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +284,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5F02BBC21967284000C9E38 /* Build configuration list for PBXNativeTarget "GigaShopTests" */;
 			buildPhases = (
+				B27BACD09D719057114FB0C5 /* [CP] Check Pods Manifest.lock */,
 				D5F02BA121967284000C9E38 /* Sources */,
 				D5F02BA221967284000C9E38 /* Frameworks */,
 				D5F02BA321967284000C9E38 /* Resources */,
+				B19C18A58487119DF307827B /* [CP] Embed Pods Frameworks */,
+				83A3EEC7C54587AFCA093722 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +305,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5F02BBF21967284000C9E38 /* Build configuration list for PBXNativeTarget "GigaShopUITests" */;
 			buildPhases = (
+				AD4DDE34FC0C58EC75F38FFC /* [CP] Check Pods Manifest.lock */,
 				D5F02BAC21967284000C9E38 /* Sources */,
 				D5F02BAD21967284000C9E38 /* Frameworks */,
 				D5F02BAE21967284000C9E38 /* Resources */,
+				EC6F4BABEE82B51366A0E470 /* [CP] Embed Pods Frameworks */,
+				1E56C6AECF731247B6C44323 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,13 +392,191 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		17235DE716FE3B1FDEE824E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PhotoBrowserSwift/PhotoBrowserSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhotoBrowserSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E56C6AECF731247B6C44323 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GigaShopUITests/Pods-GigaShopUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		232057D91BFFCCCE76B3FD79 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		555E3DF257F465845144EAB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GigaShop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83A3EEC7C54587AFCA093722 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GigaShopTests/Pods-GigaShopTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD4DDE34FC0C58EC75F38FFC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GigaShopUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B19C18A58487119DF307827B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GigaShopTests/Pods-GigaShopTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B27BACD09D719057114FB0C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GigaShopTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC6F4BABEE82B51366A0E470 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GigaShopUITests/Pods-GigaShopUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D5F02B8D21967281000C9E38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5F02BE021967B2E000C9E38 /* GSHomeController.swift in Sources */,
 				D5F02B9721967281000C9E38 /* ViewController.swift in Sources */,
+				D5F02BDC21967B08000C9E38 /* GSCartController.swift in Sources */,
+				D5F02BCD2196785B000C9E38 /* GSAccount.swift in Sources */,
 				D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */,
+				D5F02BCE2196785B000C9E38 /* GSTabBarController.swift in Sources */,
+				D5F02BCC2196785B000C9E38 /* BaseController.swift in Sources */,
+				D5F02BDE21967B1C000C9E38 /* GSCategoryController.swift in Sources */,
+				D5F02BCF2196785B000C9E38 /* MoyaRequestResource.swift in Sources */,
+				D5F02BDA21967AF8000C9E38 /* GSMineController.swift in Sources */,
+				D5F02BD02196785B000C9E38 /* MoyaTargetType.swift in Sources */,
+				D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */,
+				D5F02BD12196785B000C9E38 /* ToModelExtensions.swift in Sources */,
+				D5F02BCB2196785B000C9E38 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,11 +749,13 @@
 		};
 		D5F02BBA21967284000C9E38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,11 +769,13 @@
 		};
 		D5F02BBB21967284000C9E38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3776E0C2A4B45E0688DF0B44 /* Pods-GigaShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,6 +789,7 @@
 		};
 		D5F02BBD21967284000C9E38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95E8A0CF7351E6E59F2DDBA7 /* Pods-GigaShopTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +811,7 @@
 		};
 		D5F02BBE21967284000C9E38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 122EE30EF15E77479B62E739 /* Pods-GigaShopTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +833,7 @@
 		};
 		D5F02BC021967284000C9E38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AA60EBEA02BE3D4249A84AF /* Pods-GigaShopUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +854,7 @@
 		};
 		D5F02BC121967284000C9E38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05738806FB8D5AD8FABD82A1 /* Pods-GigaShopUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
