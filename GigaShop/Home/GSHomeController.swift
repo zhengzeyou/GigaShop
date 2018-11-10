@@ -113,7 +113,12 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 		return 100
 	}
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 10
+		switch section {
+		case 0:
+			return 0.01
+		default:
+			return 10
+		}
 	}
 	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return 0.01
