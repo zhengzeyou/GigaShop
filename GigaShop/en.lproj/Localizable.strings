@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  GigaShop
+
+  Created by dlwpdlr on 2018/11/10.
+  Copyright © 2018年 GIGA Korea. All rights reserved.
+*/
+"首页" = "Home";
+"分类" = "Category";
+"购物车" = "ShopCart";
+"我的" = "Mine";
+
