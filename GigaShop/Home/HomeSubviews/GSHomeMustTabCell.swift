@@ -1,0 +1,110 @@
+//
+//  GSHomeMustTabCell.swift
+//  GigaShop
+//
+//  Created by dlwpdlr on 2018/11/12.
+//  Copyright © 2018年 GIGA Korea. All rights reserved.
+//
+
+import UIKit
+import Kingfisher
+
+class GSHomeMustTabCell: UITableViewCell {
+	var collectView:UICollectionView!
+	let title:UILabel = UILabel()
+	var data:NSArray = []
+	
+	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		addSubviews()
+		
+	}
+	
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	private func addSubviews(){
+		
+		title.text = "必买清单"
+		self.contentView.addSubview(title)
+		title.snp.makeConstraints { (make) in
+			make.left.equalToSuperview().offset(15)
+			make.top.equalToSuperview().offset(10)
+		}
+ 
+		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+		flowlayout.itemSize = CGSize(width:(Constant.screenWidth - 10) / 2 ,height: Constant.screenWidth / 2 + 100)
+		flowlayout.minimumLineSpacing = 0
+		flowlayout.minimumInteritemSpacing = 0
+		flowlayout.scrollDirection = .vertical
+		
+		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
+		collectView.backgroundColor =  UIColor.white
+		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")
+		collectView.dataSource = self
+		collectView.delegate = self
+		collectView.showsHorizontalScrollIndicator = false
+		self.contentView.addSubview(collectView)
+		collectView.snp.makeConstraints({ (make) in
+			make.left.equalTo(10)
+			make.right.equalToSuperview()
+			make.top.equalTo(30)
+ 			make.height.equalTo(3*(Constant.screenWidth / 2 + 100))
+		})
+		
+		
+	}
+	
+}
+
+extension GSHomeMustTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return 5
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reused", for: indexPath)
+		for view in cell.contentView.subviews {
+			view.removeFromSuperview()
+		}
+		let logo:UIImageView = UIImageView()
+		cell.contentView.addSubview(logo)
+		logo.snp.makeConstraints { (make) in
+			make.top.left.equalToSuperview()
+			make.right.equalTo(-2)
+			make.height.equalTo(Constant.screenWidth / 2)
+		}
+		logo.kf.setImage(with: URL(string: "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1542007443&di=e0c7b5cd274f8624149d5c1fa59d32af&src=http://m.360buyimg.com/mobilecms/s750x750_jfs/t9382/255/419174577/214784/f9026ac4/59aa5039N3b06738b.jpg!q80.jpg"))
+		
+		let title:UILabel = UILabel()
+		title.font = UIFont.systemFont(ofSize: 15)
+		title.textColor = Constant.blackColor
+		title.text = "COACH豆蔻迟女包经典波士顿包奢侈品"
+		title.numberOfLines = 2
+		cell.contentView.addSubview(title)
+		title.snp.makeConstraints { (make) in
+			make.left.equalTo(logo.snp.left)
+			make.top.equalTo(logo.snp.bottom).offset(5)
+			make.right.equalTo(logo.snp.right)
+			make.height.equalTo(40)
+		}
+		
+		let price:UILabel = UILabel()
+		price.textColor = Constant.redColor
+		price.text = "￥1800.00"
+		price.font = UIFont.systemFont(ofSize: 15)
+		cell.contentView.addSubview(price)
+		price.snp.makeConstraints { (make) in
+			make.left.equalTo(logo.snp.left)
+			make.top.equalTo(title.snp.bottom).offset(10)
+			make.right.equalTo(logo.snp.right)
+			make.height.equalTo(15)
+		}
+		
+		return cell
+	}
+	
+	
+	
+}

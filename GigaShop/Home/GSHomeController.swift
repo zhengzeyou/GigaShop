@@ -35,7 +35,7 @@ enum Part:Int {
 	var singleView:UIView?{
 		switch self {
 		case .top:
-			return GSHomeTopView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: Constant.screenWidth/2.0))
+			return GSHomeTopView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height:3*Constant.screenWidth/5.0 ))
 		case .category:
 			return nil
 		case .mono:
@@ -85,6 +85,11 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 		maintableview.tableFooterView = UIView()
 		maintableview.estimatedSectionFooterHeight = 0
 		maintableview.estimatedSectionHeaderHeight = 0
+		maintableview.register(GSHomeCateGridTabCell.self, forCellReuseIdentifier: "section0")
+		maintableview.register(GSHomeMonoTabCell.self, forCellReuseIdentifier: "section1")
+		maintableview.register(GSHomeImagesTabCell.self, forCellReuseIdentifier: "section2")
+		maintableview.register(GSHomeMustTabCell.self, forCellReuseIdentifier: "section3")
+
 		topView = Part.top.singleView as? GSHomeTopView
 		maintableview.tableHeaderView = topView
 		view.addSubview(maintableview)
@@ -99,18 +104,45 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 		
 	}
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 5
+		return 4
 	}
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 1
  	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		return UITableViewCell()
-	}
+		let part:Part = Part.init(rawValue: indexPath.section+1)!
+		switch part {
+		case .category:
+			let cell:GSHomeCateGridTabCell = tableView.dequeueReusableCell(withIdentifier: "section0", for: indexPath) as! GSHomeCateGridTabCell
+			return cell
+		case .mono:
+			let cell:GSHomeMonoTabCell = tableView.dequeueReusableCell(withIdentifier: "section1", for: indexPath) as! GSHomeMonoTabCell
+			return cell
+		case .showimages:
+			let cell:GSHomeImagesTabCell = tableView.dequeueReusableCell(withIdentifier: "section2", for: indexPath) as! GSHomeImagesTabCell
+			return cell
+		default:
+			let cell:GSHomeMustTabCell = tableView.dequeueReusableCell(withIdentifier: "section3", for: indexPath) as! GSHomeMustTabCell
+			return cell
+		}
+
+ 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 100
+		let part:Part = Part.init(rawValue: indexPath.section+1)!
+ 		switch part {
+		case .category:
+			return 2*(Constant.screenWidth-10)/5 + 40
+		case .mono:
+			return Constant.screenWidth / 3.0 + 140
+		case .showimages:
+			return 17*Constant.screenWidth/20 + 10
+		default:
+			return 3*(Constant.screenWidth / 2 + 100) + 30
+ 		}
+
+ 
 	}
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		switch section {

@@ -31,6 +31,13 @@
 		D5F02BE72196BDDC000C9E38 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F02BE92196BDDC000C9E38 /* Localizable.strings */; };
 		D5F02BEE2196C18B000C9E38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F02BF02196C18B000C9E38 /* InfoPlist.strings */; };
 		D5F02BF52196C813000C9E38 /* GSHomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BF42196C813000C9E38 /* GSHomeTopView.swift */; };
+		D5FC57A42199170400AB19CF /* CellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A12199170400AB19CF /* CellFlowLayout.swift */; };
+		D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A22199170400AB19CF /* CycleCell.swift */; };
+		D5FC57A62199170400AB19CF /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A32199170400AB19CF /* CycleView.swift */; };
+		D5FC57A82199281800AB19CF /* GSHomeCateGridTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A72199281800AB19CF /* GSHomeCateGridTabCell.swift */; };
+		D5FC57AA219955A700AB19CF /* GSHomeMonoTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A9219955A700AB19CF /* GSHomeMonoTabCell.swift */; };
+		D5FC57AC2199666200AB19CF /* GSHomeImagesTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57AB2199666200AB19CF /* GSHomeImagesTabCell.swift */; };
+		D5FC57AE2199701D00AB19CF /* GSHomeMustTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57AD2199701D00AB19CF /* GSHomeMustTabCell.swift */; };
 		F967FC55A659408DA68E0217 /* Pods_GigaShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +102,13 @@
 		D5F02BF12196C18C000C9E38 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5F02BF22196C18E000C9E38 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D5F02BF42196C813000C9E38 /* GSHomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeTopView.swift; sourceTree = "<group>"; };
+		D5FC57A12199170400AB19CF /* CellFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellFlowLayout.swift; sourceTree = "<group>"; };
+		D5FC57A22199170400AB19CF /* CycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleCell.swift; sourceTree = "<group>"; };
+		D5FC57A32199170400AB19CF /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
+		D5FC57A72199281800AB19CF /* GSHomeCateGridTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeCateGridTabCell.swift; sourceTree = "<group>"; };
+		D5FC57A9219955A700AB19CF /* GSHomeMonoTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeMonoTabCell.swift; sourceTree = "<group>"; };
+		D5FC57AB2199666200AB19CF /* GSHomeImagesTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeImagesTabCell.swift; sourceTree = "<group>"; };
+		D5FC57AD2199701D00AB19CF /* GSHomeMustTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeMustTabCell.swift; sourceTree = "<group>"; };
 		D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,6 +189,7 @@
 		D5F02B9321967281000C9E38 /* GigaShop */ = {
 			isa = PBXGroup;
 			children = (
+				D5FC579F219916AF00AB19CF /* ThPart */,
 				D5F02BD221967951000C9E38 /* Extension */,
 				D5F02BC22196785B000C9E38 /* Base */,
 				D5F02BC72196785B000C9E38 /* NetWork */,
@@ -278,8 +293,30 @@
 			isa = PBXGroup;
 			children = (
 				D5F02BF42196C813000C9E38 /* GSHomeTopView.swift */,
+				D5FC57A72199281800AB19CF /* GSHomeCateGridTabCell.swift */,
+				D5FC57A9219955A700AB19CF /* GSHomeMonoTabCell.swift */,
+				D5FC57AB2199666200AB19CF /* GSHomeImagesTabCell.swift */,
+				D5FC57AD2199701D00AB19CF /* GSHomeMustTabCell.swift */,
 			);
 			path = HomeSubviews;
+			sourceTree = "<group>";
+		};
+		D5FC579F219916AF00AB19CF /* ThPart */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC57A02199170400AB19CF /* CycleView */,
+			);
+			path = ThPart;
+			sourceTree = "<group>";
+		};
+		D5FC57A02199170400AB19CF /* CycleView */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC57A12199170400AB19CF /* CellFlowLayout.swift */,
+				D5FC57A22199170400AB19CF /* CycleCell.swift */,
+				D5FC57A32199170400AB19CF /* CycleView.swift */,
+			);
+			path = CycleView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -597,16 +634,23 @@
 				D5F02BDC21967B08000C9E38 /* GSCartController.swift in Sources */,
 				D5F02BCD2196785B000C9E38 /* GSAccount.swift in Sources */,
 				D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */,
+				D5FC57A42199170400AB19CF /* CellFlowLayout.swift in Sources */,
 				D5F02BCE2196785B000C9E38 /* GSTabBarController.swift in Sources */,
 				D5F02BCC2196785B000C9E38 /* BaseController.swift in Sources */,
+				D5FC57A82199281800AB19CF /* GSHomeCateGridTabCell.swift in Sources */,
 				D5F02BDE21967B1C000C9E38 /* GSCategoryController.swift in Sources */,
+				D5FC57A62199170400AB19CF /* CycleView.swift in Sources */,
 				D5F02BCF2196785B000C9E38 /* MoyaRequestResource.swift in Sources */,
 				D5F02BF52196C813000C9E38 /* GSHomeTopView.swift in Sources */,
 				D5F02BDA21967AF8000C9E38 /* GSMineController.swift in Sources */,
 				D5F02BD02196785B000C9E38 /* MoyaTargetType.swift in Sources */,
+				D5FC57AE2199701D00AB19CF /* GSHomeMustTabCell.swift in Sources */,
 				D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */,
+				D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */,
 				D5F02BD12196785B000C9E38 /* ToModelExtensions.swift in Sources */,
+				D5FC57AC2199666200AB19CF /* GSHomeImagesTabCell.swift in Sources */,
 				D5F02BCB2196785B000C9E38 /* Constant.swift in Sources */,
+				D5FC57AA219955A700AB19CF /* GSHomeMonoTabCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,7 +781,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -793,7 +837,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -812,7 +856,10 @@
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -829,7 +876,10 @@
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -846,7 +896,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -864,7 +918,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -881,7 +939,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -898,7 +960,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
