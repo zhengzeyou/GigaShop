@@ -47,9 +47,8 @@ extension GSMineController:UITableViewDelegate,UITableViewDataSource {
 		view.addSubview(tableView)
 		
 		tableView.snp.makeConstraints { (make) in
-			make.left.right.equalToSuperview()
-			make.bottom.equalToSuperview()
-			make.top.equalTo(-((self.navigationController?.navigationBar.height)! + UIApplication.shared.statusBarFrame.size.height))
+			make.left.bottom.right.equalToSuperview()
+ 			make.top.equalTo(-((self.navigationController?.navigationBar.height)! + UIApplication.shared.statusBarFrame.size.height))
 		}
 		
 		

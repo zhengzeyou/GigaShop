@@ -44,6 +44,7 @@
 		D5FC57B8219AAB2700AB19CF /* GSMineOrderStateTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57B7219AAB2700AB19CF /* GSMineOrderStateTabCell.swift */; };
 		D5FC57BA219AAD3D00AB19CF /* GSMineTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57B9219AAD3D00AB19CF /* GSMineTopView.swift */; };
 		D5FC57BC219ABEB300AB19CF /* GSMineServeTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */; };
+		D5FC57BF219ACAAA00AB19CF /* GSCartGoodTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57BE219ACAAA00AB19CF /* GSCartGoodTabCell.swift */; };
 		F967FC55A659408DA68E0217 /* Pods_GigaShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		D5FC57B7219AAB2700AB19CF /* GSMineOrderStateTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineOrderStateTabCell.swift; sourceTree = "<group>"; };
 		D5FC57B9219AAD3D00AB19CF /* GSMineTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineTopView.swift; sourceTree = "<group>"; };
 		D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineServeTabCell.swift; sourceTree = "<group>"; };
+		D5FC57BE219ACAAA00AB19CF /* GSCartGoodTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartGoodTabCell.swift; sourceTree = "<group>"; };
 		D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -289,6 +291,7 @@
 		D5F02BD721967A72000C9E38 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				D5FC57BD219AC73800AB19CF /* CartSubviews */,
 				D5F02BDB21967B08000C9E38 /* GSCartController.swift */,
 			);
 			path = Cart;
@@ -351,6 +354,14 @@
 				D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */,
 			);
 			path = MineSubviews;
+			sourceTree = "<group>";
+		};
+		D5FC57BD219AC73800AB19CF /* CartSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC57BE219ACAAA00AB19CF /* GSCartGoodTabCell.swift */,
+			);
+			path = CartSubviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -676,6 +687,7 @@
 				D5FC57BC219ABEB300AB19CF /* GSMineServeTabCell.swift in Sources */,
 				D5F02BDE21967B1C000C9E38 /* GSCategoryController.swift in Sources */,
 				D5FC57A62199170400AB19CF /* CycleView.swift in Sources */,
+				D5FC57BF219ACAAA00AB19CF /* GSCartGoodTabCell.swift in Sources */,
 				D5F02BCF2196785B000C9E38 /* MoyaRequestResource.swift in Sources */,
 				D5FC57B121997C6E00AB19CF /* GSCateIndexCollectView.swift in Sources */,
 				D5FC57BA219AAD3D00AB19CF /* GSMineTopView.swift in Sources */,

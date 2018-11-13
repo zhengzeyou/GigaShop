@@ -8,22 +8,61 @@
 
 import UIKit
 
+var tableview:UITableView!
 class GSCartController: BaseController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		emptyCart()
+//		emptyCart()
 	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		self.view.backgroundColor =  Constant.vcBgColor
-
+		nonEmptyCart()
     }
 	
 }
 
-
-extension GSCartController{
+extension GSCartController:UITableViewDelegate,UITableViewDataSource{
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 2
+	}
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 2
+	}
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell:GSCartGoodTabCell = tableView.dequeueReusableCell(withIdentifier: "reused", for: indexPath) as! GSCartGoodTabCell
+		return cell
+	}
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 120
+ 	}
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		
+		return 10
+ 	}
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 0.01
+	}
+	
+	fileprivate func nonEmptyCart(){
+		tableview = UITableView(frame: .zero, style: .grouped)
+		tableview.delegate = self
+		tableview.dataSource = self
+		tableview.estimatedRowHeight = 0
+		tableview.estimatedSectionFooterHeight = 0
+		tableview.estimatedSectionHeaderHeight = 0
+		tableview.tableFooterView = UIView()
+		tableview.register(GSCartGoodTabCell.self, forCellReuseIdentifier: "reused")
+ 		view.addSubview(tableview)
+		tableview.snp.makeConstraints { (make) in
+			make.edges.equalToSuperview()
+		}
+	}
+	
+	
+	
+	
 	
 	fileprivate func emptyCart(){
 		let emptytitle:UILabel = UILabel()
