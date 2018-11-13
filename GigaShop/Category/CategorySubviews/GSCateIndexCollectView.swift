@@ -30,7 +30,7 @@ class GSCateIndexCollectView: UIView {
 		self.backgroundColor = UIColor.white
 
  		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-		flowlayout.itemSize = CGSize(width:Constant.screenWidth/4.0, height:50.0)
+		flowlayout.itemSize = CGSize(width:Constant.screenWidth/4.0, height:60.0)
 		flowlayout.minimumLineSpacing = 0
 		flowlayout.minimumInteritemSpacing = 0
  		flowlayout.scrollDirection = .vertical
