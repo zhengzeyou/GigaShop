@@ -82,8 +82,7 @@ class GSTabBarController: UITabBarController {
 		let cartNavi = UINavigationController(rootViewController: cart)
 
  		let mypage = GSMineController()
-		mypage.title = Tab.mypage.title
-  		let mypageNavi = UINavigationController(rootViewController: mypage)
+   		let mypageNavi = UINavigationController(rootViewController: mypage)
 
 		
 		

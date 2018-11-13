@@ -37,7 +37,7 @@ class GSCateValueColllectView: UIView {
 		tableview.register(GSCateValueTabCell.self, forCellReuseIdentifier: "tablecell")
 		tableview.tableFooterView = UIView()
 		tableview.showsVerticalScrollIndicator = false
-		tableview.separatorColor = UIColor.colorFromHex(hex: 0xf2f4f6)
+		tableview.separatorColor =  Constant.vcBgColor
 		self.addSubview(tableview)
 		tableview.snp.makeConstraints { (make) in
 			make.edges.equalToSuperview()

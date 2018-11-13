@@ -62,7 +62,7 @@ extension GSCateIndexCollectView:UICollectionViewDelegate,UICollectionViewDelega
 		let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reused", for: indexPath)
  
 		let selectview:UIView = UIView()
-		selectview.backgroundColor = UIColor.colorFromHex(hex: 0xf2f4f6)
+		selectview.backgroundColor =  Constant.vcBgColor
 		cell.selectedBackgroundView = selectview
 		
 		let redline:UIView = UIView()

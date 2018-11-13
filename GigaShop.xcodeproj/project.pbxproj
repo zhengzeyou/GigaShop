@@ -41,6 +41,9 @@
 		D5FC57B121997C6E00AB19CF /* GSCateIndexCollectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57B021997C6E00AB19CF /* GSCateIndexCollectView.swift */; };
 		D5FC57B321997C9100AB19CF /* GSCateValueColllectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57B221997C9100AB19CF /* GSCateValueColllectView.swift */; };
 		D5FC57B5219A6C1200AB19CF /* GSCateValueTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57B4219A6C1200AB19CF /* GSCateValueTabCell.swift */; };
+		D5FC57B8219AAB2700AB19CF /* GSMineOrderStateTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57B7219AAB2700AB19CF /* GSMineOrderStateTabCell.swift */; };
+		D5FC57BA219AAD3D00AB19CF /* GSMineTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57B9219AAD3D00AB19CF /* GSMineTopView.swift */; };
+		D5FC57BC219ABEB300AB19CF /* GSMineServeTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */; };
 		F967FC55A659408DA68E0217 /* Pods_GigaShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +118,9 @@
 		D5FC57B021997C6E00AB19CF /* GSCateIndexCollectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateIndexCollectView.swift; sourceTree = "<group>"; };
 		D5FC57B221997C9100AB19CF /* GSCateValueColllectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateValueColllectView.swift; sourceTree = "<group>"; };
 		D5FC57B4219A6C1200AB19CF /* GSCateValueTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateValueTabCell.swift; sourceTree = "<group>"; };
+		D5FC57B7219AAB2700AB19CF /* GSMineOrderStateTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineOrderStateTabCell.swift; sourceTree = "<group>"; };
+		D5FC57B9219AAD3D00AB19CF /* GSMineTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineTopView.swift; sourceTree = "<group>"; };
+		D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineServeTabCell.swift; sourceTree = "<group>"; };
 		D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -291,6 +297,7 @@
 		D5F02BD821967A96000C9E38 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				D5FC57B6219AAADB00AB19CF /* MineSubviews */,
 				D5F02BD921967AF8000C9E38 /* GSMineController.swift */,
 			);
 			path = Mine;
@@ -334,6 +341,16 @@
 				D5FC57B4219A6C1200AB19CF /* GSCateValueTabCell.swift */,
 			);
 			path = CategorySubviews;
+			sourceTree = "<group>";
+		};
+		D5FC57B6219AAADB00AB19CF /* MineSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC57B7219AAB2700AB19CF /* GSMineOrderStateTabCell.swift */,
+				D5FC57B9219AAD3D00AB19CF /* GSMineTopView.swift */,
+				D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */,
+			);
+			path = MineSubviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,13 +673,16 @@
 				D5F02BCC2196785B000C9E38 /* BaseController.swift in Sources */,
 				D5FC57A82199281800AB19CF /* GSHomeCateGridTabCell.swift in Sources */,
 				D5FC57B321997C9100AB19CF /* GSCateValueColllectView.swift in Sources */,
+				D5FC57BC219ABEB300AB19CF /* GSMineServeTabCell.swift in Sources */,
 				D5F02BDE21967B1C000C9E38 /* GSCategoryController.swift in Sources */,
 				D5FC57A62199170400AB19CF /* CycleView.swift in Sources */,
 				D5F02BCF2196785B000C9E38 /* MoyaRequestResource.swift in Sources */,
 				D5FC57B121997C6E00AB19CF /* GSCateIndexCollectView.swift in Sources */,
+				D5FC57BA219AAD3D00AB19CF /* GSMineTopView.swift in Sources */,
 				D5F02BF52196C813000C9E38 /* GSHomeTopView.swift in Sources */,
 				D5F02BDA21967AF8000C9E38 /* GSMineController.swift in Sources */,
 				D5F02BD02196785B000C9E38 /* MoyaTargetType.swift in Sources */,
+				D5FC57B8219AAB2700AB19CF /* GSMineOrderStateTabCell.swift in Sources */,
 				D5FC57AE2199701D00AB19CF /* GSHomeMustTabCell.swift in Sources */,
 				D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */,
 				D5FC57B5219A6C1200AB19CF /* GSCateValueTabCell.swift in Sources */,

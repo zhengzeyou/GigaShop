@@ -28,7 +28,7 @@ class GSCategoryController: BaseController {
 	
 	private func addSubviews(){
 
-		self.view.backgroundColor = UIColor.colorFromHex(hex: 0xf2f4f6)
+		self.view.backgroundColor =  Constant.vcBgColor
 		
 		indexView = GSCateIndexCollectView()
 		indexView.delegate = self

@@ -20,7 +20,7 @@ class GSHomeImagesTabCell: UITableViewCell {
 	}
 	
 	private func addSubViews(){
-		self.backgroundColor = UIColor.colorFromHex(hex: 0xf2f4f6)
+		self.backgroundColor = Constant.vcBgColor
 		
 		let big:UIImageView = UIImageView(image: UIImage(named: "img_01"))
 		self.contentView.addSubview(big)
