@@ -52,6 +52,13 @@ enum Part:Int {
 
 class GSHomeController: BaseController {
 	private var scrollView:UIScrollView!
+	override func loadView()
+	{
+		super.loadView()
+//		self.navigationController?.navigationBar.backgroundColor = UIColor.white
+		self.edgesForExtendedLayout = .bottom
+	}
+
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

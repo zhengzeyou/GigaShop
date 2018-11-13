@@ -76,7 +76,7 @@ class GSTabBarController: UITabBarController {
 		let cate = GSCategoryController()
 		cate.title = Tab.cate.title
 		let cateNavi = UINavigationController(rootViewController: cate)
-
+		
 		let cart = GSCartController()
 		cart.title = Tab.cart.title
 		let cartNavi = UINavigationController(rootViewController: cart)
