@@ -80,7 +80,7 @@ extension GSMineController:UITableViewDelegate,UITableViewDataSource {
 		case 0:
 			return Constant.screenWidth / 5.0 + 50.0
  		default:
-			return 2.0*Constant.screenWidth / 3.0 + 70.0
+			return 2.0*Constant.screenWidth / 3.0 
 
 		}
  

@@ -29,7 +29,7 @@ class  GSMineServeTabCell: UITableViewCell {
 		
 		let title:UILabel = UILabel()
 		title.text = "我的服务"
-		title.font = .systemFont(ofSize: 22)
+		title.font = .systemFont(ofSize: 20)
 		self.contentView.addSubview(title)
 		title.snp.makeConstraints { (make) in
 			make.left.equalToSuperview().offset(15)
@@ -40,7 +40,7 @@ class  GSMineServeTabCell: UITableViewCell {
 		
 		
 		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-		flowlayout.itemSize = CGSize(width:  Constant.screenWidth / 3.0 - 4.0 , height: Constant.screenWidth / 3.0  - 4.0)
+		flowlayout.itemSize = CGSize(width:  Constant.screenWidth / 3.0 - 5.0 , height: Constant.screenWidth / 3.0  - 30.0)
 		flowlayout.minimumLineSpacing = 1
 		flowlayout.minimumInteritemSpacing = 1
 		
@@ -53,7 +53,7 @@ class  GSMineServeTabCell: UITableViewCell {
 		self.contentView.addSubview(collectView)
 		collectView.snp.makeConstraints({ (make) in
  			make.bottom.left.right.equalToSuperview()
-			make.top.equalTo(70)
+			make.top.equalTo(50)
 		})
 		
 		
@@ -76,7 +76,7 @@ extension  GSMineServeTabCell:UICollectionViewDelegate,UICollectionViewDelegateF
 		icon.contentMode = .scaleAspectFit
 		cell.contentView.addSubview(icon)
 		icon.snp.makeConstraints { (make) in
-			make.top.equalToSuperview()
+			make.top.equalToSuperview().offset(15)
 			make.centerX.equalToSuperview()
 			make.height.equalTo(Constant.screenWidth / 10)
 		}
