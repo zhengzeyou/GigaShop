@@ -45,6 +45,8 @@
 		D5FC57BA219AAD3D00AB19CF /* GSMineTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57B9219AAD3D00AB19CF /* GSMineTopView.swift */; };
 		D5FC57BC219ABEB300AB19CF /* GSMineServeTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */; };
 		D5FC57BF219ACAAA00AB19CF /* GSCartGoodTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57BE219ACAAA00AB19CF /* GSCartGoodTabCell.swift */; };
+		D5FC57F8219C0A2000AB19CF /* GSCartCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57F7219C0A1F00AB19CF /* GSCartCountView.swift */; };
+		D5FC57FA219D119000AB19CF /* GSCartPricePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57F9219D119000AB19CF /* GSCartPricePanelView.swift */; };
 		F967FC55A659408DA68E0217 /* Pods_GigaShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +125,8 @@
 		D5FC57B9219AAD3D00AB19CF /* GSMineTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineTopView.swift; sourceTree = "<group>"; };
 		D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineServeTabCell.swift; sourceTree = "<group>"; };
 		D5FC57BE219ACAAA00AB19CF /* GSCartGoodTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartGoodTabCell.swift; sourceTree = "<group>"; };
+		D5FC57F7219C0A1F00AB19CF /* GSCartCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartCountView.swift; sourceTree = "<group>"; };
+		D5FC57F9219D119000AB19CF /* GSCartPricePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartPricePanelView.swift; sourceTree = "<group>"; };
 		D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -360,6 +364,8 @@
 			isa = PBXGroup;
 			children = (
 				D5FC57BE219ACAAA00AB19CF /* GSCartGoodTabCell.swift */,
+				D5FC57F7219C0A1F00AB19CF /* GSCartCountView.swift */,
+				D5FC57F9219D119000AB19CF /* GSCartPricePanelView.swift */,
 			);
 			path = CartSubviews;
 			sourceTree = "<group>";
@@ -679,6 +685,7 @@
 				D5F02BDC21967B08000C9E38 /* GSCartController.swift in Sources */,
 				D5F02BCD2196785B000C9E38 /* GSAccount.swift in Sources */,
 				D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */,
+				D5FC57FA219D119000AB19CF /* GSCartPricePanelView.swift in Sources */,
 				D5FC57A42199170400AB19CF /* CellFlowLayout.swift in Sources */,
 				D5F02BCE2196785B000C9E38 /* GSTabBarController.swift in Sources */,
 				D5F02BCC2196785B000C9E38 /* BaseController.swift in Sources */,
@@ -694,6 +701,7 @@
 				D5F02BF52196C813000C9E38 /* GSHomeTopView.swift in Sources */,
 				D5F02BDA21967AF8000C9E38 /* GSMineController.swift in Sources */,
 				D5F02BD02196785B000C9E38 /* MoyaTargetType.swift in Sources */,
+				D5FC57F8219C0A2000AB19CF /* GSCartCountView.swift in Sources */,
 				D5FC57B8219AAB2700AB19CF /* GSMineOrderStateTabCell.swift in Sources */,
 				D5FC57AE2199701D00AB19CF /* GSHomeMustTabCell.swift in Sources */,
 				D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */,

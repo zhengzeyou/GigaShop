@@ -13,20 +13,36 @@ class GSCartGoodTabCell: UITableViewCell {
 	var picture:UIImageView!
 	var goodname:UILabel!
 	var goodprice:UILabel!
-	
+ 	let count:GSCartCountView = GSCartCountView()
+	var num:Int?
+ 	var changeCount:((Int) -> Void)!
+	var indexpath:IndexPath?
+	var checkbtn:UIButton!
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		addSubviews()
+  		addSubviews()
+		
 		
 	}
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+
+	func setGoodData(dic:NSDictionary){
+
+		picture.kf.setImage(with: URL(string: dic.object(forKey: "goodurl") as! String))
+		goodname.text = dic.object(forKey: "goodname") as? String
+		let price:String = dic.object(forKey: "goodprice") as! String
+		goodprice.text = "￥" + price
+		num = dic.object(forKey: "goodNum") as? Int
+		count.setNumberText(nums:num!)
+
+	}
 	fileprivate func addSubviews(){
 		
-		let checkbtn:UIButton = UIButton()
+		checkbtn = UIButton()
 		checkbtn.setImage(UIImage(named: "icon_cart_unselected"), for: .normal)
 		checkbtn.setImage(UIImage(named: "icon_cart_selected"), for: .selected)
 		checkbtn.addTarget(self, action: #selector(checkaction), for: .touchUpInside)
@@ -51,10 +67,8 @@ class GSCartGoodTabCell: UITableViewCell {
 			make.width.height.equalTo(90)
 		}
 		
-		picture.kf.setImage(with: URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542097015350&di=e5176001fb939f1ccf908f4289aefd7e&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D1f6841e845c2d562e605d8ae8f78fa9a%2F8435e5dde71190efd0967d57c41b9d16fcfa60cd.jpg"))
 		
 		goodname = UILabel()
-		goodname.text = "COACH豆蔻迟女包经典波士顿包奢侈品"
 		goodname.textColor = Constant.blackColor
 		self.contentView.addSubview(goodname)
 		goodname.snp.makeConstraints { (make) in
@@ -65,8 +79,7 @@ class GSCartGoodTabCell: UITableViewCell {
 		}
 		
 		goodprice = UILabel()
-		goodprice.text = "￥1899.00"
-		goodprice.textColor = Constant.blackColor
+ 		goodprice.textColor = Constant.blackColor
 		self.contentView.addSubview(goodprice)
 		goodprice.snp.makeConstraints { (make) in
 			make.left.equalTo(goodname.snp.left)
@@ -88,6 +101,22 @@ class GSCartGoodTabCell: UITableViewCell {
 			make.width.height.equalTo(15)
 		}
 		
+ 		count.setNumberText(nums: 1)
+		count.changeNumber = {(num:Int) -> Void in
+			self.num = num
+			guard self.changeCount != nil&&self.checkbtn.isSelected else {
+				return
+			}
+			self.changeCount(self.num!)
+  		}
+		self.contentView.addSubview(count)
+		count.snp.makeConstraints { (make) in
+			make.left.equalTo(goodname.snp.left)
+ 			make.width.equalTo(90)
+			make.height.equalTo(30)
+			make.bottom.equalTo(-10)
+		}
+		
 		
 		
 
@@ -96,7 +125,21 @@ class GSCartGoodTabCell: UITableViewCell {
 		
 	}
 	
+	func setSenderIsSelectState(isSelected:Bool){
+		self.checkbtn.isSelected = isSelected
+		guard self.changeCount != nil else {
+			return
+		}
+		self.changeCount(isSelected ? num! : 0)
+	}
+	
 	@objc func checkaction(sender:UIButton){
 		sender.isSelected = !sender.isSelected
+		guard self.changeCount != nil else {
+			return
+		}
+		self.changeCount(sender.isSelected ? num! : 0)
+		
+
 	}
 }
