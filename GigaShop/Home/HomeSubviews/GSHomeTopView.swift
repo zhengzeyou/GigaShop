@@ -56,6 +56,7 @@ extension GSHomeTopView:CycleViewDelegate {
 		//轮播图加载
 		bannerView = CycleView(frame: CGRect(x: 15, y:90 , width: Constant.screenWidth - 30, height: 3*Constant.screenWidth/5.0-76.0))
 		bannerView.delegate = self
+		bannerView.pgmode = .pointCount
 		bannerView.layer.cornerRadius = 3
 		bannerView.layer.masksToBounds = true
 		bannerView.mode = .scaleAspectFill

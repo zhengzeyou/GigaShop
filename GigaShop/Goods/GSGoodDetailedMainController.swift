@@ -97,7 +97,11 @@ class GSGoodDetailedMainController: UIViewController {
 		tableView = UITableView(frame: .zero, style: .grouped)
 		tableView.delegate = self
 		tableView.dataSource = self
+		tableView.estimatedSectionFooterHeight = 0
+		tableview.estimatedSectionHeaderHeight = 0
 		tableView.contentInsetAdjustmentBehavior = .never
+		tableView.backgroundColor = Constant.vcBgColor
+		tableView.separatorColor = Constant.vcBgColor
 		
 		bgView.addSubview(tableView)
 		tableView.snp.makeConstraints { (make) in
@@ -108,11 +112,11 @@ class GSGoodDetailedMainController: UIViewController {
 		//轮播图加载
 		let tableHeadView:CycleView = CycleView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: Constant.screenWidth))
 		tableHeadView.delegate = self
+		tableHeadView.pgmode = .numberCount
 		tableHeadView.mode = .scaleAspectFit
 		tableHeadView.currentPageColor = Constant.redColor
 		tableHeadView.pageColor = Constant.greyColor
- 		//本地图片测试--加载网络图片,请用第三方库如SDWebImage等
-		tableHeadView.imageURLStringArr = ["https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBi7jHemi8BP_!!0-item_pic.jpg", "https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBhTF7Fo4uif_!!4120736425.jpg","https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhB4WccycS4Ym_!!4120736425.jpg","https://img.alicdn.com/imgextra/i4/4120736425/O1CN011xKhC56zXUOU7gz_!!4120736425.jpg","https://img.alicdn.com/imgextra/i2/4120736425/O1CN011xKhB4MQGSoRofE_!!4120736425.jpg"]
+ 		tableHeadView.imageURLStringArr = ["https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBi7jHemi8BP_!!0-item_pic.jpg", "https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBhTF7Fo4uif_!!4120736425.jpg","https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhB4WccycS4Ym_!!4120736425.jpg","https://img.alicdn.com/imgextra/i4/4120736425/O1CN011xKhC56zXUOU7gz_!!4120736425.jpg","https://img.alicdn.com/imgextra/i2/4120736425/O1CN011xKhB4MQGSoRofE_!!4120736425.jpg"]
 
  		tableView.tableHeaderView = tableHeadView
 		
@@ -177,21 +181,42 @@ extension GSGoodDetailedMainController:UICollectionViewDelegate,UICollectionView
 
 
 extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource,UIWebViewDelegate,UIScrollViewDelegate{
- 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 15
+	
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 3
+	}
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 1
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:UITableViewCell = UITableViewCell()
-		cell.textLabel?.text = String(format: "%d", indexPath.row)
- 		return cell
+  		return cell
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		switch indexPath.section {
+		case 0:
+			return 120
+		case 1:
+			return 50
+ 		default:
+			return Constant.screenHeight/2
+		}
+ 	}
+	
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 6
+	}
+	
+	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+		return 0.1
 	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		
 		if scrollView == tableView {
-			print(scrollView.offsetY)
-			if scrollView.offsetY > 10{
+ 			if scrollView.offsetY > 10{
 			
 				let bomValue:CGFloat = (self.navigationController?.navigationBar.height)! + UIApplication.shared.statusBarFrame.height
 				self.navigationController?.navigationBar.alpha = abs(scrollView.offsetY)/bomValue

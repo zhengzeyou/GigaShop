@@ -14,6 +14,13 @@ enum contentMode {
     case scaleAspectFit
 }
 
+//计算的模式
+enum pageMode {
+	case pointCount
+	case numberCount
+}
+
+
 protocol CycleViewDelegate : class {
     func cycleViewDidSelectedItemAtIndex(_ index : NSInteger) -> ()
 }
@@ -24,6 +31,16 @@ class CycleView: UIView,UICollectionViewDelegate, UICollectionViewDataSource {
     weak var delegate : CycleViewDelegate?
     
     var mode : contentMode? = .scaleAspectFill
+ 	var pgmode : pageMode? {
+		didSet{
+			switch pgmode ?? .pointCount {
+			case .pointCount:
+				addSubview(pageControl)
+			case .numberCount:
+				addSubview(numberIndexView)
+			}
+		}
+	}
 
     //CollectionView复用cell的机制,不管当前的section有道少了item,当cell的宽和屏幕的宽一致是,当前屏幕最多显示两个cell(图片切换时是两个cell),切换完成时有且仅有一个cell,即使放大1000倍,内存中最多加载两个cell,所以不会造成内存暴涨现象
     let KCount = 100
@@ -87,9 +104,21 @@ class CycleView: UIView,UICollectionViewDelegate, UICollectionViewDataSource {
         pageControl.currentPageIndicatorTintColor = UIColor.white
         return pageControl
     }()
+	
+	lazy var numberIndexView:UILabel = {
+	
+		let indexView:UILabel = UILabel(frame: CGRect(x: 20, y: height - 40, width: 65, height: 30))
+		indexView.textColor = UIColor.white
+		indexView.backgroundColor = UIColor.black
+		indexView.alpha = 0.4
+ 		indexView.layer.cornerRadius = 15
+		indexView.textAlignment = .center
+		indexView.layer.masksToBounds = true
+		return indexView
+	}()
     //定时器
     lazy var timer : Timer = {
-        let timer = Timer(timeInterval: 2.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        let timer = Timer(timeInterval: 4.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: .common)
         return timer
     }()
@@ -140,6 +169,8 @@ extension CycleView {
         var page = NSInteger(offsetX / bounds.size.width + 0.5)
         page = page % (imageURLStringArr?.count)!
         pageControl.currentPage = page
+ 		numberIndexView.text = String(format: "%d/%d", (page+1),(imageURLStringArr?.count)!)
+		
     }
 
     //MARK: 随父控件的消失取消定时器
@@ -170,7 +201,6 @@ extension CycleView {
 extension CycleView {
     fileprivate func setUpUI() {
         addSubview(collectionView)
-        addSubview(pageControl)
         //启动定时器
         timer.fireDate = Date(timeIntervalSinceNow: 2.0)
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GSGoodMiddleCollectView: UIView {
+class GSGoodInfoTableCell: UITableViewCell {
 	let titles:[String] = ["商品","评价","详情"]
 	var collectView:UICollectionView!
 
@@ -43,7 +43,7 @@ class GSGoodMiddleCollectView: UIView {
 	}
 }
 
-extension GSGoodMiddleCollectView:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
+extension GSGoodInfoTableCell:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return 3
 	}
