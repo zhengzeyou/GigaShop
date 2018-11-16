@@ -18,6 +18,7 @@ class GSGoodDetailedMainController: UIViewController {
 	var titleView:UIScrollView!
 	let titles:[String] = ["商品","评价","详情"]
 	var collectView:UICollectionView!
+//	var bannerView:CycleView!
 
 	var scrolleview:UIScrollView!
 	override func viewWillAppear(_ animated: Bool) {
@@ -104,9 +105,16 @@ class GSGoodDetailedMainController: UIViewController {
 			make.height.equalTo(Constant.screenHeight)
 		}
 		
-		let tableHeadView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: Constant.screenWidth))
-		tableHeadView.backgroundColor = UIColor.brown
-		tableView.tableHeaderView = tableHeadView
+		//轮播图加载
+		let tableHeadView:CycleView = CycleView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: Constant.screenWidth))
+		tableHeadView.delegate = self
+		tableHeadView.mode = .scaleAspectFit
+		tableHeadView.currentPageColor = Constant.redColor
+		tableHeadView.pageColor = Constant.greyColor
+ 		//本地图片测试--加载网络图片,请用第三方库如SDWebImage等
+		tableHeadView.imageURLStringArr = ["https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBi7jHemi8BP_!!0-item_pic.jpg", "https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBhTF7Fo4uif_!!4120736425.jpg","https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhB4WccycS4Ym_!!4120736425.jpg","https://img.alicdn.com/imgextra/i4/4120736425/O1CN011xKhC56zXUOU7gz_!!4120736425.jpg","https://img.alicdn.com/imgextra/i2/4120736425/O1CN011xKhB4MQGSoRofE_!!4120736425.jpg"]
+
+ 		tableView.tableHeaderView = tableHeadView
 		
 		let tableFootView:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: 30))
 		tableFootView.setTitle("下拉显示详情", for: .normal)
@@ -210,4 +218,10 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 	
 	
 	
+}
+extension GSGoodDetailedMainController:CycleViewDelegate {
+	func cycleViewDidSelectedItemAtIndex(_ index: NSInteger) {
+		
+	}
+		
 }

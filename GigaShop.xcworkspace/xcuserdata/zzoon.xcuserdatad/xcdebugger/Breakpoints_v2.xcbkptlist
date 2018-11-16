@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GigaShop/Cart/CartSubviews/GSCartGoodTabCell.swift"
-            timestampString = "564046240.528893"
+            timestampString = "564050523.659976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "141"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GigaShop/Goods/GSGoodDetailedMainController.swift"
-            timestampString = "564046240.5289789"
+            timestampString = "564050523.660072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
