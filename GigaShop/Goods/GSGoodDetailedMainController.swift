@@ -97,12 +97,13 @@ class GSGoodDetailedMainController: UIViewController {
 		tableView = UITableView(frame: .zero, style: .grouped)
 		tableView.delegate = self
 		tableView.dataSource = self
-		tableView.estimatedSectionFooterHeight = 0
+		tableView.estimatedRowHeight = 0
+ 		tableView.estimatedSectionFooterHeight = 0
 		tableview.estimatedSectionHeaderHeight = 0
 		tableView.contentInsetAdjustmentBehavior = .never
 		tableView.backgroundColor = Constant.vcBgColor
 		tableView.separatorColor = Constant.vcBgColor
-		
+		tableView.register(GSGoodInfoTableCell.self, forCellReuseIdentifier: "infoCell")
 		bgView.addSubview(tableView)
 		tableView.snp.makeConstraints { (make) in
 			make.left.top.right.equalToSuperview()
@@ -190,14 +191,22 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell:UITableViewCell = UITableViewCell()
-  		return cell
+		switch indexPath.section {
+		case 0:
+			let infocell:GSGoodInfoTableCell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! GSGoodInfoTableCell
+			return infocell
+		default:
+			let cell:UITableViewCell = UITableViewCell()
+			return cell
+
+
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		switch indexPath.section {
 		case 0:
-			return 120
+			return 130
 		case 1:
 			return 50
  		default:
@@ -206,11 +215,11 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
  	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 6
+		return 5
 	}
 	
 	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-		return 0.1
+		return 0.01
 	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
