@@ -12,6 +12,8 @@ class GSGoodDetailedHeadView: UIView {
 	var headcollectView:UICollectionView!
 	var buttomLine:UILabel!
 	let titles:[String] = ["商品","评价","详情"]
+	var clickIndexMap:((Int) -> Void)?
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		Subviews()
@@ -78,6 +80,7 @@ extension GSGoodDetailedHeadView:UICollectionViewDelegate,UICollectionViewDelega
 			}
 			
 			for i in 0 ... 2 {
+				
 				let index:IndexPath = IndexPath(item: i, section: 0)
 				let cell:UICollectionViewCell = collectionView.cellForItem(at: index)!
 				let title:UILabel = cell.viewWithTag(index.row + 1) as! UILabel
@@ -89,6 +92,10 @@ extension GSGoodDetailedHeadView:UICollectionViewDelegate,UICollectionViewDelega
 			let title:UILabel = cell.viewWithTag(indexPath.row + 1) as! UILabel
 			title.textColor = Constant.redColor
  
+			guard self.clickIndexMap != nil else {
+				return
+			}
+			self.clickIndexMap!(indexPath.row)
 		}
 	}
 
