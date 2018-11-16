@@ -36,7 +36,7 @@ class GSHomeCateGridTabCell: UITableViewCell {
 		flowlayout.minimumInteritemSpacing = 1
 		
 		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
-		collectView.backgroundColor = Constant.vcBgColor
+		collectView.backgroundColor = UIColor.white
 		collectView.showsVerticalScrollIndicator = false
 		collectView.isScrollEnabled = false
 		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")

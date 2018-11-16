@@ -17,6 +17,7 @@ class GSCategoryController: BaseController {
 		super.loadView()
 		self.navigationController?.navigationBar.backgroundColor = UIColor.white
   		self.edgesForExtendedLayout = .bottom
+		self.tabBarController?.tabBar.isTranslucent = false
   	}
 
 	override func viewDidLoad() {
@@ -34,17 +35,15 @@ class GSCategoryController: BaseController {
 		indexView.delegate = self
 		view.addSubview(indexView)
 		indexView.snp.makeConstraints { (make) in
-			make.left.top.equalToSuperview()
-			make.bottom.equalTo(-(tabBarController?.tabBar.height ?? 0))
- 			make.width.equalTo(Constant.screenWidth/4)
+			make.bottom.left.top.equalToSuperview()
+  			make.width.equalTo(Constant.screenWidth/4)
 		}
 		
 		valueView = GSCateValueColllectView()
 		view.addSubview(valueView)
 		valueView.snp.makeConstraints { (make) in
-			make.right.equalToSuperview().offset(-10)
-			make.bottom.equalTo(-(tabBarController?.tabBar.height ?? 0)-10)
- 			make.top.equalTo(10)
+			make.right.bottom.equalToSuperview().offset(-10)
+  			make.top.equalTo(10)
 			make.left.equalTo(indexView.snp.right).offset(10)
  		}
 		

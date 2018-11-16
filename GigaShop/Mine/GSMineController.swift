@@ -41,15 +41,15 @@ extension GSMineController:UITableViewDelegate,UITableViewDataSource {
 		tableView.estimatedSectionHeaderHeight = 0
 		tableView.register(GSMineOrderStateTabCell.self, forCellReuseIdentifier: "section0")
 		tableView.register(GSMineServeTabCell.self, forCellReuseIdentifier: "section1")
+		tableView.contentInsetAdjustmentBehavior = .never
 
  		mineTopView = GSMineTopView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height:Constant.screenWidth/2.0 ))
 		tableView.tableHeaderView = mineTopView
 		view.addSubview(tableView)
 		
 		tableView.snp.makeConstraints { (make) in
-			make.left.bottom.right.equalToSuperview()
- 			make.top.equalTo(-((self.navigationController?.navigationBar.height)! + UIApplication.shared.statusBarFrame.size.height))
-		}
+			make.edges.equalToSuperview()
+ 		}
 		
 		
 		

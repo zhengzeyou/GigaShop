@@ -71,7 +71,7 @@ class GSCartCountView: UIView {
 	@objc private func numberaction(sender:UIButton){
 		switch sender.tag {
 		case 0:
-			if num != 0 {
+			if num! > 1 {
 				num = num! - 1
 			}
 			break

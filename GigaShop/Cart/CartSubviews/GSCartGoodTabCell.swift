@@ -23,7 +23,6 @@ class GSCartGoodTabCell: UITableViewCell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
   		addSubviews()
 		
-		
 	}
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
@@ -41,7 +40,8 @@ class GSCartGoodTabCell: UITableViewCell {
 
 	}
 	fileprivate func addSubviews(){
-		
+		self.selectionStyle = .none
+
 		checkbtn = UIButton()
 		checkbtn.setImage(UIImage(named: "icon_cart_unselected"), for: .normal)
 		checkbtn.setImage(UIImage(named: "icon_cart_selected"), for: .selected)

@@ -19,7 +19,14 @@ var goodNunbers:NSMutableArray = [[0,0],[0,0]]
 class GSCartController: BaseController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-//		emptyCart()
+		self.navigationController?.navigationBar.backgroundColor = UIColor.white
+		self.tabBarController?.tabBar.isTranslucent = false
+		self.edgesForExtendedLayout = .bottom
+  //		emptyCart()
+	}
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewDidDisappear(animated)
+ 
 	}
 
     override func viewDidLoad() {
@@ -48,7 +55,19 @@ class GSCartController: BaseController {
 		showPircePanel.setPrice(totalprice: String(format: "%.2f", totalPrice))
 		
 	}
-	
+	fileprivate func checkIsAllSelected() -> Bool{
+		for i in 0 ..< data.count {//section
+			for j in 0 ..< data[i].count {//row
+				let sections:NSArray = goodNunbers[i] as! NSArray
+				let element:Int = sections[j] as! Int
+				if element == 0 {
+					return false
+				}
+			}
+		}
+		return true
+		
+	}
 	
 }
 
@@ -77,6 +96,14 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 		}
 		return cell
 	}
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		let goodDetailVC:GSGoodDetailedMainController = GSGoodDetailedMainController()
+		goodDetailVC.hidesBottomBarWhenPushed = true
+		self.navigationController?.pushViewController(goodDetailVC, animated: true)
+	}
+	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 120
  	}
@@ -88,19 +115,7 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 		return 0.01
 	}
 	
-	fileprivate func checkIsAllSelected() -> Bool{
-		for i in 0 ..< data.count {//section
-			for j in 0 ..< data[i].count {//row
-				let sections:NSArray = goodNunbers[i] as! NSArray
-				let element:Int = sections[j] as! Int
-				if element == 0 {
-					return false
-				}
-  			}
-		}
-		return true
-
-	}
+	
 	
 	fileprivate func nonEmptyCart(){
 		tableview = UITableView(frame: .zero, style: .grouped)
@@ -111,12 +126,13 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 		tableview.estimatedSectionHeaderHeight = 0
 		tableview.tableFooterView = UIView()
 		tableview.register(GSCartGoodTabCell.self, forCellReuseIdentifier: "reused")
- 		view.addSubview(tableview)
+  		view.addSubview(tableview)
 		tableview.snp.makeConstraints { (make) in
 			make.left.right.top.equalToSuperview()
-			make.bottom.equalTo(-(tabBarController?.tabBar.height ?? 0)-50)
+			make.bottom.equalTo(-50)
 		}
-		
+		tableview.contentInsetAdjustmentBehavior = .never
+
 		showPircePanel = GSCartPricePanelView()
 		showPircePanel.changeSelectState = {(state:Bool) -> Void in
 			defaultSelect = state

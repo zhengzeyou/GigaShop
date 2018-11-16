@@ -56,7 +56,7 @@ class GSHomeController: BaseController {
 	{
 		super.loadView()
 //		self.navigationController?.navigationBar.backgroundColor = UIColor.white
-		self.edgesForExtendedLayout = .bottom
+//		self.edgesForExtendedLayout = .bottom
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -100,12 +100,10 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 		topView = Part.top.singleView as? GSHomeTopView
 		maintableview.tableHeaderView = topView
 		view.addSubview(maintableview)
-
-		maintableview.snp.makeConstraints { (make) in
-			make.left.right.equalToSuperview()
-			make.bottom.equalToSuperview()
- 			make.top.equalTo(-((self.navigationController?.navigationBar.height)! + UIApplication.shared.statusBarFrame.size.height))
-		}
+ 		maintableview.contentInsetAdjustmentBehavior = .never
+  		maintableview.snp.makeConstraints { (make) in
+			make.edges.equalToSuperview()
+ 		}
  
 		
 		

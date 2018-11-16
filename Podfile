@@ -11,6 +11,7 @@ target 'GigaShop' do
   pod 'ObjectMapper', '~> 3.3.0'
   pod 'Kingfisher', '~> 4.8.1'
   pod 'PhotoBrowserSwift', '~> 0.0.3'
+  pod 'JRefresh', '~> 1.4.0'
 
   # Pods for GigaShop
 

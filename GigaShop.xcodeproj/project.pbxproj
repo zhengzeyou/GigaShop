@@ -47,6 +47,8 @@
 		D5FC57BF219ACAAA00AB19CF /* GSCartGoodTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57BE219ACAAA00AB19CF /* GSCartGoodTabCell.swift */; };
 		D5FC57F8219C0A2000AB19CF /* GSCartCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57F7219C0A1F00AB19CF /* GSCartCountView.swift */; };
 		D5FC57FA219D119000AB19CF /* GSCartPricePanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57F9219D119000AB19CF /* GSCartPricePanelView.swift */; };
+		D5FC57FD219D52A600AB19CF /* GSGoodDetailedMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57FC219D52A600AB19CF /* GSGoodDetailedMainController.swift */; };
+		D5FC5800219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57FF219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift */; };
 		F967FC55A659408DA68E0217 /* Pods_GigaShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,8 @@
 		D5FC57BE219ACAAA00AB19CF /* GSCartGoodTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartGoodTabCell.swift; sourceTree = "<group>"; };
 		D5FC57F7219C0A1F00AB19CF /* GSCartCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartCountView.swift; sourceTree = "<group>"; };
 		D5FC57F9219D119000AB19CF /* GSCartPricePanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCartPricePanelView.swift; sourceTree = "<group>"; };
+		D5FC57FC219D52A600AB19CF /* GSGoodDetailedMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodDetailedMainController.swift; sourceTree = "<group>"; };
+		D5FC57FF219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodDetailedHeadView.swift; sourceTree = "<group>"; };
 		D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -215,6 +219,7 @@
 				D5F02BD621967A59000C9E38 /* Category */,
 				D5F02BD721967A72000C9E38 /* Cart */,
 				D5F02BD821967A96000C9E38 /* Mine */,
+				D5FC57FB219D525200AB19CF /* Goods */,
 				D5F02B9421967281000C9E38 /* AppDelegate.swift */,
 				D5F02B9621967281000C9E38 /* ViewController.swift */,
 				D5F02B9821967281000C9E38 /* Main.storyboard */,
@@ -370,6 +375,23 @@
 			path = CartSubviews;
 			sourceTree = "<group>";
 		};
+		D5FC57FB219D525200AB19CF /* Goods */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC57FC219D52A600AB19CF /* GSGoodDetailedMainController.swift */,
+				D5FC57FE219E5DA800AB19CF /* GSGoodDetailedSubviews */,
+			);
+			path = Goods;
+			sourceTree = "<group>";
+		};
+		D5FC57FE219E5DA800AB19CF /* GSGoodDetailedSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				D5FC57FF219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift */,
+			);
+			path = GSGoodDetailedSubviews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -519,6 +541,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/JRefresh/JRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -531,6 +554,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -690,6 +714,7 @@
 				D5F02BCE2196785B000C9E38 /* GSTabBarController.swift in Sources */,
 				D5F02BCC2196785B000C9E38 /* BaseController.swift in Sources */,
 				D5FC57A82199281800AB19CF /* GSHomeCateGridTabCell.swift in Sources */,
+				D5FC5800219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift in Sources */,
 				D5FC57B321997C9100AB19CF /* GSCateValueColllectView.swift in Sources */,
 				D5FC57BC219ABEB300AB19CF /* GSMineServeTabCell.swift in Sources */,
 				D5F02BDE21967B1C000C9E38 /* GSCategoryController.swift in Sources */,
@@ -705,6 +730,7 @@
 				D5FC57B8219AAB2700AB19CF /* GSMineOrderStateTabCell.swift in Sources */,
 				D5FC57AE2199701D00AB19CF /* GSHomeMustTabCell.swift in Sources */,
 				D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */,
+				D5FC57FD219D52A600AB19CF /* GSGoodDetailedMainController.swift in Sources */,
 				D5FC57B5219A6C1200AB19CF /* GSCateValueTabCell.swift in Sources */,
 				D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */,
 				D5F02BD12196785B000C9E38 /* ToModelExtensions.swift in Sources */,
@@ -915,7 +941,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -935,7 +961,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShop/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
