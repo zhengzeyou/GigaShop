@@ -18,8 +18,7 @@ class GSGoodDetailedMainController: UIViewController {
 	var titleView:UIScrollView!
 	let titles:[String] = ["商品","评价","详情"]
 	var collectView:UICollectionView!
-//	var bannerView:CycleView!
-
+	var segment:GSGoodDetailedHeadView!
 	var scrolleview:UIScrollView!
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -45,7 +44,7 @@ class GSGoodDetailedMainController: UIViewController {
 		
 		titleView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 160, height: 44))
 		
- 		let segment:GSGoodDetailedHeadView = GSGoodDetailedHeadView.init(frame: CGRect(x: 0, y: 0, width: 160, height: 40))
+		segment = GSGoodDetailedHeadView.init(frame: CGRect(x: 0, y: 0, width: 160, height: 40))
 		titleView.addSubview(segment)
 		segment.clickIndexMap = {(index:Int) -> Void in
 			print(index)
@@ -101,7 +100,7 @@ class GSGoodDetailedMainController: UIViewController {
  		tableView.estimatedSectionFooterHeight = 0
 		tableview.estimatedSectionHeaderHeight = 0
 		tableView.contentInsetAdjustmentBehavior = .never
-		tableView.backgroundColor = Constant.vcBgColor
+  		tableView.backgroundColor = Constant.vcBgColor
 		tableView.separatorColor = Constant.vcBgColor
 		tableView.register(GSGoodInfoTableCell.self, forCellReuseIdentifier: "infoCell")
 		bgView.addSubview(tableView)
@@ -176,6 +175,8 @@ extension GSGoodDetailedMainController:UICollectionViewDelegate,UICollectionView
 		return cell
 	}
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		
+
 	}
 	
 }
@@ -194,6 +195,7 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 		switch indexPath.section {
 		case 0:
 			let infocell:GSGoodInfoTableCell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! GSGoodInfoTableCell
+			
 			return infocell
 		default:
 			let cell:UITableViewCell = UITableViewCell()
@@ -214,13 +216,23 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 		}
  	}
 	
-	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-		return 5
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		self.collectView.scrollToItem(at: IndexPath(item: indexPath.section, section: 0), at: .centeredHorizontally, animated: true)
+		segment.currentIndex = indexPath.section
+		
+ 	}
+ 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		return 10
 	}
-	
+
 	func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
 		return 0.01
 	}
+	
+	
+	
+	
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		

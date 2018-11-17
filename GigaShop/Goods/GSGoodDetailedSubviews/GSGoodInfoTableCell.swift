@@ -21,6 +21,7 @@ class GSGoodInfoTableCell: UITableViewCell {
 	
 	private func addSubViews(){
 		self.contentView.backgroundColor = Constant.vcBgColor
+		self.selectionStyle = .none
 		let bgView:UIView = UIView()
 		bgView.backgroundColor = UIColor.white
  		self.contentView.addSubview(bgView)

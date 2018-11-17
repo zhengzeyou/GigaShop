@@ -14,7 +14,31 @@ class GSGoodDetailedHeadView: UIView {
 	let titles:[String] = ["商品","评价","详情"]
 	var clickIndexMap:((Int) -> Void)?
 	
+	var currentIndex:Int?{
+		didSet{
+			print(self.currentIndex)
+ 			UIView.animate(withDuration: 0.3) {
+				var frame:CGRect = self.buttomLine.frame
+				frame.origin.x = 11.5 + 53.5 * CGFloat(self.currentIndex!)
+				self.buttomLine.frame = frame
+			}
+			
+			for i in 0 ... 2 {
+				
+				let index:IndexPath = IndexPath(item: i, section: 0)
+				let cell:UICollectionViewCell = headcollectView.cellForItem(at: index)!
+				let title:UILabel = cell.viewWithTag(index.row + 1) as! UILabel
+				title.textColor = Constant.blackColor
+				
+			}
+			let indexPath:IndexPath = IndexPath(item:self.currentIndex!, section: 0)
+ 			let cell:UICollectionViewCell = headcollectView.cellForItem(at: indexPath)!
+			let title:UILabel = cell.viewWithTag(self.currentIndex! + 1) as! UILabel
+			title.textColor = Constant.redColor
+		}
+	}
 	override init(frame: CGRect) {
+		self.currentIndex = 0
 		super.init(frame: frame)
 		Subviews()
 	}
