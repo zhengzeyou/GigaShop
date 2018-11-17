@@ -14,13 +14,16 @@ class GSGoodSelectSizeView: UIView {
 	var storeCount:UILabel!
 	var sumbit:UIButton!
 	var dismissClosure:(()->Void)?
-	
+	var sizeTableView:UITableView!
+	let count:GSCartCountView = GSCartCountView()
+
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.backgroundColor = UIColor.white
 		self.layer.cornerRadius = 10
 		self.layer.masksToBounds = true
 		addSubViews()
+		addTableView()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -95,4 +98,79 @@ class GSGoodSelectSizeView: UIView {
 		self.dismissClosure!()
 		
 	}
+}
+
+
+extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
+	
+	fileprivate func addTableView(){
+		sizeTableView = UITableView(frame: .zero, style: .plain)
+		sizeTableView.delegate = self
+		sizeTableView.dataSource = self
+		sizeTableView.estimatedRowHeight = 0
+		sizeTableView.estimatedSectionFooterHeight = 0
+		sizeTableView.estimatedSectionHeaderHeight = 0
+		sizeTableView.tableFooterView = UIView()
+		sizeTableView.separatorStyle = .none
+		self.addSubview(sizeTableView)
+		sizeTableView.snp.makeConstraints { (make) in
+			make.left.right.equalToSuperview()
+			make.top.equalTo(logo.snp.bottom).offset(5)
+			make.bottom.equalTo(sumbit.snp.top).offset(-5)
+
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 2
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		switch indexPath.row {
+		case 0:
+			return 200
+		default:
+			return 80
+
+		}
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell:UITableViewCell = UITableViewCell()
+		
+		if indexPath.row == 0 {
+			
+			let line:UILabel = UILabel()
+			line.backgroundColor = Constant.vcBgColor
+			cell.contentView.addSubview(line)
+			line.snp.makeConstraints { (make) in
+				make.bottom.equalToSuperview()
+				make.height.equalTo(1)
+				make.left.equalTo(10)
+				make.right.equalTo(-10)
+			}
+		}else {
+			
+			cell.textLabel?.text = "购买数量"
+ 
+			count.mode = .showGray
+			count.setNumberText(nums: 1)
+			count.changeNumber = {(num:Int) -> Void in
+			}
+			cell.contentView.addSubview(count)
+			count.snp.makeConstraints { (make) in
+				make.right.equalTo(-15)
+				make.width.equalTo(150)
+				make.height.equalTo(40)
+				make.top.equalTo(15)
+			}
+
+		
+		}
+
+
+		return cell
+	}
+	
+	
 }

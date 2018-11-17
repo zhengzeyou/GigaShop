@@ -101,8 +101,9 @@ class GSCartGoodTabCell: UITableViewCell {
 			make.width.height.equalTo(15)
 		}
 		
- 		count.setNumberText(nums: 1)
-		count.changeNumber = {(num:Int) -> Void in
+		count.mode = .showGrid
+  		count.setNumberText(nums: 1)
+ 		count.changeNumber = {(num:Int) -> Void in
 			self.num = num
 			guard self.changeCount != nil&&self.checkbtn.isSelected else {
 				return
