@@ -10,7 +10,6 @@ import UIKit
 import WebKit
 import JRefresh
 
-
 class GSGoodDetailedMainController: UIViewController {
 	var tableView:UITableView!
 	var webView:WKWebView!
@@ -20,7 +19,7 @@ class GSGoodDetailedMainController: UIViewController {
 	var collectView:UICollectionView!
 	var segment:GSGoodDetailedHeadView!
 	var scrolleview:UIScrollView!
-	var selectSizeView:UIView!
+	var selectSizeView:GSGoodSelectSizeView!
 	var coverView:UIImageView!
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
@@ -100,7 +99,7 @@ class GSGoodDetailedMainController: UIViewController {
 		tableView.dataSource = self
 		tableView.estimatedRowHeight = 0
  		tableView.estimatedSectionFooterHeight = 0
-		tableview.estimatedSectionHeaderHeight = 0
+		tableView.estimatedSectionHeaderHeight = 0
 		tableView.contentInsetAdjustmentBehavior = .never
   		tableView.backgroundColor = Constant.vcBgColor
 		tableView.separatorColor = Constant.vcBgColor
@@ -302,10 +301,13 @@ extension GSGoodDetailedMainController {
 			UIView.animate(withDuration: 0.5, animations: {
 				self.bgView.layer.backgroundColor = Constant.blackColor.cgColor
 				self.tableView.layer.transform = self.firstTransform()
-				self.selectSizeView = UIView(frame: CGRect(x: 0, y: Constant.screenHeight, width: Constant.screenHeight, height: Constant.screenWidth))
-				self.selectSizeView.backgroundColor = Constant.greyColor
-				let window:UIWindow = UIApplication.shared.windows.last!
+				self.selectSizeView = GSGoodSelectSizeView(frame: CGRect(x: 0, y: Constant.screenHeight, width: Constant.screenHeight, height: Constant.screenWidth))
+ 				let window:UIWindow = UIApplication.shared.windows.last!
 				window.addSubview(self.selectSizeView)
+				
+				self.selectSizeView.dismissClosure = { ()->Void in
+					self.coverViewAction()
+				}
 				
 			}) { (finish) in
 				self.coverView = UIImageView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: Constant.screenHeight - Constant.screenWidth))

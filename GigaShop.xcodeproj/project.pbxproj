@@ -50,6 +50,7 @@
 		D5FC57FD219D52A600AB19CF /* GSGoodDetailedMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57FC219D52A600AB19CF /* GSGoodDetailedMainController.swift */; };
 		D5FC5800219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57FF219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift */; };
 		D5FC5802219E91CE00AB19CF /* GSGoodInfoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC5801219E91CE00AB19CF /* GSGoodInfoTableCell.swift */; };
+		D5FC5804219FFAA700AB19CF /* GSGoodSelectSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC5803219FFAA600AB19CF /* GSGoodSelectSizeView.swift */; };
 		F967FC55A659408DA68E0217 /* Pods_GigaShopUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,7 @@
 		D5FC57FC219D52A600AB19CF /* GSGoodDetailedMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodDetailedMainController.swift; sourceTree = "<group>"; };
 		D5FC57FF219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodDetailedHeadView.swift; sourceTree = "<group>"; };
 		D5FC5801219E91CE00AB19CF /* GSGoodInfoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodInfoTableCell.swift; sourceTree = "<group>"; };
+		D5FC5803219FFAA600AB19CF /* GSGoodSelectSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodSelectSizeView.swift; sourceTree = "<group>"; };
 		D664145EF64890EE5DA7682F /* Pods-GigaShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShop/Pods-GigaShop.debug.xcconfig"; sourceTree = "<group>"; };
 		E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -391,6 +393,7 @@
 			children = (
 				D5FC57FF219E5F5D00AB19CF /* GSGoodDetailedHeadView.swift */,
 				D5FC5801219E91CE00AB19CF /* GSGoodInfoTableCell.swift */,
+				D5FC5803219FFAA600AB19CF /* GSGoodSelectSizeView.swift */,
 			);
 			path = GSGoodDetailedSubviews;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5F02BE021967B2E000C9E38 /* GSHomeController.swift in Sources */,
+				D5FC5804219FFAA700AB19CF /* GSGoodSelectSizeView.swift in Sources */,
 				D5F02B9721967281000C9E38 /* ViewController.swift in Sources */,
 				D5F02BDC21967B08000C9E38 /* GSCartController.swift in Sources */,
 				D5F02BCD2196785B000C9E38 /* GSAccount.swift in Sources */,

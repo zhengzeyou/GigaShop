@@ -104,7 +104,13 @@ extension GSHomeMonoTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlo
 		
 		return cell
 	}
-	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let goodDetailVC:GSGoodDetailedMainController = GSGoodDetailedMainController()
+		goodDetailVC.hidesBottomBarWhenPushed = true
+		self.viewForController(view: self)?.navigationController?.pushViewController(goodDetailVC, animated: true)
+		
+	}
+
 	
 	
 }
