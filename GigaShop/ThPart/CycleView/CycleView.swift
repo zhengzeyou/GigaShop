@@ -110,7 +110,7 @@ class CycleView: UIView,UICollectionViewDelegate, UICollectionViewDataSource {
 		let indexView:UILabel = UILabel(frame: CGRect(x: 20, y: height - 40, width: 65, height: 30))
 		indexView.textColor = UIColor.white
 		indexView.backgroundColor = UIColor.black
-		indexView.alpha = 0.4
+		indexView.alpha = 0.3
  		indexView.layer.cornerRadius = 15
 		indexView.textAlignment = .center
 		indexView.layer.masksToBounds = true

@@ -20,6 +20,8 @@ class GSGoodDetailedMainController: UIViewController {
 	var collectView:UICollectionView!
 	var segment:GSGoodDetailedHeadView!
 	var scrolleview:UIScrollView!
+	var selectSizeView:UIView!
+	var coverView:UIImageView!
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.view.layer.backgroundColor = Constant.vcBgColor.cgColor
@@ -197,9 +199,34 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 			let infocell:GSGoodInfoTableCell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! GSGoodInfoTableCell
 			
 			return infocell
+			
+		case 1:
+			let cell:UITableViewCell = UITableViewCell()
+			cell.textLabel?.text = "选择规格"
+			
+			let selectSize:UIButton = UIButton()
+			selectSize.tag = indexPath.section
+			selectSize.setTitle("请选择", for: .normal)
+			selectSize.titleLabel?.font = .systemFont(ofSize: 14)
+			selectSize.setTitleColor(UIColor.white, for: .normal)
+			selectSize.layer.cornerRadius = 15
+			selectSize.layer.masksToBounds = true
+			selectSize.backgroundColor = Constant.redColor
+			selectSize.addTarget(self, action: #selector(selectSizeAction), for: .touchUpInside)
+			cell.contentView.addSubview(selectSize)
+			selectSize.snp.makeConstraints { (make) in
+				make.centerY.equalToSuperview()
+				make.right.equalToSuperview().offset(-15)
+				make.width.equalTo(80)
+				make.height.equalTo(30)
+			}
+			
+ 
+			return cell
+
 		default:
 			let cell:UITableViewCell = UITableViewCell()
-			return cell
+ 			return cell
 
 
 		}
@@ -217,9 +244,11 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
  	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		
-		self.collectView.scrollToItem(at: IndexPath(item: indexPath.section, section: 0), at: .centeredHorizontally, animated: true)
-		segment.currentIndex = indexPath.section
+		if indexPath.section == 2 {
+			self.collectView.scrollToItem(at: IndexPath(item: indexPath.section, section: 0), at: .centeredHorizontally, animated: true)
+			segment.currentIndex = indexPath.section
+
+		}
 		
  	}
  	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -263,6 +292,72 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 	}
 	
 	
+	
+}
+
+extension GSGoodDetailedMainController {
+ 	@objc fileprivate func selectSizeAction(sender:UIButton){
+		sender.isSelected = !sender.isSelected
+ 
+			UIView.animate(withDuration: 0.5, animations: {
+				self.bgView.layer.backgroundColor = Constant.blackColor.cgColor
+				self.tableView.layer.transform = self.firstTransform()
+				self.selectSizeView = UIView(frame: CGRect(x: 0, y: Constant.screenHeight, width: Constant.screenHeight, height: Constant.screenWidth))
+				self.selectSizeView.backgroundColor = Constant.greyColor
+				let window:UIWindow = UIApplication.shared.windows.last!
+				window.addSubview(self.selectSizeView)
+				
+			}) { (finish) in
+				self.coverView = UIImageView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: Constant.screenHeight - Constant.screenWidth))
+				self.coverView.backgroundColor = Constant.blackColor
+				let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.coverViewAction))
+ 				self.coverView.addGestureRecognizer(tap)
+				self.coverView.isUserInteractionEnabled = true
+				self.coverView.alpha = 0.1
+				let window:UIWindow = UIApplication.shared.windows.last!
+				window.addSubview(self.selectSizeView)
+				
+ 				window.addSubview(self.coverView)
+				UIView.animate(withDuration: 0.5) {
+					self.tableView.transform = CGAffineTransform.init(scaleX: 0.9, y: 0.95)
+					self.selectSizeView.frame = CGRect(x: 0, y: Constant.screenHeight - Constant.screenWidth, width: Constant.screenWidth, height: Constant.screenWidth)
+ 				}
+			}
+ 
+	}
+	
+	@objc private func coverViewAction(){
+		UIView.animate(withDuration: 0.5, animations: {
+			self.selectSizeView.frame = CGRect(x: 0, y: Constant.screenHeight, width: Constant.screenWidth, height: Constant.screenWidth)
+			self.tableView.layer.transform = self.secondTransform()
+			self.coverView.frame = CGRect(x: 0, y: -Constant.screenWidth, width: Constant.screenWidth, height: Constant.screenWidth)
+
+		}) { (finish) in
+			self.selectSizeView.removeFromSuperview()
+			self.selectSizeView = nil
+			self.coverView.removeFromSuperview()
+			self.coverView = nil
+			UIView.animate(withDuration: 0.5, animations: {
+				self.tableView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+			})
+		}
+	}
+	
+	func firstTransform() -> CATransform3D {
+		var t1:CATransform3D = CATransform3DIdentity
+ 		t1.m34 = 1.0 / -900
+		t1 = CATransform3DScale(t1, 0.95, 0.95, 1)
+		t1 = CATransform3DRotate(t1, CGFloat(15.0 * Double.pi / 180.0), 1, 0, 0)
+		return t1
+	}
+	
+	func secondTransform() -> CATransform3D {
+		var t2:CATransform3D = CATransform3DIdentity
+		t2.m34 = 1.0 / -900
+		t2 = CATransform3DScale(t2, 1, 1, 1)
+		t2 = CATransform3DRotate(t2, CGFloat(15.0 * Double.pi / 180.0), 1, 0, 0)
+		return t2
+	}
 	
 }
 extension GSGoodDetailedMainController:CycleViewDelegate {
