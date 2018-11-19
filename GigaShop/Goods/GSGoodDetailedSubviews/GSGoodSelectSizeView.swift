@@ -111,6 +111,7 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 		sizeTableView.estimatedSectionFooterHeight = 0
 		sizeTableView.estimatedSectionHeaderHeight = 0
 		sizeTableView.tableFooterView = UIView()
+		sizeTableView.register(GSGoodSelectParamaSizeTabCell.self, forCellReuseIdentifier: "paramID")
 		sizeTableView.separatorStyle = .none
 		self.addSubview(sizeTableView)
 		sizeTableView.snp.makeConstraints { (make) in
@@ -128,7 +129,7 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		switch indexPath.row {
 		case 0:
-			return 200
+			return 220
 		default:
 			return 80
 
@@ -139,6 +140,9 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 		let cell:UITableViewCell = UITableViewCell()
 		
 		if indexPath.row == 0 {
+			let cell:GSGoodSelectParamaSizeTabCell = tableView.dequeueReusableCell(withIdentifier: "paramID", for: indexPath) as! GSGoodSelectParamaSizeTabCell
+			
+
 			
 			let line:UILabel = UILabel()
 			line.backgroundColor = Constant.vcBgColor
@@ -149,6 +153,9 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 				make.left.equalTo(10)
 				make.right.equalTo(-10)
 			}
+			
+			return cell
+
 		}else {
 			
 			cell.textLabel?.text = "购买数量"
@@ -156,6 +163,7 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 			count.mode = .showGray
 			count.setNumberText(nums: 1)
 			count.changeNumber = {(num:Int) -> Void in
+			
 			}
 			cell.contentView.addSubview(count)
 			count.snp.makeConstraints { (make) in

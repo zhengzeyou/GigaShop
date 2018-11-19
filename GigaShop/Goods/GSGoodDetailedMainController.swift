@@ -11,6 +11,7 @@ import WebKit
 import JRefresh
 
 class GSGoodDetailedMainController: UIViewController {
+	
 	var tableView:UITableView!
 	var webView:WKWebView!
 	var bgView:UIView!
@@ -21,6 +22,8 @@ class GSGoodDetailedMainController: UIViewController {
 	var scrolleview:UIScrollView!
 	var selectSizeView:GSGoodSelectSizeView!
 	var coverView:UIImageView!
+	var buyAddShopCartView:GSGoodBuyAddShopCartView!
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.view.layer.backgroundColor = Constant.vcBgColor.cgColor
@@ -107,7 +110,14 @@ class GSGoodDetailedMainController: UIViewController {
 		bgView.addSubview(tableView)
 		tableView.snp.makeConstraints { (make) in
 			make.left.top.right.equalToSuperview()
-			make.height.equalTo(Constant.screenHeight)
+			make.height.equalTo(Constant.screenHeight - 60)
+		}
+		
+		buyAddShopCartView = GSGoodBuyAddShopCartView()
+		self.view.addSubview(buyAddShopCartView)
+		buyAddShopCartView.snp.makeConstraints { (make) in
+			make.height.equalTo(60)
+			make.left.bottom.right.equalToSuperview()
 		}
 		
 		//轮播图加载
@@ -140,6 +150,7 @@ class GSGoodDetailedMainController: UIViewController {
 				frame.origin.y = 0
 				self.bgView.frame = frame
 				self.titleView.contentOffset = CGPoint(x: 0, y: 0)
+				
 			})
 			} as! JRefreshNormalHeader
 		
