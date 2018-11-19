@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D277046031F4DDFF6A256B6 /* Pods_GigaShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167DF4B174EDB0B54B84869 /* Pods_GigaShopTests.framework */; };
 		CF7B15FF7B1321EE45A736D4 /* Pods_GigaShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */; };
+		D5128C1721A2BBAF0045AC39 /* GSGoodCommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C1621A2BBAF0045AC39 /* GSGoodCommentTableView.swift */; };
+		D5128C1921A2BCED0045AC39 /* GSGoodCommetTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C1821A2BCED0045AC39 /* GSGoodCommetTableCell.swift */; };
 		D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9421967281000C9E38 /* AppDelegate.swift */; };
 		D5F02B9721967281000C9E38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9621967281000C9E38 /* ViewController.swift */; };
 		D5F02B9A21967281000C9E38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F02B9821967281000C9E38 /* Main.storyboard */; };
@@ -82,6 +84,8 @@
 		6167DF4B174EDB0B54B84869 /* Pods_GigaShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E8A0CF7351E6E59F2DDBA7 /* Pods-GigaShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShopTests/Pods-GigaShopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5128C1621A2BBAF0045AC39 /* GSGoodCommentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodCommentTableView.swift; sourceTree = "<group>"; };
+		D5128C1821A2BCED0045AC39 /* GSGoodCommetTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodCommetTableCell.swift; sourceTree = "<group>"; };
 		D5F02B9121967281000C9E38 /* GigaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F02B9421967281000C9E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5F02B9621967281000C9E38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 				D5FC580521A0090D00AB19CF /* GSGoodSelectParamaSizeTabCell.swift */,
 				D5FC580721A2919500AB19CF /* GSGoodBuyAddShopCartView.swift */,
 				D5FC580921A2A06800AB19CF /* GSAddShopCartTool.swift */,
+				D5128C1621A2BBAF0045AC39 /* GSGoodCommentTableView.swift */,
+				D5128C1821A2BCED0045AC39 /* GSGoodCommetTableCell.swift */,
 			);
 			path = GSGoodDetailedSubviews;
 			sourceTree = "<group>";
@@ -741,6 +747,7 @@
 				D5FC580A21A2A06800AB19CF /* GSAddShopCartTool.swift in Sources */,
 				D5FC57B121997C6E00AB19CF /* GSCateIndexCollectView.swift in Sources */,
 				D5FC57BA219AAD3D00AB19CF /* GSMineTopView.swift in Sources */,
+				D5128C1721A2BBAF0045AC39 /* GSGoodCommentTableView.swift in Sources */,
 				D5F02BF52196C813000C9E38 /* GSHomeTopView.swift in Sources */,
 				D5F02BDA21967AF8000C9E38 /* GSMineController.swift in Sources */,
 				D5F02BD02196785B000C9E38 /* MoyaTargetType.swift in Sources */,
@@ -748,6 +755,7 @@
 				D5FC580821A2919500AB19CF /* GSGoodBuyAddShopCartView.swift in Sources */,
 				D5FC5802219E91CE00AB19CF /* GSGoodInfoTableCell.swift in Sources */,
 				D5FC57B8219AAB2700AB19CF /* GSMineOrderStateTabCell.swift in Sources */,
+				D5128C1921A2BCED0045AC39 /* GSGoodCommetTableCell.swift in Sources */,
 				D5FC57AE2199701D00AB19CF /* GSHomeMustTabCell.swift in Sources */,
 				D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */,
 				D5FC57FD219D52A600AB19CF /* GSGoodDetailedMainController.swift in Sources */,

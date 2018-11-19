@@ -52,7 +52,7 @@ class GSGoodDetailedMainController: UIViewController {
 		titleView.addSubview(segment)
 		segment.clickIndexMap = {(index:Int) -> Void in
 			print(index)
-			self.collectView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+ 			self.collectView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
  		}
  
 		let secondTitle:UILabel = UILabel(frame: CGRect(x: 0, y: 44, width: 160, height: 44))
@@ -132,7 +132,7 @@ class GSGoodDetailedMainController: UIViewController {
  		tableView.tableHeaderView = tableHeadView
 		
 		let tableFootView:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: 30))
-		tableFootView.setTitle("下拉显示详情", for: .normal)
+		tableFootView.setTitle("下拉显示图文详情", for: .normal)
 		tableFootView.setTitleColor(Constant.greyColor, for: .normal)
  		tableView.tableFooterView = tableFootView
  
@@ -162,6 +162,10 @@ class GSGoodDetailedMainController: UIViewController {
 	}
 
 
+	@objc fileprivate func pushComment(sender:UIButton){
+		self.collectView.scrollToItem(at: IndexPath(item: sender.tag, section: 0), at: .centeredHorizontally, animated: true)
+		segment.currentIndex = sender.tag
+	}
 }
 
 extension GSGoodDetailedMainController:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
@@ -173,7 +177,8 @@ extension GSGoodDetailedMainController:UICollectionViewDelegate,UICollectionView
 		let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reused", for: indexPath)
 		if indexPath.row == 0 {
 			createPullView(cell: cell)
-		}else {
+		
+		}else{
 			let title:UILabel = UILabel()
 			title.tag = indexPath.row + 1
 			title.textColor = Constant.redColor
@@ -230,13 +235,43 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 				make.width.equalTo(80)
 				make.height.equalTo(30)
 			}
-			
- 
 			return cell
-
+ 
 		default:
 			let cell:UITableViewCell = UITableViewCell()
- 			return cell
+			
+			let lab:UILabel = UILabel()
+			lab.text = "商品评价"
+			lab.textColor = Constant.blackColor
+			cell.contentView.addSubview(lab)
+			lab.snp.makeConstraints { (make) in
+				make.top.left.equalToSuperview().offset(15)
+			}
+			
+			let all:UIButton = UIButton()
+			all.addTarget(self, action: #selector(pushComment), for: .touchUpInside)
+			all.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+			all.setTitle("查看全部", for: .normal)
+			all.setTitleColor(Constant.greyColor, for: .normal)
+			all.tag = 1
+  			cell.contentView.addSubview(all)
+			all.snp.makeConstraints { (make) in
+ 				make.right.equalTo(-15)
+				make.centerY.equalTo(lab.snp.centerY)
+				make.width.equalTo(70)
+				make.height.equalTo(20)
+				
+			}
+
+			let comment:GSGoodCommentTableView = GSGoodCommentTableView()
+			cell.addSubview(comment)
+			comment.snp.makeConstraints { (make) in
+				make.top.equalTo(lab.snp.bottom)
+				make.left.bottom.right.equalToSuperview()
+			}
+			
+			return cell
+			
 
 
 		}
@@ -249,16 +284,12 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 		case 1:
 			return 50
  		default:
-			return Constant.screenHeight/2
+			return Constant.screenHeight
 		}
  	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		if indexPath.section == 2 {
-			self.collectView.scrollToItem(at: IndexPath(item: indexPath.section, section: 0), at: .centeredHorizontally, animated: true)
-			segment.currentIndex = indexPath.section
-
-		}
+		
 		
  	}
  	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
