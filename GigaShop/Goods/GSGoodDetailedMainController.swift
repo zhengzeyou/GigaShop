@@ -110,8 +110,9 @@ class GSGoodDetailedMainController: UIViewController {
 		bgView.addSubview(tableView)
 		tableView.snp.makeConstraints { (make) in
 			make.left.top.right.equalToSuperview()
-			make.height.equalTo(Constant.screenHeight - 60)
+			make.height.equalTo(Constant.screenHeight)
 		}
+		
 		
 		buyAddShopCartView = GSGoodBuyAddShopCartView()
 		self.view.addSubview(buyAddShopCartView)
@@ -239,7 +240,7 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
  
 		default:
 			let cell:UITableViewCell = UITableViewCell()
-			
+ 
 			let lab:UILabel = UILabel()
 			lab.text = "商品评价"
 			lab.textColor = Constant.blackColor
@@ -309,8 +310,7 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 		if scrollView == tableView {
  			if scrollView.offsetY > 10{
 			
-				let bomValue:CGFloat = (self.navigationController?.navigationBar.height)! + UIApplication.shared.statusBarFrame.height
-				self.navigationController?.navigationBar.alpha = abs(scrollView.offsetY)/bomValue
+				self.navigationController?.navigationBar.alpha = abs(scrollView.offsetY)/100
 				
 			}else {
 				

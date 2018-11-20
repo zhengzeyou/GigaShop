@@ -28,8 +28,7 @@ class GSGoodCommentTableView: UIView {
 		tableView.estimatedSectionHeaderHeight = 0
 		tableView.contentInsetAdjustmentBehavior = .never
 		tableView.register(GSGoodCommetTableCell.self , forCellReuseIdentifier: "reused")
-		tableView.backgroundColor = Constant.vcBgColor
-		tableView.separatorColor = Constant.vcBgColor
+ 		tableView.separatorColor = Constant.vcBgColor
  		self.addSubview(tableView)
 		tableView.snp.makeConstraints { (make) in
 			make.edges.equalToSuperview()

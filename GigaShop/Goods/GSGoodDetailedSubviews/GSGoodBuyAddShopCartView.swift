@@ -112,11 +112,30 @@ class GSGoodBuyAddShopCartView: UIView {
 		switch sender.tag {
 		case 102:
 			self.goodCount.isHidden = true
+			
+			var tempvc:UIViewController? = nil
+			let currentVC = self.viewForController(view: self)
+ 			for  controller in (currentVC?.navigationController?.viewControllers)!{
+				if controller.isKind(of: GSCartController.self ){
+					tempvc = controller
+					self.viewForController(view: self)?.navigationController?.popViewController(animated: true)
+
+				}
+			}
+ 			if tempvc == nil {
+				let cartVC:GSCartController = GSCartController()
+				cartVC.navigationItem.title = "购物车"
+  				self.viewForController(view: self)?.navigationController?.pushViewController(cartVC, animated: true)
+				
+ 			}
+
+			self.viewForController(view: self)?.navigationController?.navigationBar.alpha = 1
 
 		case 103:
 			
 			let imageview:UIImageView = UIImageView()
 			imageview.kf.setImage(with:  URL(string: "https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBi7jHemi8BP_!!0-item_pic.jpg"), placeholder: UIImage(named: "img_01"), options: nil, progressBlock: nil) { (image, error, type, url) in
+				
 				GSAddShopCartTool.addToShoppingCartWithGoodsImage(goodsImage: image!, startPoint:CGPoint(x: Constant.screenWidth/2, y: Constant.screenHeight - 30) , endPoint: CGPoint(x: Constant.screenWidth/4, y: Constant.screenHeight - 30)) { (finish) in
 					
 					let scaleAnimation:CABasicAnimation = CABasicAnimation.init(keyPath: "transform.scale")
@@ -146,3 +165,5 @@ class GSGoodBuyAddShopCartView: UIView {
 	}
 
 }
+
+
