@@ -26,7 +26,7 @@ class GSGoodCommentTableView: UIView {
 		tableView.estimatedRowHeight = 0
 		tableView.estimatedSectionFooterHeight = 0
 		tableView.estimatedSectionHeaderHeight = 0
-		tableView.contentInsetAdjustmentBehavior = .never
+//		tableView.contentInsetAdjustmentBehavior = .never
 		tableView.register(GSGoodCommetTableCell.self , forCellReuseIdentifier: "reused")
  		tableView.separatorColor = Constant.vcBgColor
  		self.addSubview(tableView)
@@ -44,10 +44,7 @@ extension GSGoodCommentTableView:UITableViewDelegate,UITableViewDataSource{
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:GSGoodCommetTableCell = tableView.dequeueReusableCell(withIdentifier: "reused", for: indexPath) as! GSGoodCommetTableCell
-//		cell.returnCellHeight = {(h:CGFloat)->Void in
-//			
-//		}
-		return cell
+ 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -52,6 +52,8 @@ class GSGoodDetailedMainController: UIViewController {
 		titleView.addSubview(segment)
 		segment.clickIndexMap = {(index:Int) -> Void in
 			print(index)
+			self.navigationController?.navigationBar.alpha = 1
+
  			self.collectView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
  		}
  
@@ -176,19 +178,19 @@ extension GSGoodDetailedMainController:UICollectionViewDelegate,UICollectionView
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reused", for: indexPath)
-		if indexPath.row == 0 {
+		switch indexPath.row {
+		case 0:
 			createPullView(cell: cell)
-		
-		}else{
-			let title:UILabel = UILabel()
-			title.tag = indexPath.row + 1
-			title.textColor = Constant.redColor
-			title.text = titles[indexPath.row]
-			cell.contentView.addSubview(title)
-			title.snp.makeConstraints { (make) in
-				make.center.equalToSuperview()
-			}
 
+		case 1:
+			let comment:GSGoodCommentTableView = GSGoodCommentTableView()
+			cell.addSubview(comment)
+			comment.snp.makeConstraints { (make) in
+				make.edges.equalToSuperview()
+ 			}
+
+		default:
+			break
 		}
 		return cell
 	}

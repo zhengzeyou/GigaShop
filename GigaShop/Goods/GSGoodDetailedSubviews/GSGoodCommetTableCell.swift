@@ -14,8 +14,8 @@ class GSGoodCommetTableCell: UITableViewCell {
 	var content:UILabel!
 	var time:UILabel!
 	var commentPic:GSGoodPicBrowerView!
-	var returnCellHeight:((CGFloat)->Void)?
-	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+	var starView:UIImageView!
+ 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		self.selectionStyle = .none
 		addSubViews()
@@ -45,6 +45,17 @@ class GSGoodCommetTableCell: UITableViewCell {
 		name.snp.makeConstraints { (make) in
 			make.centerY.equalTo(avator.snp.centerY)
 			make.left.equalTo(avator.snp.right).offset(10)
+		}
+		
+		starView = UIImageView()
+		starView.contentMode = .scaleAspectFit
+ 		starView.image = UIImage(named: "img_fourstars")?.withRenderingMode(.alwaysOriginal)
+		self.contentView.addSubview(starView)
+		starView.snp.makeConstraints { (make) in
+			make.right.equalTo(-15)
+			make.top.equalTo(avator.snp.centerY)
+			make.width.equalTo(100)
+			make.height.equalTo(20)
 		}
 		
 		let str:String = "今天是双十一,很高心来到了东京最出名的地标建筑,拍了一场有生以来最劲爆刺激的二人动作片,期待它和观众朋友们见面。💗"

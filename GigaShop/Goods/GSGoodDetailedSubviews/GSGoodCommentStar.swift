@@ -9,7 +9,11 @@
 import UIKit
 
 class GSGoodCommentStar: UIView {
-
+	var star:CGFloat?{
+		didSet {
+			
+		}
+	}
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		SubViews()
@@ -21,5 +25,6 @@ class GSGoodCommentStar: UIView {
 	
 	private func SubViews(){
 		self.backgroundColor = Constant.vcBgColor
+		
 	}
 }
