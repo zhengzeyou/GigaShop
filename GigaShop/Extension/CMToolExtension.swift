@@ -9,6 +9,27 @@
 import UIKit
 import RxSwift
 
+extension UILabel {
+
+	static func getTextHeigh(content:String,font:CGFloat,width:CGFloat) -> CGFloat {
+		let normalText: String = content
+		let size = CGSize(width: width, height: CGFloat(MAXFLOAT))
+		let dic = NSDictionary(object: UIFont.systemFont(ofSize: font), forKey: NSAttributedString.Key.font as NSCopying)
+		let stringSize = normalText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedString.Key : Any] , context:nil).size
+		return stringSize.height
+	}
+	
+
+	static func getTexWidth(content:String,font:CGFloat,height:CGFloat) -> CGFloat {
+		let normalText: String = content
+ 		let size = CGSize(width: 1000, height: height)
+ 		let dic = NSDictionary(object: UIFont.systemFont(ofSize: font), forKey: NSAttributedString.Key.font as NSCopying)
+ 		let stringSize = normalText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedString.Key : Any] , context:nil).size
+ 		return stringSize.width
+		
+	}
+ }
+
 
 
 extension UIColor {

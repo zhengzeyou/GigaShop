@@ -39,16 +39,21 @@ class GSGoodCommentTableView: UIView {
 
 extension GSGoodCommentTableView:UITableViewDelegate,UITableViewDataSource{
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 5
+		return 3
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:GSGoodCommetTableCell = tableView.dequeueReusableCell(withIdentifier: "reused", for: indexPath) as! GSGoodCommetTableCell
+//		cell.returnCellHeight = {(h:CGFloat)->Void in
+//			
+//		}
 		return cell
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 100
+		let str:String = "今天是双十一,很高心来到了东京最出名的地标建筑,拍了一场有生以来最劲爆刺激的二人动作片,期待它和观众朋友们见面。💗"
+		let h:CGFloat = UILabel.getTextHeigh(content: str, font: 15, width: Constant.screenWidth - 30)
+  		return 100+h+Constant.screenWidth/3 - 10
 	}
 	
 }

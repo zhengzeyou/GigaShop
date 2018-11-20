@@ -285,7 +285,7 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 		case 1:
 			return 50
  		default:
-			return Constant.screenHeight
+			return Constant.screenHeight/2
 		}
  	}
 	
@@ -309,8 +309,7 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 		
 		if scrollView == tableView {
  			if scrollView.offsetY > 10{
-			
-				self.navigationController?.navigationBar.alpha = abs(scrollView.offsetY)/100
+ 				self.navigationController?.navigationBar.alpha = abs(scrollView.offsetY)/100
 				
 			}else {
 				
