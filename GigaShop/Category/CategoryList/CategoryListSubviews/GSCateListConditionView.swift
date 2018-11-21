@@ -60,17 +60,13 @@ class GSCateListConditionView: UIView {
 		if sender.tag == 3 {
 			let btn:UIButton = self.viewWithTag(3) as! UIButton
 
-			if flag == true {
-				btn.set(image:UIImage(named: "icon_price_high"), title: titles[2], titlePosition: .left, additionalSpacing: 12, state: .selected)
-//				for i in 0 ..< titles.count {
-//				let btn:UIButton = self.viewWithTag(3) as! UIButton
-//				if i == 2 {
-				flag = false
-				sender.isSelected = true
+			if flag! {
 				
-//				}
-//				}
- 			}else{
+				btn.set(image:UIImage(named: "icon_price_high"), title: titles[2], titlePosition: .left, additionalSpacing: 12, state: .selected)
+ 				flag = false
+				sender.isSelected = true
+  			}else{
+				
 				btn.set(image:UIImage(named: "icon_price_low"), title: titles[2], titlePosition: .left, additionalSpacing: 12, state: .selected)
  				for i in 0 ..< titles.count {
 					let btn:UIButton = self.viewWithTag(i+1) as! UIButton

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GigaShop/Category/CategoryList/CategoryListSubviews/GSCateListConditionView.swift"
-            timestampString = "564455504.1316741"
+            timestampString = "564456174.706778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "clickBtn(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GigaShop/Category/CategoryList/CategoryListSubviews/GSCateListConditionView.swift"
-            timestampString = "564455504.131803"
+            timestampString = "564456174.707468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
