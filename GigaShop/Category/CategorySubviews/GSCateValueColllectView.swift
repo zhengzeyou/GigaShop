@@ -11,7 +11,6 @@ import UIKit
 class GSCateValueColllectView: UIView {
 	var tableview:UITableView!
 	
-
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
@@ -59,6 +58,7 @@ extension GSCateValueColllectView:UITableViewDelegate,UITableViewDataSource {
 		return 3*Constant.screenWidth/4 - 20
 	}
 	
+
 	
 	
 	

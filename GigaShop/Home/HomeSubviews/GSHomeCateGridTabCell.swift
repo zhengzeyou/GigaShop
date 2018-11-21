@@ -87,9 +87,12 @@ extension GSHomeCateGridTabCell:UICollectionViewDelegate,UICollectionViewDelegat
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
- 
-	}
-	
-}
+		if indexPath.row != (titles.count - 1) {
+			let cateList:GSCategoryListController = GSCategoryListController()
+			cateList.hidesBottomBarWhenPushed = true
+			self.viewForController(view: self)?.navigationController?.pushViewController(cateList, animated: true)
+		}
+  	}
+ }
 
 

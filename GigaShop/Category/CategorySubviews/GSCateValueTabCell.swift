@@ -105,5 +105,12 @@ extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFl
 		return cell
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let cateList:GSCategoryListController = GSCategoryListController()
+		cateList.hidesBottomBarWhenPushed = true
+		self.viewForController(view: self)?.navigationController?.pushViewController(cateList, animated: true)
+
+	}
+	
 	
 }

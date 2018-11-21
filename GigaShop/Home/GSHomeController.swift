@@ -55,9 +55,7 @@ class GSHomeController: BaseController {
 	override func loadView()
 	{
 		super.loadView()
-//		self.navigationController?.navigationBar.backgroundColor = UIColor.white
-//		self.edgesForExtendedLayout = .bottom
-	}
+ 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)

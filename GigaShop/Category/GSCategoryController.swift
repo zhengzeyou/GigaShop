@@ -22,8 +22,7 @@ class GSCategoryController: BaseController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-
-		addSubviews()
+ 		addSubviews()
 		
     }
 	

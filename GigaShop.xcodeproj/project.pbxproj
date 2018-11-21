@@ -13,6 +13,9 @@
 		D5128C1921A2BCED0045AC39 /* GSGoodCommetTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C1821A2BCED0045AC39 /* GSGoodCommetTableCell.swift */; };
 		D5128C1B21A3D6BD0045AC39 /* GSGoodPicBrowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C1A21A3D6BD0045AC39 /* GSGoodPicBrowerView.swift */; };
 		D5128C1D21A3DD8A0045AC39 /* GSGoodCommentStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C1C21A3DD8A0045AC39 /* GSGoodCommentStar.swift */; };
+		D5128C2121A3F5DC0045AC39 /* GSCategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2021A3F5DC0045AC39 /* GSCategoryListController.swift */; };
+		D5128C2421A406A20045AC39 /* GSCateListConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2321A406A20045AC39 /* GSCateListConditionView.swift */; };
+		D5128C2621A40F6F0045AC39 /* GSCategoryListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */; };
 		D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9421967281000C9E38 /* AppDelegate.swift */; };
 		D5F02B9721967281000C9E38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9621967281000C9E38 /* ViewController.swift */; };
 		D5F02B9A21967281000C9E38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F02B9821967281000C9E38 /* Main.storyboard */; };
@@ -90,6 +93,10 @@
 		D5128C1821A2BCED0045AC39 /* GSGoodCommetTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodCommetTableCell.swift; sourceTree = "<group>"; };
 		D5128C1A21A3D6BD0045AC39 /* GSGoodPicBrowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodPicBrowerView.swift; sourceTree = "<group>"; };
 		D5128C1C21A3DD8A0045AC39 /* GSGoodCommentStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodCommentStar.swift; sourceTree = "<group>"; };
+		D5128C1E21A3EE4D0045AC39 /* GigaShop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GigaShop-Bridging-Header.h"; sourceTree = "<group>"; };
+		D5128C2021A3F5DC0045AC39 /* GSCategoryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryListController.swift; sourceTree = "<group>"; };
+		D5128C2321A406A20045AC39 /* GSCateListConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateListConditionView.swift; sourceTree = "<group>"; };
+		D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryListTableCell.swift; sourceTree = "<group>"; };
 		D5F02B9121967281000C9E38 /* GigaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F02B9421967281000C9E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5F02B9621967281000C9E38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,9 +211,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D5128C1F21A3F4C60045AC39 /* CategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				D5128C2221A3FC930045AC39 /* CategoryListSubviews */,
+				D5128C2021A3F5DC0045AC39 /* GSCategoryListController.swift */,
+			);
+			path = CategoryList;
+			sourceTree = "<group>";
+		};
+		D5128C2221A3FC930045AC39 /* CategoryListSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				D5128C2321A406A20045AC39 /* GSCateListConditionView.swift */,
+				D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */,
+			);
+			path = CategoryListSubviews;
+			sourceTree = "<group>";
+		};
 		D5F02B8821967281000C9E38 = {
 			isa = PBXGroup;
 			children = (
+				D5128C1E21A3EE4D0045AC39 /* GigaShop-Bridging-Header.h */,
 				D5F02B9321967281000C9E38 /* GigaShop */,
 				D5F02BA821967284000C9E38 /* GigaShopTests */,
 				D5F02BB321967284000C9E38 /* GigaShopUITests */,
@@ -309,6 +335,7 @@
 		D5F02BD621967A59000C9E38 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				D5128C1F21A3F4C60045AC39 /* CategoryList */,
 				D5FC57AF21997C1900AB19CF /* CategorySubviews */,
 				D5F02BDD21967B1C000C9E38 /* GSCategoryController.swift */,
 			);
@@ -572,6 +599,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PYSearch/PYSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/PhotoBrowserSwift/PhotoBrowserSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -585,6 +613,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PYSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhotoBrowserSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -731,6 +760,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5128C2121A3F5DC0045AC39 /* GSCategoryListController.swift in Sources */,
 				D5F02BE021967B2E000C9E38 /* GSHomeController.swift in Sources */,
 				D5FC5804219FFAA700AB19CF /* GSGoodSelectSizeView.swift in Sources */,
 				D5F02B9721967281000C9E38 /* ViewController.swift in Sources */,
@@ -751,6 +781,7 @@
 				D5FC57A62199170400AB19CF /* CycleView.swift in Sources */,
 				D5FC57BF219ACAAA00AB19CF /* GSCartGoodTabCell.swift in Sources */,
 				D5F02BCF2196785B000C9E38 /* MoyaRequestResource.swift in Sources */,
+				D5128C2621A40F6F0045AC39 /* GSCategoryListTableCell.swift in Sources */,
 				D5FC580A21A2A06800AB19CF /* GSAddShopCartTool.swift in Sources */,
 				D5FC57B121997C6E00AB19CF /* GSCateIndexCollectView.swift in Sources */,
 				D5FC57BA219AAD3D00AB19CF /* GSMineTopView.swift in Sources */,
@@ -767,6 +798,7 @@
 				D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */,
 				D5128C1D21A3DD8A0045AC39 /* GSGoodCommentStar.swift in Sources */,
 				D5FC57FD219D52A600AB19CF /* GSGoodDetailedMainController.swift in Sources */,
+				D5128C2421A406A20045AC39 /* GSCateListConditionView.swift in Sources */,
 				D5FC57B5219A6C1200AB19CF /* GSCateValueTabCell.swift in Sources */,
 				D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */,
 				D5F02BD12196785B000C9E38 /* ToModelExtensions.swift in Sources */,
@@ -909,6 +941,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "GigaShop-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -964,6 +997,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "GigaShop-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};

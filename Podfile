@@ -13,6 +13,7 @@ target 'GigaShop' do
   pod 'PhotoBrowserSwift', '~> 0.0.3'
   pod 'JRefresh', '~> 1.4.0'
   pod 'PhotoBrowserSwift', '~> 0.0.3'
+  pod 'PYSearch', '~> 0.9.0'
 
 
   # Pods for GigaShop
