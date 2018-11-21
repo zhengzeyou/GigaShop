@@ -163,6 +163,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 				
 				let hotSearches:NSArray = NSArray()
 				let searchVC:PYSearchViewController = PYSearchViewController(hotSearches: hotSearches as? [String], searchBarPlaceholder: "搜索关键字".localized()) { (searchViewController, searchBar, searchText) in
+					self.placher.text = searchText
 					self.navigationController?.popViewController(animated: true)
 
 				}

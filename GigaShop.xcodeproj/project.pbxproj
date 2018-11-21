@@ -16,6 +16,7 @@
 		D5128C2121A3F5DC0045AC39 /* GSCategoryListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2021A3F5DC0045AC39 /* GSCategoryListController.swift */; };
 		D5128C2421A406A20045AC39 /* GSCateListConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2321A406A20045AC39 /* GSCateListConditionView.swift */; };
 		D5128C2621A40F6F0045AC39 /* GSCategoryListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */; };
+		D5128C2821A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2721A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift */; };
 		D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9421967281000C9E38 /* AppDelegate.swift */; };
 		D5F02B9721967281000C9E38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9621967281000C9E38 /* ViewController.swift */; };
 		D5F02B9A21967281000C9E38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F02B9821967281000C9E38 /* Main.storyboard */; };
@@ -97,6 +98,7 @@
 		D5128C2021A3F5DC0045AC39 /* GSCategoryListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryListController.swift; sourceTree = "<group>"; };
 		D5128C2321A406A20045AC39 /* GSCateListConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateListConditionView.swift; sourceTree = "<group>"; };
 		D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryListTableCell.swift; sourceTree = "<group>"; };
+		D5128C2721A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateListPopSetPriceView.swift; sourceTree = "<group>"; };
 		D5F02B9121967281000C9E38 /* GigaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F02B9421967281000C9E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5F02B9621967281000C9E38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 			children = (
 				D5128C2321A406A20045AC39 /* GSCateListConditionView.swift */,
 				D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */,
+				D5128C2721A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift */,
 			);
 			path = CategoryListSubviews;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 				D5FC57FD219D52A600AB19CF /* GSGoodDetailedMainController.swift in Sources */,
 				D5128C2421A406A20045AC39 /* GSCateListConditionView.swift in Sources */,
 				D5FC57B5219A6C1200AB19CF /* GSCateValueTabCell.swift in Sources */,
+				D5128C2821A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift in Sources */,
 				D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */,
 				D5F02BD12196785B000C9E38 /* ToModelExtensions.swift in Sources */,
 				D5FC57AC2199666200AB19CF /* GSHomeImagesTabCell.swift in Sources */,
