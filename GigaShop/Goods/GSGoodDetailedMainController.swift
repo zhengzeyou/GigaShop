@@ -52,9 +52,12 @@ class GSGoodDetailedMainController: UIViewController {
 		titleView.addSubview(segment)
 		segment.clickIndexMap = {(index:Int) -> Void in
 			print(index)
-			self.navigationController?.navigationBar.alpha = 1
-
- 			self.collectView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+ 			DispatchQueue.main.async(execute: {
+				self.navigationController?.navigationBar.alpha = 1
+ 				self.collectView.scrollToItem(at: IndexPath(item: index, section: 0), at: .centeredHorizontally, animated: true)
+				self.buyAddShopCartView.isHidden = (index == 0 ? false : true)
+ 
+			})
  		}
  
 		let secondTitle:UILabel = UILabel(frame: CGRect(x: 0, y: 44, width: 160, height: 44))
@@ -185,6 +188,7 @@ extension GSGoodDetailedMainController:UICollectionViewDelegate,UICollectionView
 		case 1:
 			let comment:GSGoodCommentTableView = GSGoodCommentTableView()
 			cell.addSubview(comment)
+			comment.mode = .tableheadviewmode
 			comment.snp.makeConstraints { (make) in
 				make.edges.equalToSuperview()
  			}

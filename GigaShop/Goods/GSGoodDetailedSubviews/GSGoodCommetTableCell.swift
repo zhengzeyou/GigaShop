@@ -40,7 +40,7 @@ class GSGoodCommetTableCell: UITableViewCell {
 		avator.kf.setImage(with: URL(string: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2902141346,3120927423&fm=27&gp=0.jpg"))
 	
 		name = UILabel()
-		name.text = "小泽玛利亚"
+		name.text = "玛利亚"
  		self.contentView.addSubview(name)
 		name.snp.makeConstraints { (make) in
 			make.centerY.equalTo(avator.snp.centerY)

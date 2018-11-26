@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0D277046031F4DDFF6A256B6 /* Pods_GigaShopTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6167DF4B174EDB0B54B84869 /* Pods_GigaShopTests.framework */; };
 		CF7B15FF7B1321EE45A736D4 /* Pods_GigaShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */; };
+		D508B69921AB956A00FC3363 /* GSGoodLardCommentTabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D508B69821AB956A00FC3363 /* GSGoodLardCommentTabCell.swift */; };
 		D5128C1721A2BBAF0045AC39 /* GSGoodCommentTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C1621A2BBAF0045AC39 /* GSGoodCommentTableView.swift */; };
 		D5128C1921A2BCED0045AC39 /* GSGoodCommetTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C1821A2BCED0045AC39 /* GSGoodCommetTableCell.swift */; };
 		D5128C1B21A3D6BD0045AC39 /* GSGoodPicBrowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C1A21A3D6BD0045AC39 /* GSGoodPicBrowerView.swift */; };
@@ -90,6 +91,7 @@
 		6167DF4B174EDB0B54B84869 /* Pods_GigaShopTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShopTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95E8A0CF7351E6E59F2DDBA7 /* Pods-GigaShopTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GigaShopTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GigaShopTests/Pods-GigaShopTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BCFFE91AE21E0DDE2EA72D30 /* Pods_GigaShopUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GigaShopUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D508B69821AB956A00FC3363 /* GSGoodLardCommentTabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodLardCommentTabCell.swift; sourceTree = "<group>"; };
 		D5128C1621A2BBAF0045AC39 /* GSGoodCommentTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodCommentTableView.swift; sourceTree = "<group>"; };
 		D5128C1821A2BCED0045AC39 /* GSGoodCommetTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodCommetTableCell.swift; sourceTree = "<group>"; };
 		D5128C1A21A3D6BD0045AC39 /* GSGoodPicBrowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSGoodPicBrowerView.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 				D5FC580921A2A06800AB19CF /* GSAddShopCartTool.swift */,
 				D5128C1621A2BBAF0045AC39 /* GSGoodCommentTableView.swift */,
 				D5128C1821A2BCED0045AC39 /* GSGoodCommetTableCell.swift */,
+				D508B69821AB956A00FC3363 /* GSGoodLardCommentTabCell.swift */,
 				D5128C1A21A3D6BD0045AC39 /* GSGoodPicBrowerView.swift */,
 				D5128C1C21A3DD8A0045AC39 /* GSGoodCommentStar.swift */,
 			);
@@ -782,6 +785,7 @@
 				D5128C1B21A3D6BD0045AC39 /* GSGoodPicBrowerView.swift in Sources */,
 				D5F02BDE21967B1C000C9E38 /* GSCategoryController.swift in Sources */,
 				D5FC57A62199170400AB19CF /* CycleView.swift in Sources */,
+				D508B69921AB956A00FC3363 /* GSGoodLardCommentTabCell.swift in Sources */,
 				D5FC57BF219ACAAA00AB19CF /* GSCartGoodTabCell.swift in Sources */,
 				D5F02BCF2196785B000C9E38 /* MoyaRequestResource.swift in Sources */,
 				D5128C2621A40F6F0045AC39 /* GSCategoryListTableCell.swift in Sources */,

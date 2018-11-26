@@ -73,9 +73,17 @@ extension UILabel {
  		let dic = NSDictionary(object: UIFont.systemFont(ofSize: font), forKey: NSAttributedString.Key.font as NSCopying)
  		let stringSize = normalText.boundingRect(with: size, options: .usesLineFragmentOrigin, attributes: dic as? [NSAttributedString.Key : Any] , context:nil).size
  		return stringSize.width
-		
+				
 	}
- }
+	
+	static func LableTextColor(lab:UILabel,sizeFont:CGFloat,textColor: Any,startInt:Int,len:Int) -> () {
+ 		let attributedString = NSMutableAttributedString(string: lab.text!)
+		attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: textColor, range: NSMakeRange(startInt, len))
+		attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: sizeFont), range: NSMakeRange(startInt, len))
+ 		lab.attributedText = attributedString
+ 	}
+	
+  }
 
 
 
