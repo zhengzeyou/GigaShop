@@ -32,6 +32,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		search.isHidden = true
 		let navbottomline:UIImageView = findHairlineImageViewUnder(vw: (self.navigationController?.navigationBar)!)
 		navbottomline.isHidden = false
+		condition.pop.hiddeSuv()
 
 	}
 	override func viewDidLoad() {

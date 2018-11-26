@@ -60,6 +60,7 @@ class GSCateListConditionView: UIView {
 		
 		if sender.tag == 3 {
 			let btn:UIButton = self.viewWithTag(3) as! UIButton
+			self.pop?.hiddeSuv()
 			pop = nil
  			if flag! {
 				
@@ -101,7 +102,8 @@ class GSCateListConditionView: UIView {
  					self.pop?.hiddeSuv()
 				}
 			}else{
-				pop = nil
+				self.pop?.hiddeSuv()
+ 				self.pop = nil
 			}
 
  		}

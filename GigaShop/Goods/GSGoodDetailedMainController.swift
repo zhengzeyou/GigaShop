@@ -246,7 +246,7 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
  
 		default:
 			let cell:UITableViewCell = UITableViewCell()
- 
+			cell.selectionStyle = .none
 			let lab:UILabel = UILabel()
 			lab.text = "商品评价"
 			lab.textColor = Constant.blackColor

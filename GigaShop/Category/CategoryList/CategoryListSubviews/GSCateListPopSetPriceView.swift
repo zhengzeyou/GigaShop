@@ -37,7 +37,7 @@ class GSCateListPopSetPriceView: UIView {
 		cover.alpha = 0.2
 		let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickCover))
 		cover.addGestureRecognizer(tap)
-		(UIApplication.shared.delegate?.window)!?.addSubview(cover)
+ 		(UIApplication.shared.delegate?.window)!?.addSubview(cover)
 		cover.snp.makeConstraints { (make) in
 			make.top.equalToSuperview().offset(self.frame.origin.y)
 			make.left.bottom.right.equalToSuperview()
@@ -81,6 +81,7 @@ class GSCateListPopSetPriceView: UIView {
 		}
 
 		let sumbit:UIButton = UIButton()
+		sumbit.addTarget(self, action: #selector(ok), for: .touchUpInside)
 		sumbit.backgroundColor = Constant.redColor
 		sumbit.layer.cornerRadius = 6
 		sumbit.layer.masksToBounds = true
@@ -97,11 +98,9 @@ class GSCateListPopSetPriceView: UIView {
 		
  	}
 	
-	@objc private func uploadDel(sender:UIButton){
-		print("下载和删除")
-		hiddeSuv()
-		
-		
+	@objc private func ok(sender:UIButton){
+ 		hiddeSuv()
+ 
 	}
 	@objc private func clickCover(){
 		guard self.tapCoverMap != nil else {
@@ -118,46 +117,4 @@ class GSCateListPopSetPriceView: UIView {
  		self.removeFromSuperview()
 	}
 }
-
-//extension GSCateListPopSetPriceView:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
-//	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//		return 3
-//	}
-//
-//	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reused", for: indexPath)
-//
-//		let icon:UIImageView = UIImageView(image: UIImage(named: icons.object(at:indexPath.row) as! String)?.withRenderingMode(.alwaysOriginal))
-//		cell.contentView.addSubview(icon)
-//		icon.isUserInteractionEnabled = true
-//		icon.snp.makeConstraints { (make) in
-//			make.left.top.equalTo(15)
-//			make.width.height.equalTo(Constant.screenWidth/4.0 - 30.0)
-//		}
-//
-//		let title:UILabel = UILabel()
-//		title.text = titles.object(at: indexPath.row) as? String
-//		title.textAlignment = .center
-//		title.textColor = Constant.greyColor
-//		title.font = UIFont.systemFont(ofSize: 12)
-//		cell.contentView.addSubview(title)
-//		title.snp.makeConstraints { (make) in
-//			make.bottom.equalToSuperview()
-//			make.width.equalTo(Constant.screenWidth/4.0)
-//			make.top.equalTo(icon.snp.bottom)
-//		}
-//
-//		return cell
-//	}
-//
-//	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//		guard self.uploadMap != nil else {
-//			return
-//		}
-//		self.uploadMap?(indexPath.row)
-//	}
-	
-	
-//}
-
 
