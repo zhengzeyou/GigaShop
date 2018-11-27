@@ -26,6 +26,7 @@ class GSCategoryListTableCell: UITableViewCell {
 	
 
 	private func addSubviews(){
+		
 		imageview = UIImageView()
 		self.contentView.addSubview(imageview)
 		imageview.snp.makeConstraints {
@@ -38,7 +39,7 @@ class GSCategoryListTableCell: UITableViewCell {
 		imageview.kf.setImage(with: URL(string: "https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBhTF7Fo4uif_!!4120736425.jpg"))
 
 		contentLab = UILabel()
-		contentLab.text = "碧蒙萱 bioemsan非离子迷迭洁面乳150ml化妆水100ml保湿霜70ml套装"
+		contentLab.text = "碧蒙萱 bioemsan 非离子迷迭洁面乳150ml化妆水100ml保湿霜70ml套装"
 		contentLab.textColor = Constant.blackColor
 		contentLab.numberOfLines = 0
 		self.contentView.addSubview(contentLab)
@@ -65,9 +66,5 @@ class GSCategoryListTableCell: UITableViewCell {
 			$0.left.equalTo(curentPrice.snp.right).offset(10)
 			$0.bottom.equalTo(imageview.snp.bottom).offset(-10)
 		}
-
-		
-		
-		
-	}
+ 	}
 }
