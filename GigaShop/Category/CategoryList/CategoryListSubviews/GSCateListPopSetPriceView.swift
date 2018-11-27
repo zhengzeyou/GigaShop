@@ -33,14 +33,14 @@ class GSCateListPopSetPriceView: UIView {
 		self.backgroundColor = UIColor.white
 		self.layer.borderWidth = 1
 		self.layer.borderColor = UIColor.colorFromHex(hex: 0xeeeeee).cgColor
-		cover.backgroundColor = Constant.blackColor
-		cover.alpha = 0.2
-		let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickCover))
+		cover.backgroundColor = Constant.blackColor.withAlphaComponent(0.2)
+ 		let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(clickCover))
 		cover.addGestureRecognizer(tap)
  		(UIApplication.shared.delegate?.window)!?.addSubview(cover)
-		cover.snp.makeConstraints { (make) in
-			make.top.equalToSuperview().offset(self.frame.origin.y)
-			make.left.bottom.right.equalToSuperview()
+		cover.snp.makeConstraints {
+			$0.top.equalTo(self.frame.origin.y)
+			$0.bottom.left.right.equalToSuperview()
+			
 		}
 		
 		lowPrice = UITextField()
@@ -50,19 +50,19 @@ class GSCateListPopSetPriceView: UIView {
 		lowPrice.placeholder = "最低价"
 		lowPrice.backgroundColor = UIColor.colorFromHex(hex: 0xe2e2e2)
 		self.addSubview(lowPrice)
-		lowPrice.snp.makeConstraints { (make) in
-			make.top.equalTo(50)
-			make.left.equalTo(15)
-			make.right.equalTo(self.snp.centerX).offset(-40)
-			make.height.equalTo(40)
+		lowPrice.snp.makeConstraints {
+			$0.top.equalTo(50)
+			$0.left.equalTo(15)
+			$0.right.equalTo(self.snp.centerX).offset(-40)
+			$0.height.equalTo(40)
 		}
 		
 		let lab:UILabel = UILabel()
 		lab.text = "至"
 		self.addSubview(lab)
-		lab.snp.makeConstraints { (make) in
-			make.centerX.equalToSuperview()
-			make.centerY.equalTo(lowPrice.snp.centerY)
+		lab.snp.makeConstraints {
+			$0.centerX.equalToSuperview()
+			$0.centerY.equalTo(lowPrice.snp.centerY)
 		}
 		
 		
@@ -73,11 +73,11 @@ class GSCateListPopSetPriceView: UIView {
 		highPrice.placeholder = "最高价"
 		highPrice.backgroundColor = UIColor.colorFromHex(hex: 0xe2e2e2)
 		self.addSubview(highPrice)
-		highPrice.snp.makeConstraints { (make) in
-			make.top.equalTo(50)
-			make.right.equalTo(-30)
-			make.left.equalTo(self.snp.centerX).offset(40)
-			make.height.equalTo(40)
+		highPrice.snp.makeConstraints {
+			$0.top.equalTo(50)
+			$0.right.equalTo(-30)
+			$0.left.equalTo(self.snp.centerX).offset(40)
+			$0.height.equalTo(40)
 		}
 
 		let sumbit:UIButton = UIButton()
@@ -88,11 +88,11 @@ class GSCateListPopSetPriceView: UIView {
 		sumbit.setTitle("确定", for: .normal)
 		sumbit.setTitleColor(UIColor.white, for: .normal)
 		self.addSubview(sumbit)
-		sumbit.snp.makeConstraints { (make) in
-			make.left.equalTo(lowPrice.snp.left)
-			make.right.equalTo(highPrice.snp.right)
-			make.top.equalTo(lowPrice.snp.bottom).offset(40)
-			make.height.equalTo(50)
+		sumbit.snp.makeConstraints {
+			$0.left.equalTo(lowPrice.snp.left)
+			$0.right.equalTo(highPrice.snp.right)
+			$0.top.equalTo(lowPrice.snp.bottom).offset(40)
+			$0.height.equalTo(50)
 			
 		}
 		

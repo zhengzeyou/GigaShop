@@ -24,29 +24,29 @@ class GSHomeImagesTabCell: UITableViewCell {
 		
 		let big:UIImageView = UIImageView(image: UIImage(named: "img_01"))
 		self.contentView.addSubview(big)
-		big.snp.makeConstraints { (make) in
-			make.left.top.equalToSuperview()
-			make.width.equalTo(Constant.screenWidth/2)
-			make.height.equalTo(2*Constant.screenWidth/5)
+		big.snp.makeConstraints {
+			$0.left.top.equalToSuperview()
+			$0.width.equalTo(Constant.screenWidth/2)
+			$0.height.equalTo(2*Constant.screenWidth/5)
 		}
 		
 		for i in 2...5 {
 			let right:UIImageView = UIImageView(image: UIImage(named: "img_0"+String(i)))
 			self.contentView.addSubview(right)
 			if i == 5 {
-				right.snp.makeConstraints { (make) in
-					make.top.equalTo(big.snp.bottom)
-					make.right.equalTo(big.snp.right)
-					make.height.equalTo(Constant.screenWidth/5)
-					make.left.equalToSuperview()
+				right.snp.makeConstraints {
+					$0.top.equalTo(big.snp.bottom)
+					$0.right.equalTo(big.snp.right)
+					$0.height.equalTo(Constant.screenWidth/5)
+					$0.left.equalToSuperview()
 				}
 			}
 			else {
-				right.snp.makeConstraints { (make) in
-					make.right.equalToSuperview()
-					make.top.equalTo(CGFloat(i-2)*Constant.screenWidth/5)
-					make.left.equalTo(big.snp.right)
-					make.height.equalTo(Constant.screenWidth/5)
+				right.snp.makeConstraints {
+					$0.right.equalToSuperview()
+					$0.top.equalTo(CGFloat(i-2)*Constant.screenWidth/5)
+					$0.left.equalTo(big.snp.right)
+					$0.height.equalTo(Constant.screenWidth/5)
 				}
 
 			}
@@ -55,9 +55,9 @@ class GSHomeImagesTabCell: UITableViewCell {
 		
 		let banner:UIImageView = UIImageView(image: UIImage(named: "img_02"))
 		self.contentView.addSubview(banner)
-		banner.snp.makeConstraints { (make) in
-			make.left.right.bottom.equalToSuperview()
-			make.height.equalTo(Constant.screenWidth/4)
+		banner.snp.makeConstraints {
+			$0.left.right.bottom.equalToSuperview()
+			$0.height.equalTo(Constant.screenWidth/4)
 		}
 
 		

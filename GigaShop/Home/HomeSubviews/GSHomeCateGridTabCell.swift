@@ -64,10 +64,10 @@ extension GSHomeCateGridTabCell:UICollectionViewDelegate,UICollectionViewDelegat
  
   		let avator:UIImageView = UIImageView()
 		cell.contentView.addSubview(avator)
-		avator.snp.updateConstraints { (make) in
-			make.centerY.equalTo(20)
- 			make.centerX.equalToSuperview()
-			make.height.width.equalTo((Constant.screenWidth - 10)/10.0)
+		avator.snp.updateConstraints {
+			$0.centerY.equalTo(20)
+ 			$0.centerX.equalToSuperview()
+			$0.height.width.equalTo((Constant.screenWidth - 10)/10.0)
  		}
  		avator.image = UIImage(named: "icon_category_" + images[indexPath.row])
 		
@@ -76,9 +76,9 @@ extension GSHomeCateGridTabCell:UICollectionViewDelegate,UICollectionViewDelegat
 		name.font = .systemFont(ofSize: 12)
 		name.text = titles[indexPath.row]
  		cell.contentView.addSubview(name)
-		name.snp.makeConstraints { (make) in
- 			make.centerX.equalToSuperview()
-			make.top.equalTo(avator.snp.bottom)
+		name.snp.makeConstraints {
+ 			$0.centerX.equalToSuperview()
+			$0.top.equalTo(avator.snp.bottom)
 			
 		}
 		

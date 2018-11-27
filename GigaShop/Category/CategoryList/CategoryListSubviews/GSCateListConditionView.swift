@@ -34,10 +34,10 @@ class GSCateListConditionView: UIView {
  			btn.titleLabel?.font = .systemFont(ofSize: 14)
 			btn.set(image:UIImage(named: icons[i]), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .normal)
 			self.addSubview(btn)
-			btn.snp.makeConstraints { (make) in
-				make.bottom.top.equalToSuperview()
-				make.width.equalTo(Constant.screenWidth/4)
-				make.left.equalTo(CGFloat(i)*Constant.screenWidth/4)
+			btn.snp.makeConstraints {
+				$0.bottom.top.equalToSuperview()
+				$0.width.equalTo(Constant.screenWidth/4)
+				$0.left.equalTo(CGFloat(i)*Constant.screenWidth/4)
 			}
 
 			switch i {

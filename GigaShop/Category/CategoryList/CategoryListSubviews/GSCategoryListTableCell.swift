@@ -28,10 +28,10 @@ class GSCategoryListTableCell: UITableViewCell {
 	private func addSubviews(){
 		imageview = UIImageView()
 		self.contentView.addSubview(imageview)
-		imageview.snp.makeConstraints { (make) in
-			make.bottom.equalToSuperview()
-			make.top.left.equalTo(20)
-			make.width.equalTo(120)
+		imageview.snp.makeConstraints {
+			$0.bottom.equalToSuperview()
+			$0.top.left.equalTo(20)
+			$0.width.equalTo(120)
 		}
 		imageview.layer.borderWidth = 1
 		imageview.layer.borderColor = Constant.vcBgColor.cgColor
@@ -42,28 +42,28 @@ class GSCategoryListTableCell: UITableViewCell {
 		contentLab.textColor = Constant.blackColor
 		contentLab.numberOfLines = 0
 		self.contentView.addSubview(contentLab)
- 		contentLab.snp.makeConstraints { (make) in
-			make.top.equalTo(imageview.snp.top)
-			make.left.equalTo(imageview.snp.right).offset(10)
-			make.right.equalTo(-15)
+ 		contentLab.snp.makeConstraints {
+			$0.top.equalTo(imageview.snp.top)
+			$0.left.equalTo(imageview.snp.right).offset(10)
+			$0.right.equalTo(-15)
 		}
 		
 		curentPrice = UILabel()
 		curentPrice.textColor = Constant.redColor
 		curentPrice.text = "￥7199.00"
 		self.contentView.addSubview(curentPrice)
-		curentPrice.snp.makeConstraints { (make) in
-			make.left.equalTo(contentLab.snp.left)
-			make.bottom.equalTo(imageview.snp.bottom).offset(-10)
+		curentPrice.snp.makeConstraints {
+			$0.left.equalTo(contentLab.snp.left)
+			$0.bottom.equalTo(imageview.snp.bottom).offset(-10)
 		}
 		
 		marketPrice = UILabel()
 		marketPrice.textColor = Constant.greyColor
 		marketPrice.text = "￥7300.00"
 		self.contentView.addSubview(marketPrice)
-		marketPrice.snp.makeConstraints { (make) in
-			make.left.equalTo(curentPrice.snp.right).offset(10)
-			make.bottom.equalTo(imageview.snp.bottom).offset(-10)
+		marketPrice.snp.makeConstraints {
+			$0.left.equalTo(curentPrice.snp.right).offset(10)
+			$0.bottom.equalTo(imageview.snp.bottom).offset(-10)
 		}
 
 		

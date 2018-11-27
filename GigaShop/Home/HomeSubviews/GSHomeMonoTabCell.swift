@@ -28,9 +28,9 @@ class GSHomeMonoTabCell: UITableViewCell {
 		
 		title.text = "人气单品"
  		self.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.left.equalToSuperview().offset(15)
-			make.top.equalToSuperview().offset(10)
+		title.snp.makeConstraints {
+			$0.left.equalToSuperview().offset(15)
+			$0.top.equalToSuperview().offset(10)
 		}
 		
 		
@@ -47,10 +47,10 @@ class GSHomeMonoTabCell: UITableViewCell {
 		collectView.delegate = self
 		collectView.showsHorizontalScrollIndicator = false
 		self.contentView.addSubview(collectView)
-		collectView.snp.makeConstraints({ (make) in
-			make.left.equalTo(10)
-			make.right.bottom.equalToSuperview()
- 			make.height.equalTo( Constant.screenWidth / 3.0 + 100)
+		collectView.snp.makeConstraints({
+			$0.left.equalTo(10)
+			$0.right.bottom.equalToSuperview()
+ 			$0.height.equalTo( Constant.screenWidth / 3.0 + 100)
 		})
 		
 		
@@ -70,10 +70,10 @@ extension GSHomeMonoTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlo
 		}
  		let logo:UIImageView = UIImageView()
  		cell.contentView.addSubview(logo)
-		logo.snp.makeConstraints { (make) in
-			make.top.left.equalToSuperview()
-			make.right.equalTo(-2)
-			make.height.equalTo(Constant.screenWidth / 3.0 + 10)
+		logo.snp.makeConstraints {
+			$0.top.left.equalToSuperview()
+			$0.right.equalTo(-2)
+			$0.height.equalTo(Constant.screenWidth / 3.0 + 10)
 		}
  		logo.kf.setImage(with: URL(string: "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1542007443&di=e0c7b5cd274f8624149d5c1fa59d32af&src=http://m.360buyimg.com/mobilecms/s750x750_jfs/t9382/255/419174577/214784/f9026ac4/59aa5039N3b06738b.jpg!q80.jpg"))
 		
@@ -83,11 +83,11 @@ extension GSHomeMonoTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlo
  		title.text = "COACH豆蔻迟女包经典波士顿包奢侈品"
 		title.numberOfLines = 2
  		cell.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.left.equalTo(logo.snp.left)
-			make.top.equalTo(logo.snp.bottom).offset(5)
-			make.right.equalTo(logo.snp.right)
-			make.height.equalTo(40)
+		title.snp.makeConstraints {
+			$0.left.equalTo(logo.snp.left)
+			$0.top.equalTo(logo.snp.bottom).offset(5)
+			$0.right.equalTo(logo.snp.right)
+			$0.height.equalTo(40)
  		}
 		
 		let price:UILabel = UILabel()
@@ -95,11 +95,11 @@ extension GSHomeMonoTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlo
 		price.text = "￥1800.00"
  		price.font = UIFont.systemFont(ofSize: 15)
  		cell.contentView.addSubview(price)
-		price.snp.makeConstraints { (make) in
-			make.left.equalTo(logo.snp.left)
-			make.top.equalTo(title.snp.bottom).offset(10)
-			make.right.equalTo(logo.snp.right)
-			make.height.equalTo(15)
+		price.snp.makeConstraints {
+			$0.left.equalTo(logo.snp.left)
+			$0.top.equalTo(title.snp.bottom).offset(10)
+			$0.right.equalTo(logo.snp.right)
+			$0.height.equalTo(15)
 		}
 		
 		return cell
