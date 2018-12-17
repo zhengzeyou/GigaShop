@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import JRefresh
 
 var maintableview:UITableView!
 var topView:GSHomeTopView!
@@ -109,11 +110,9 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
  
 	
 		maintableview.header = JRefreshStateHeader.headerWithRefreshingBlock({[weak self] in
-//			guard let `self` = self else {return}
+			guard self != nil else {return}
 			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
-				self.count += 2
-				self.tableView.reloadData()
-				self.tableView.header?.endRefreshing()
+				maintableview.header?.endRefreshing()
 			})
 		})
 		maintableview.header?.beginRefreshing()
