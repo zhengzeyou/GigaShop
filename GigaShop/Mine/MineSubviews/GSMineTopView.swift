@@ -24,13 +24,13 @@ class GSMineTopView: UIView {
 	}
 	fileprivate func addSuv(){
 		
-		let bgimg:UIImageView = UIImageView(image: UIImage(named: "img_bg_personal"))
+		let bgimg:UIImageView = UIImageView(image:gigaImg("img_bg_personal"))
 		self.addSubview(bgimg)
 		bgimg.snp.makeConstraints { (make) in
 			make.edges.equalToSuperview()
 		}
 		
-		avator = UIImageView(image: UIImage(named: "img_default_image"))
+		avator = UIImageView(image:  gigaImg("img_default_image"))
 		avator.layer.cornerRadius = Constant.screenWidth/10
 		avator.layer.masksToBounds = true
 		bgimg.addSubview(avator)
@@ -50,7 +50,7 @@ class GSMineTopView: UIView {
 			make.left.equalTo(avator.snp.right).offset(10)
 		}
 		
-		let phone:UIImageView = UIImageView(image: UIImage(named: "icon_telephone"))
+		let phone:UIImageView = UIImageView(image: gigaImg("icon_telephone"))
 		bgimg.addSubview(phone)
 		phone.snp.makeConstraints { (make) in
 			make.top.equalTo(avator.snp.centerY).offset(3)

@@ -33,8 +33,8 @@ class GSCartCountView: UIView {
 				break
 			case .showGray:
 				self.heightValue = 40
-				minus.setImage(UIImage(named: ""), for: .normal)
-				plus.setImage(UIImage(named: ""), for: .normal)
+				minus.setImage( gigaImg(""), for: .normal)
+				plus.setImage( gigaImg(""), for: .normal)
 				minus.setTitle("-", for: .normal)
 				plus.setTitle("+", for: .normal)
 				minus.setTitleColor(Constant.greyColor, for: .normal)
@@ -80,7 +80,7 @@ class GSCartCountView: UIView {
   		minus = UIButton()
 		minus.tag = 0
 		minus.addTarget(self, action: #selector(numberaction), for: .touchUpInside)
-		minus.setImage(UIImage(named: "icon_plus"), for: .normal)
+		minus.setImage( gigaImg( "icon_plus"), for: .normal)
 		self.addSubview(minus)
 		minus.snp.makeConstraints { (make) in
 			make.left.top.equalToSuperview()
@@ -90,7 +90,7 @@ class GSCartCountView: UIView {
 		plus = UIButton()
 		plus.tag = 1
 		plus.addTarget(self, action: #selector(numberaction), for: .touchUpInside)
-		plus.setImage(UIImage(named: "icon_minus"), for: .normal)
+		plus.setImage( gigaImg("icon_minus"), for: .normal)
 		self.addSubview(plus)
 		plus.snp.makeConstraints { (make) in
 			make.right.top.equalToSuperview()

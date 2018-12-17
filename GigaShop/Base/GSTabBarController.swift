@@ -24,28 +24,35 @@ class GSTabBarController: UITabBarController {
 		var image:UIImage?{
 			switch self {
 			case .home:
-				return UIImage(named: "icon_bottom_homepage_n")?.withRenderingMode(.alwaysOriginal)
-			case .cate:
-				return UIImage(named: "icon_bottom_category_n")?.withRenderingMode(.alwaysOriginal)
- 			case .cart:
-				return UIImage(named: "icon_bottom_cart_n")?.withRenderingMode(.alwaysOriginal)
-			case .mypage:
-				return UIImage(named: "icon_bottom_mine_n")?.withRenderingMode(.alwaysOriginal)
+				return gigaImg("icon_bottom_homepage_n")
+ 			case .cate:
+				return gigaImg("icon_bottom_category_n")
 
+  			case .cart:
+				return gigaImg("icon_bottom_cart_n")
+
+ 			case .mypage:
+				return gigaImg("icon_bottom_mine_n")
+
+ 
  			}
 		}
 		
 		var selectimage:UIImage?{
 			switch self {
 			case .home:
-				return UIImage(named: "icon_bottom_homepage_s")?.withRenderingMode(.alwaysOriginal)
-			case .cate:
-				return UIImage(named: "icon_bottom_category_s")?.withRenderingMode(.alwaysOriginal)
-			case .cart:
-				return UIImage(named: "icon_bottom_cart_s")?.withRenderingMode(.alwaysOriginal)
- 			case .mypage:
-				return UIImage(named: "icon_bottom_mine_s")?.withRenderingMode(.alwaysOriginal)
-				
+				return gigaImg("icon_bottom_homepage_s")
+
+ 			case .cate:
+				return gigaImg("icon_bottom_category_s")
+
+ 			case .cart:
+				return gigaImg("icon_bottom_cart_s")
+
+  			case .mypage:
+				return gigaImg("icon_bottom_mine_s")
+
+ 
 			}
 		}
 

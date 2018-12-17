@@ -64,7 +64,7 @@ class GSGoodSelectSizeView: UIView {
 		}
 		
 		let del:UIButton = UIButton()
-		del.setImage(UIImage(named: "icon_close_00"), for: .normal)
+		del.setImage( gigaImg( "icon_close_00"), for: .normal)
 		del.addTarget(self, action: #selector(delAction), for: .touchUpInside)
 		self.addSubview(del)
 		del.snp.makeConstraints { (make) in

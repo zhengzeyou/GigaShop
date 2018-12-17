@@ -158,7 +158,7 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 			make.center.equalToSuperview()
 		}
 		
-		let emptyIcon:UIImageView = UIImageView(image: UIImage(named: "img_empty_cart"))
+		let emptyIcon:UIImageView = UIImageView(image:  gigaImg( "img_empty_cart"))
 		view.addSubview(emptyIcon)
 		emptyIcon.snp.makeConstraints { (make) in
 			make.bottom.equalTo(emptytitle.snp.top).offset(-10)

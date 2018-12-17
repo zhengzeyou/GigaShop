@@ -69,7 +69,8 @@ extension GSHomeCateGridTabCell:UICollectionViewDelegate,UICollectionViewDelegat
  			$0.centerX.equalToSuperview()
 			$0.height.width.equalTo((Constant.screenWidth - 10)/10.0)
  		}
- 		avator.image = UIImage(named: "icon_category_" + images[indexPath.row])
+		avator.image = gigaImg("icon_category_" + images[indexPath.row])
+//		 gigaImg( "icon_category_" + images[indexPath.row])
 		
 		let name:UILabel = UILabel()
 		name.textColor = Constant.blackColor

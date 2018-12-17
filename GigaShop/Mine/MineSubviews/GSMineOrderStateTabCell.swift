@@ -36,7 +36,7 @@ class  GSMineOrderStateTabCell: UITableViewCell {
 			make.top.equalToSuperview().offset(10)
 		}
 		
-		let icon:UIImageView = UIImageView(image: UIImage(named: "icon_arrow_all_order")?.withRenderingMode(.alwaysOriginal))
+		let icon:UIImageView = UIImageView(image:gigaImg( "icon_arrow_all_order"))
 		icon.contentMode = .scaleAspectFit
 		self.contentView.addSubview(icon)
 		icon.snp.makeConstraints { (make) in
@@ -93,7 +93,7 @@ extension  GSMineOrderStateTabCell:UICollectionViewDelegate,UICollectionViewDele
 			view.removeFromSuperview()
 		}
 		
-		let icon:UIImageView = UIImageView(image: UIImage(named: icons[indexPath.row])?.withRenderingMode(.alwaysOriginal))
+		let icon:UIImageView = UIImageView(image: gigaImg(icons[indexPath.row]))
 		icon.contentMode = .scaleAspectFit
 		cell.contentView.addSubview(icon)
 		icon.snp.makeConstraints { (make) in

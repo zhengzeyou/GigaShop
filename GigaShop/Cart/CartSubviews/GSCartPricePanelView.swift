@@ -32,8 +32,8 @@ class GSCartPricePanelView: UIView {
 		self.backgroundColor = UIColor.white
 		
 		checkbtn = UIButton()
-		checkbtn.setImage(UIImage(named: "icon_cart_unselected"), for: .normal)
-		checkbtn.setImage(UIImage(named: "icon_cart_selected"), for: .selected)
+		checkbtn.setImage( gigaImg("icon_cart_unselected"), for: .normal)
+		checkbtn.setImage( gigaImg("icon_cart_selected"), for: .selected)
 		checkbtn.setTitle(" 全选", for: .normal)
  		checkbtn.setTitleColor(UIColor.black, for: .normal)
 		checkbtn.titleLabel?.font = .systemFont(ofSize: 15)

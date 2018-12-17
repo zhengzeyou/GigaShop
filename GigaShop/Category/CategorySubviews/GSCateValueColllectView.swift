@@ -12,7 +12,7 @@ class GSCateValueColllectView: UIView {
 	var tableview:UITableView!
 	var valueItems:[[itemlevelModel]] = [[itemlevelModel]]()
 	var titlesItems:[itemlevelModel] = [itemlevelModel]()
-
+	var rowHeight:CGFloat = 3*Constant.screenWidth/8 - 30.0
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
@@ -63,8 +63,10 @@ extension GSCateValueColllectView:UITableViewDelegate,UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 3*Constant.screenWidth/4 - 20
-	}
+		let indexItems = valueItems[indexPath.row]
+		let sections = ceil(CGFloat(indexItems.count)/3.0)
+		return sections*rowHeight + 15.0
+ 	}
 	
 
 	

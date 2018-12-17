@@ -22,7 +22,7 @@ class GSHomeImagesTabCell: UITableViewCell {
 	private func addSubViews(){
 		self.backgroundColor = Constant.vcBgColor
 		
-		let big:UIImageView = UIImageView(image: UIImage(named: "img_01"))
+		let big:UIImageView = UIImageView(image:gigaImg("img_01"))
 		self.contentView.addSubview(big)
 		big.snp.makeConstraints {
 			$0.left.top.equalToSuperview()
@@ -31,7 +31,7 @@ class GSHomeImagesTabCell: UITableViewCell {
 		}
 		
 		for i in 2...5 {
-			let right:UIImageView = UIImageView(image: UIImage(named: "img_0"+String(i)))
+			let right:UIImageView = UIImageView(image:gigaImg("img_0"+String(i)))
 			self.contentView.addSubview(right)
 			if i == 5 {
 				right.snp.makeConstraints {
@@ -53,7 +53,7 @@ class GSHomeImagesTabCell: UITableViewCell {
 			
 		}
 		
-		let banner:UIImageView = UIImageView(image: UIImage(named: "img_02"))
+		let banner:UIImageView = UIImageView(image:gigaImg("img_02"))
 		self.contentView.addSubview(banner)
 		banner.snp.makeConstraints {
 			$0.left.right.bottom.equalToSuperview()

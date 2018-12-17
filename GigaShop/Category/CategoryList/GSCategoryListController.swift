@@ -101,8 +101,8 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		
 		let rightBtn:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
 		rightBtn.tag = 101
-		rightBtn.setImage(UIImage(named: "icon_list"), for: .normal)
-		rightBtn.setImage(UIImage(named: "icon_pic"), for: .selected)
+		rightBtn.setImage( gigaImg( "icon_list"), for: .normal)
+		rightBtn.setImage( gigaImg( "icon_pic"), for: .selected)
 		rightBtn.addTarget(self, action: #selector(btnAcion), for: .touchUpInside)
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
 
@@ -115,7 +115,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		self.navigationController?.navigationBar.addSubview(search)
 
  
-		let searchIcon:UIImageView = UIImageView(image: UIImage(named: "icon_search_around")?.withRenderingMode(.alwaysOriginal))
+		let searchIcon:UIImageView = UIImageView(image:  gigaImg( "icon_search_around"))
 		search.addSubview(searchIcon)
 		searchIcon.snp.makeConstraints { (make) in
 			make.left.equalTo(12)
@@ -125,7 +125,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		
 		let del:UIButton = UIButton()
 		del.tag = 102
-		del.setImage(UIImage(named: "icon_delete_search"), for: .normal)
+		del.setImage( gigaImg( "icon_delete_search"), for: .normal)
 		del.addTarget(self, action: #selector(btnAcion), for: .touchUpInside)
 		search.addSubview(del)
 		del.snp.makeConstraints { (make) in

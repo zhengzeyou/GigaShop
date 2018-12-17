@@ -72,7 +72,7 @@ extension  GSMineServeTabCell:UICollectionViewDelegate,UICollectionViewDelegateF
 			view.removeFromSuperview()
 		}
 		
-		let icon:UIImageView = UIImageView(image: UIImage(named:"icon_" + icons[indexPath.row])?.withRenderingMode(.alwaysOriginal))
+		let icon:UIImageView = UIImageView(image:  gigaImg("icon_" + icons[indexPath.row]))
 		icon.contentMode = .scaleAspectFit
 		cell.contentView.addSubview(icon)
 		icon.snp.makeConstraints { (make) in

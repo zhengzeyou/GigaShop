@@ -30,7 +30,7 @@ class CycleCell: UICollectionViewCell {
 
             } else {
                 //本地图片
-                imageView.image = UIImage(named: imageURLString!)
+                imageView.image =  gigaImg( imageURLString!)
             }
         }
     }

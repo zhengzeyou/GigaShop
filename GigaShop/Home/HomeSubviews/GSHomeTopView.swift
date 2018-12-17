@@ -36,7 +36,7 @@ extension GSHomeTopView:CycleViewDelegate {
 		search.backgroundColor = UIColor.colorFromHex(hex: 0xc92728)
 		self.addSubview(search)
 		
-		let searchIcon:UIImageView = UIImageView(image: UIImage(named: "icon_search")?.withRenderingMode(.alwaysOriginal))
+		let searchIcon:UIImageView = UIImageView(image:gigaImg("icon_search"))
 		search.addSubview(searchIcon)
 		searchIcon.snp.makeConstraints {
 			$0.left.equalTo(20)

@@ -29,7 +29,7 @@ class GSGoodBuyAddShopCartView: UIView {
 		let collection:UIButton = UIButton()
 		collection.addTarget(self, action: #selector(btnaction), for: .touchUpInside)
 		collection.tag = 101
- 		collection.setImage(UIImage(named: "icon_bottom_collection"), for: .normal)
+ 		collection.setImage( gigaImg( "icon_bottom_collection"), for: .normal)
 		collection.setTitle("收藏", for: .normal)
 		collection.setTitleColor(Constant.blackColor, for: .normal)
 		collection.titleLabel?.font = .systemFont(ofSize: 13)
@@ -47,7 +47,7 @@ class GSGoodBuyAddShopCartView: UIView {
 		goCart = UIButton()
 		goCart.addTarget(self, action: #selector(btnaction), for: .touchUpInside)
 		goCart.tag = 102
-   		goCart.setImage(UIImage(named: "icon_bottom_cart"), for: .normal)
+   		goCart.setImage( gigaImg( "icon_bottom_cart"), for: .normal)
 		goCart.setTitle("购物车", for: .normal)
 		goCart.setTitleColor(Constant.blackColor, for: .normal)
 		goCart.titleLabel?.font = .systemFont(ofSize: 13)
@@ -134,7 +134,7 @@ class GSGoodBuyAddShopCartView: UIView {
 		case 103:
 			
 			let imageview:UIImageView = UIImageView()
-			imageview.kf.setImage(with:  URL(string: "https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBi7jHemi8BP_!!0-item_pic.jpg"), placeholder: UIImage(named: "img_01"), options: nil, progressBlock: nil) { (image, error, type, url) in
+			imageview.kf.setImage(with:  URL(string: "https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBi7jHemi8BP_!!0-item_pic.jpg"), placeholder:  gigaImg( "img_01"), options: nil, progressBlock: nil) { (image, error, type, url) in
 				
 				GSAddShopCartTool.addToShoppingCartWithGoodsImage(goodsImage: image!, startPoint:CGPoint(x: Constant.screenWidth/2, y: Constant.screenHeight - 30) , endPoint: CGPoint(x: Constant.screenWidth/4, y: Constant.screenHeight - 30)) { (finish) in
 					

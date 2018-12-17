@@ -61,7 +61,7 @@ class GSCategoryController: BaseController {
 			
 			var itemlevel2Array = [itemlevelModel]()
  			manData?.map({ (model2)  in
-				if((flag == 0 ? model2.level1 : model2.level2) == (flag == 0 ? model1.level1 : model1.level2) && (flag == 0 ? model2.level2 : model2.level2) != "*" ){
+				if((flag == 0 ? model2.level1 : model2.level2) == (flag == 0 ? model1.level1 : model1.level2) && (flag == 0 ? model2.level2 : model2.level3) != "*" ){
 					
 					itemlevel2Array.append(model2)
  				}
@@ -109,6 +109,7 @@ class GSCategoryController: BaseController {
 }
 
 extension GSCategoryController :GSCateIndexCollectViewDelegate {
+	
 	func GSCateIndexCollectViewDidSelectedItemAtIndex(_ index: NSInteger) {
 		valueView.reloadWithValueModel(item1: maniItemModels![index],item2:sectionTitles[index])
 		print("选中了" + String(index))

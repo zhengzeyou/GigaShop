@@ -53,7 +53,7 @@ class GSCateValueTabCell: UITableViewCell {
 		}
 		
 		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-		flowlayout.itemSize = CGSize(width: Constant.screenWidth/4 - 15, height:3*Constant.screenWidth/8 - 33)
+		flowlayout.itemSize = CGSize(width: Constant.screenWidth/4 - 15, height:3*Constant.screenWidth/8 - 30)
 		flowlayout.minimumLineSpacing = 1
 		flowlayout.minimumInteritemSpacing = 1
 		flowlayout.scrollDirection = .vertical
@@ -94,7 +94,7 @@ extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFl
 			make.top.centerX.equalToSuperview()
  			make.height.width.equalTo(Constant.screenWidth/4 - 30)
 		}
-		logo.kf.setImage(with: URL(string:itemmodel.image_url! ),placeholder: UIImage(named: "icon_category_clothing"))
+		logo.kf.setImage(with: URL(string:itemmodel.image_url! ),placeholder: defaultImage)
 
 		let title:UILabel = UILabel()
 		title.font = UIFont.systemFont(ofSize: 12)

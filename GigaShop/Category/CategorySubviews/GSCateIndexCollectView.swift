@@ -33,8 +33,7 @@ class GSCateIndexCollectView: UIView {
  
 		items.flatMap({(model) -> [itemlevelModel] in
 			if model.level2 == "*" {
-				print(model.level1)
-				leftItemModels.append(model)
+ 				leftItemModels.append(model)
 			}
  			return leftItemModels
 		})

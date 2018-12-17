@@ -43,8 +43,8 @@ class GSCartGoodTabCell: UITableViewCell {
 		self.selectionStyle = .none
 
 		checkbtn = UIButton()
-		checkbtn.setImage(UIImage(named: "icon_cart_unselected"), for: .normal)
-		checkbtn.setImage(UIImage(named: "icon_cart_selected"), for: .selected)
+		checkbtn.setImage( gigaImg( "icon_cart_unselected"), for: .normal)
+		checkbtn.setImage( gigaImg( "icon_cart_selected"), for: .selected)
 		checkbtn.addTarget(self, action: #selector(checkaction), for: .touchUpInside)
 		self.contentView.addSubview(checkbtn)
 		checkbtn.snp.makeConstraints { (make) in
@@ -89,7 +89,7 @@ class GSCartGoodTabCell: UITableViewCell {
 		}
 
 		
-	    let del:UIImageView = UIImageView(image: UIImage(named: "icon_delete_goods"))
+	    let del:UIImageView = UIImageView(image:  gigaImg( "icon_delete_goods"))
 		del.isUserInteractionEnabled = true
 		let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
 		del.addGestureRecognizer(tap)

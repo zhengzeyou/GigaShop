@@ -49,7 +49,7 @@ class GSGoodCommetTableCell: UITableViewCell {
 		
 		starView = UIImageView()
 		starView.contentMode = .scaleAspectFit
- 		starView.image = UIImage(named: "img_fourstars")?.withRenderingMode(.alwaysOriginal)
+ 		starView.image =  gigaImg( "img_fourstars")
 		self.contentView.addSubview(starView)
 		starView.snp.makeConstraints { (make) in
 			make.right.equalTo(-15)

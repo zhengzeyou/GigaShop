@@ -25,14 +25,14 @@ class GSCateListConditionView: UIView {
 	
 	private func addSubViews(){
 		for i in 0 ..< titles.count {
- 
+
 			let btn:UIButton = UIButton()
 			btn.tag = i + 1
 			btn.addTarget(self, action: #selector(clickBtn), for: .touchUpInside)
 			btn.setTitleColor(Constant.blackColor, for: .normal)
 			btn.setTitleColor(Constant.redColor, for: .selected)
  			btn.titleLabel?.font = .systemFont(ofSize: 14)
-			btn.set(image:UIImage(named: icons[i]), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .normal)
+			btn.set(image: gigaImg( icons[i]), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .normal)
 			self.addSubview(btn)
 			btn.snp.makeConstraints {
 				$0.bottom.top.equalToSuperview()
@@ -43,13 +43,13 @@ class GSCateListConditionView: UIView {
 			switch i {
  			case 0:
 				btn.isSelected = true
-				btn.set(image:UIImage(named: "icon_pulldown_s"), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .selected)
+				btn.set(image: gigaImg( "icon_pulldown_s"), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .selected)
  			case 1:
-				btn.set(image:UIImage(named: "icon_pulldown_s"), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .selected)
+				btn.set(image: gigaImg( "icon_pulldown_s"), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .selected)
 			case 3:
-				btn.set(image:UIImage(named: "icon_pulldown_s"), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .selected)
+				btn.set(image: gigaImg( "icon_pulldown_s"), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .selected)
 			default:
-				btn.set(image:UIImage(named: "icon_price_low"), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .selected)
+				btn.set(image: gigaImg( "icon_price_low"), title: titles[i], titlePosition: .left, additionalSpacing: 12, state: .selected)
 
 				break
 			}
@@ -64,12 +64,12 @@ class GSCateListConditionView: UIView {
 			pop = nil
  			if flag! {
 				
-				btn.set(image:UIImage(named: "icon_price_high"), title: titles[2], titlePosition: .left, additionalSpacing: 12, state: .selected)
+				btn.set(image: gigaImg( "icon_price_high"), title: titles[2], titlePosition: .left, additionalSpacing: 12, state: .selected)
  				flag = false
 				sender.isSelected = true
   			}else{
 				
-				btn.set(image:UIImage(named: "icon_price_low"), title: titles[2], titlePosition: .left, additionalSpacing: 12, state: .selected)
+				btn.set(image: gigaImg( "icon_price_low"), title: titles[2], titlePosition: .left, additionalSpacing: 12, state: .selected)
  				for i in 0 ..< titles.count {
 					let btn:UIButton = self.viewWithTag(i+1) as! UIButton
 					btn.isSelected = false
