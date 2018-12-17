@@ -16,10 +16,15 @@ import HandyJSON
 enum MoyaBaseUriEnum:String{
 	
 	case mainUri
+	case categoryUri
+
 	var baseUri:URL{
 		switch self {
 		case .mainUri:
 			return URL(string: "http://mall.gigawon.co.kr:8800/api/")!
+		case .categoryUri:
+			return URL(string: "http://mall.gigawon.co.kr:8800/api/")!
+
 		}
 	}
 }
@@ -27,13 +32,19 @@ enum MoyaBaseUriEnum:String{
 enum MoyaPathEnum:String{
 	
 	case mainUri
+	case categoryUri
+
 	var pathUri:String{
 		switch self {
 		case .mainUri:
 			return "StoreCate/requestStoreCate1FavList"
+		case .categoryUri:
+			return "Main/requestGetMain"
+
 		}
 	}
 }
+
 
 //--------------------------------------Model-----------------------------------
 

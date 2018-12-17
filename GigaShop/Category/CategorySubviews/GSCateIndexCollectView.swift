@@ -13,18 +13,33 @@ protocol GSCateIndexCollectViewDelegate : class {
 class GSCateIndexCollectView: UIView {
 	var collectView:UICollectionView!
 	let titles:[String] = ["潮流服装","箱包配饰","母婴用品","水果时蔬","家具用品","运动装备","家居家饰","数码电子","家用电器","更多分类"]
+	var leftItemModels:[itemlevelModel] = [itemlevelModel]()
  	weak var delegate : GSCateIndexCollectViewDelegate?
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+		
+
  	}
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		addSubviews()
 
 	}
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	
+	func reloadWithManiLevelModel(items:[itemlevelModel]){
+ 
+		items.flatMap({(model) -> [itemlevelModel] in
+			if model.level2 == "*" {
+				print(model.level1)
+				leftItemModels.append(model)
+			}
+ 			return leftItemModels
+		})
+		addSubviews()
+
 	}
 	private func addSubviews(){
 		self.backgroundColor = UIColor.white
@@ -35,9 +50,11 @@ class GSCateIndexCollectView: UIView {
 		flowlayout.minimumInteritemSpacing = 0
  		flowlayout.scrollDirection = .vertical
 		
+		
 		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
 		collectView.backgroundColor =  UIColor.white
  		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")
+		collectView.showsVerticalScrollIndicator = false
 		collectView.dataSource = self
 		collectView.delegate = self
 		
@@ -55,7 +72,7 @@ class GSCateIndexCollectView: UIView {
 
 extension GSCateIndexCollectView:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return titles.count
+		return leftItemModels.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -73,9 +90,10 @@ extension GSCateIndexCollectView:UICollectionViewDelegate,UICollectionViewDelega
 			make.width.equalTo(4)
 		}
 		
+		let model = leftItemModels[indexPath.row]
   		let title:UILabel = UILabel()
  		title.textColor = Constant.blackColor
-		title.text = titles[indexPath.row]
+		title.text = model.level_name
  		cell.contentView.addSubview(title)
 		title.snp.makeConstraints { (make) in
 			make.center.equalToSuperview()

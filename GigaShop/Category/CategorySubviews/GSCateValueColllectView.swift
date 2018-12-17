@@ -10,7 +10,9 @@ import UIKit
 
 class GSCateValueColllectView: UIView {
 	var tableview:UITableView!
-	
+	var valueItems:[[itemlevelModel]] = [[itemlevelModel]]()
+	var titlesItems:[itemlevelModel] = [itemlevelModel]()
+
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
@@ -22,8 +24,12 @@ class GSCateValueColllectView: UIView {
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		addSubviews()
-
+ 		addSubviews()
+ 	}
+	func reloadWithValueModel(item1:[[itemlevelModel]],item2:[itemlevelModel]){
+		valueItems = item1
+		titlesItems = item2
+		tableview.reloadData()
  	}
 
 	private func addSubviews(){
@@ -46,11 +52,13 @@ class GSCateValueColllectView: UIView {
 }
 extension GSCateValueColllectView:UITableViewDelegate,UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		return valueItems.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let indexItems = valueItems[indexPath.row]
 		let cell:GSCateValueTabCell = tableView.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath) as! GSCateValueTabCell
+		cell.reloadWithCateValueItemsModel(item1:indexItems,item2:titlesItems[indexPath.row])
 		return cell
 	}
 	

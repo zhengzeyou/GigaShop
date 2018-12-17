@@ -11,8 +11,10 @@ import UIKit
 class GSCategoryController: BaseController {
 	var indexView:GSCateIndexCollectView!
 	var valueView:GSCateValueColllectView!
-	
-	override func loadView()
+	var maniItemModels:[[[itemlevelModel]]]?
+	var levelCounts:[itemlevelModel]?
+	lazy var sectionTitles:[[itemlevelModel]] = [[itemlevelModel]]()
+ 	override func loadView()
 	{
 		super.loadView()
 		self.navigationController?.navigationBar.backgroundColor = UIColor.white
@@ -22,9 +24,63 @@ class GSCategoryController: BaseController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
- 		addSubviews()
+		addSubviews()
+		loadCategoryData()
 		
     }
+	
+	
+	private func loadCategoryData(){
+	
+		let provider = MoyaTargetType(paramter:["lang_type":"kor","div_code":"2","user_id":"","token":"","cateevent1":"","cateEvent2":""], method: .post, base: .categoryUri, path: .categoryUri)
+		provider.requestData(failerror: { (error) in
+			print("错误")
+		}) { (categorymodel:CategorgyModel) in
+			let itemLevelModels:[itemlevelModel] = categorymodel.itemlevel ?? [itemlevelModel]()
+			self.maniItemModels = self.manipulationData(manData: itemLevelModels,flag: 0) as? [[[itemlevelModel]]]
+			self.indexView.reloadWithManiLevelModel(items: itemLevelModels)
+			self.valueView.reloadWithValueModel(item1: (self.maniItemModels?.first)!,item2:self.sectionTitles.first!)
+ 		}
+	}
+
+
+	private func manipulationData(manData:[itemlevelModel]?,flag:Int) -> [Array<Any>] {
+		
+ 		var itemArray = [itemlevelModel]()
+		
+		manData?.flatMap({(model) -> [itemlevelModel] in
+ 			if (flag == 0 ? model.level2 : model.level3) == "*" {
+   				itemArray.append(model)
+			}
+			return itemArray
+		})
+		(flag == 1 ? sectionTitles.append(itemArray) : nil)
+
+		var itemlAll:[Array<Any>] = [Array<Any>]()
+		itemArray.flatMap({(model1) -> [itemlevelModel] in
+			
+			var itemlevel2Array = [itemlevelModel]()
+ 			manData?.map({ (model2)  in
+				if((flag == 0 ? model2.level1 : model2.level2) == (flag == 0 ? model1.level1 : model1.level2) && (flag == 0 ? model2.level2 : model2.level2) != "*" ){
+					
+					itemlevel2Array.append(model2)
+ 				}
+ 			})
+			
+			if flag == 0 {
+				let itemSecArray = manipulationData(manData: itemlevel2Array,flag:1)
+				itemlAll.append(itemSecArray)
+
+			}else{
+				itemlAll.append(itemlevel2Array)
+ 			}
+
+			return itemArray
+		})
+ 
+		return itemlAll
+
+	}
 	
 	private func addSubviews(){
 
@@ -32,7 +88,7 @@ class GSCategoryController: BaseController {
 		
 		indexView = GSCateIndexCollectView()
 		indexView.delegate = self
-		view.addSubview(indexView)
+ 		view.addSubview(indexView)
 		indexView.snp.makeConstraints { (make) in
 			make.bottom.left.top.equalToSuperview()
   			make.width.equalTo(Constant.screenWidth/4)
@@ -54,6 +110,7 @@ class GSCategoryController: BaseController {
 
 extension GSCategoryController :GSCateIndexCollectViewDelegate {
 	func GSCateIndexCollectViewDidSelectedItemAtIndex(_ index: NSInteger) {
+		valueView.reloadWithValueModel(item1: maniItemModels![index],item2:sectionTitles[index])
 		print("选中了" + String(index))
 	}
 	

@@ -11,7 +11,8 @@ import UIKit
 class GSCateValueTabCell: UITableViewCell {
 	var title:UILabel!
 	var collectView:UICollectionView!
-
+	var cateValueItems:[itemlevelModel] = [itemlevelModel]()
+	var titlemodel:itemlevelModel?
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		addSubviews()
@@ -19,6 +20,12 @@ class GSCateValueTabCell: UITableViewCell {
 	}
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
+	}
+	func reloadWithCateValueItemsModel(item1:[itemlevelModel],item2:itemlevelModel){
+		cateValueItems = item1
+		titlemodel = item2
+		title.text = titlemodel?.level_name
+ 		collectView.reloadData()
 	}
 
 
@@ -40,7 +47,6 @@ class GSCateValueTabCell: UITableViewCell {
 		}
 		
 		title = UILabel()
-		title.text = "男装"
 		bg.addSubview(title)
 		title.snp.makeConstraints { (make) in
 			make.left.top.height.equalTo(15)
@@ -71,7 +77,7 @@ class GSCateValueTabCell: UITableViewCell {
 
 extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return 6
+		return cateValueItems.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,26 +86,26 @@ extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFl
 		for view in cell.contentView.subviews {
 			view.removeFromSuperview()
 		}
+		let itemmodel = cateValueItems[indexPath.row]
 		let logo:UIImageView = UIImageView()
+		logo.contentMode = .scaleAspectFit
 		cell.contentView.addSubview(logo)
 		logo.snp.makeConstraints { (make) in
 			make.top.centerX.equalToSuperview()
  			make.height.width.equalTo(Constant.screenWidth/4 - 30)
 		}
-		logo.kf.setImage(with: URL(string: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1542097015350&di=e5176001fb939f1ccf908f4289aefd7e&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimage%2Fc0%253Dshijue1%252C0%252C0%252C294%252C40%2Fsign%3D1f6841e845c2d562e605d8ae8f78fa9a%2F8435e5dde71190efd0967d57c41b9d16fcfa60cd.jpg"))
+		logo.kf.setImage(with: URL(string:itemmodel.image_url! ),placeholder: UIImage(named: "icon_category_clothing"))
 
 		let title:UILabel = UILabel()
-		title.font = UIFont.systemFont(ofSize: 15)
+		title.font = UIFont.systemFont(ofSize: 12)
 		title.textColor = Constant.blackColor
-		title.text = "衣服"
+		title.text = itemmodel.level_name
 		title.textAlignment = .center
 		title.numberOfLines = 2
 		cell.contentView.addSubview(title)
 		title.snp.makeConstraints { (make) in
-			make.left.equalTo(logo.snp.left)
 			make.top.equalTo(logo.snp.bottom).offset(5)
-			make.right.equalTo(logo.snp.right)
-			make.height.equalTo(20)
+			make.centerX.equalToSuperview()
 		}
 
 		return cell
