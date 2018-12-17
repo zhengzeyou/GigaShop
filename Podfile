@@ -14,8 +14,8 @@ target 'GigaShop' do
   pod 'JRefresh', '~> 1.4.0'
   pod 'PhotoBrowserSwift', '~> 0.0.3'
   pod 'PYSearch', '~> 0.9.0'
-
-
+  pod 'TYPagerController', '~> 2.1.2'
+  pod 'QMUIKit', '~> 2.7.6'
   # Pods for GigaShop
 
   target 'GigaShopTests' do

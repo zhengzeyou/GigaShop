@@ -107,6 +107,18 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 			make.edges.equalToSuperview()
  		}
  
+	
+		maintableview.header = JRefreshStateHeader.headerWithRefreshingBlock({[weak self] in
+//			guard let `self` = self else {return}
+			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+				self.count += 2
+				self.tableView.reloadData()
+				self.tableView.header?.endRefreshing()
+			})
+		})
+		maintableview.header?.beginRefreshing()
+		
+ 
 		
 		
 	}

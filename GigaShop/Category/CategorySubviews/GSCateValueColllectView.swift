@@ -33,6 +33,7 @@ class GSCateValueColllectView: UIView {
  	}
 
 	private func addSubviews(){
+		
 		tableview = UITableView(frame: .zero, style: .plain)
 		tableview.delegate = self
 		tableview.dataSource = self
@@ -65,7 +66,7 @@ extension GSCateValueColllectView:UITableViewDelegate,UITableViewDataSource {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		let indexItems = valueItems[indexPath.row]
 		let sections = ceil(CGFloat(indexItems.count)/3.0)
-		return sections*rowHeight + 15.0
+		return sections*rowHeight + 40.0
  	}
 	
 
