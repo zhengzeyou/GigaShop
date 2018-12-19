@@ -9,17 +9,8 @@
 import UIKit
 import RxSwift
 
-var defaultImage:UIImage {
-	
-	let image =  UIImage(named: "icon_category_clothing")?.withRenderingMode(.alwaysOriginal)
- 	return image!
-}
 
-var gigaImg:(String) -> UIImage = { (icon:String) -> UIImage in
-	
-	let image =  UIImage(named:icon)?.withRenderingMode(.alwaysOriginal)
-	return image!
-}
+
 struct Constant {
 	
 	static let dispose = DisposeBag()

@@ -15,11 +15,16 @@ class GSMineController: BaseController {
 		super.viewWillAppear(animated)
 		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 		navigationController?.navigationBar.shadowImage = UIImage()
+ 		navigationController?.navigationBar.alpha = 0
+		
+
 	}
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
 		navigationController?.navigationBar.shadowImage = nil
+		navigationController?.navigationBar.alpha = 1
+
 	}
 
     override func viewDidLoad() {

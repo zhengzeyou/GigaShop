@@ -27,10 +27,8 @@ class  GSMineServeTabCell: UITableViewCell {
 	
 	private func addSubviews(){
 		
-		let title:UILabel = UILabel()
-		title.text = "我的服务"
-		title.font = .systemFont(ofSize: 20)
-		self.contentView.addSubview(title)
+		let	title:UILabel = gigaLabel("我的服务",20,nil,nil)
+  		self.contentView.addSubview(title)
 		title.snp.makeConstraints { (make) in
 			make.left.equalToSuperview().offset(15)
 			make.top.equalToSuperview().offset(10)
@@ -72,20 +70,16 @@ extension  GSMineServeTabCell:UICollectionViewDelegate,UICollectionViewDelegateF
 			view.removeFromSuperview()
 		}
 		
-		let icon:UIImageView = UIImageView(image:  gigaImg("icon_" + icons[indexPath.row]))
-		icon.contentMode = .scaleAspectFit
-		cell.contentView.addSubview(icon)
+ 
+		let icon:UIImageView = gigaImageView("icon_" + icons[indexPath.row],nil,nil,nil)
+ 		cell.contentView.addSubview(icon)
 		icon.snp.makeConstraints { (make) in
 			make.top.equalToSuperview().offset(15)
 			make.centerX.equalToSuperview()
 			make.height.equalTo(Constant.screenWidth / 10)
 		}
 		
-		let title:UILabel = UILabel()
-		title.font = UIFont.systemFont(ofSize: 15)
-		title.textColor = Constant.blackColor
-		title.text = titles[indexPath.row]
-		title.numberOfLines = 2
+ 		let	title:UILabel = gigaLabel(titles[indexPath.row],15,nil,nil)
 		cell.contentView.addSubview(title)
 		title.snp.makeConstraints { (make) in
 			make.left.equalTo(icon.snp.left)
@@ -98,6 +92,18 @@ extension  GSMineServeTabCell:UICollectionViewDelegate,UICollectionViewDelegateF
 		return cell
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		switch indexPath.row {
+		case 0:
+			let collectionVC = GSMineCollectionController()
+			collectionVC.hidesBottomBarWhenPushed = true
+			collectionVC.title = "商品收藏"
+		    viewForController(view: self)?.navigationController?.pushViewController(collectionVC, animated: true)
+			
+		default:
+			break
+		}
+	}
 	
 	
 }

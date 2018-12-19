@@ -30,7 +30,7 @@ class GSMineTopView: UIView {
 			make.edges.equalToSuperview()
 		}
 		
-		avator = UIImageView(image:  gigaImg("img_default_image"))
+ 		avator = UIImageView(image:  gigaImg("img_default_image"))
 		avator.layer.cornerRadius = Constant.screenWidth/10
 		avator.layer.masksToBounds = true
 		bgimg.addSubview(avator)

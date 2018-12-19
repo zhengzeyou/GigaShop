@@ -17,6 +17,7 @@ class  GSMineOrderStateTabCell: UITableViewCell {
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		self.selectionStyle = .none
 		addSubviews()
 		
 	}
@@ -29,32 +30,35 @@ class  GSMineOrderStateTabCell: UITableViewCell {
 		
 		let title:UILabel = UILabel()
  		title.text = "我的订单"
-		title.font = .systemFont(ofSize: 20)
+		title.font = .systemFont(ofSize: 18)
 		self.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.left.equalToSuperview().offset(15)
-			make.top.equalToSuperview().offset(10)
+		title.snp.makeConstraints {
+			$0.left.equalToSuperview().offset(15)
+			$0.top.equalToSuperview().offset(10)
 		}
 		
 		let icon:UIImageView = UIImageView(image:gigaImg( "icon_arrow_all_order"))
 		icon.contentMode = .scaleAspectFit
 		self.contentView.addSubview(icon)
-		icon.snp.makeConstraints { (make) in
-			make.centerY.equalTo(title.snp.centerY)
-			make.width.height.equalTo(14)
-			make.right.equalTo(-15)
+		icon.snp.makeConstraints {
+			$0.centerY.equalTo(title.snp.centerY)
+			$0.width.height.equalTo(14)
+			$0.right.equalTo(-10)
 		}
  
 		
 		let allbtn:UIButton = UIButton()
-		allbtn.setTitle("查看全部", for: .normal)
+ 		allbtn.setTitle("查看全部", for: .normal)
+		allbtn.titleLabel?.font = .systemFont(ofSize: 14)
+		allbtn.titleLabel?.textAlignment = .right
 		allbtn.setTitleColor( Constant.greyColor, for: .normal)
+		allbtn.addTarget(self, action: #selector(allOrders), for: .touchUpInside)
 		self.contentView.addSubview(allbtn)
-		allbtn.snp.makeConstraints { (make) in
- 			make.right.equalTo(icon.snp.left)
-			make.centerY.equalTo(title.snp.centerY)
-			make.width.equalTo(80)
-			make.height.equalTo(20)
+		allbtn.snp.makeConstraints {
+ 			$0.right.equalTo(icon.snp.left)
+			$0.centerY.equalTo(title.snp.centerY)
+			$0.width.equalTo(60)
+			$0.height.equalTo(20)
 		}
 
 		
@@ -70,16 +74,26 @@ class  GSMineOrderStateTabCell: UITableViewCell {
 		collectView.delegate = self
 		collectView.showsHorizontalScrollIndicator = false
 		self.contentView.addSubview(collectView)
-		collectView.snp.makeConstraints({ (make) in
-			make.left.equalTo(10)
-			make.right.equalTo(-10)
-			make.bottom.equalToSuperview()
-			make.top.equalTo(50)
+		collectView.snp.makeConstraints({
+			$0.left.equalTo(10)
+			$0.right.equalTo(-10)
+			$0.bottom.equalToSuperview()
+			$0.top.equalTo(50)
 		})
 		
 		
 	}
 	
+}
+
+extension GSMineOrderStateTabCell{
+	@objc private func allOrders(sender:UIButton){
+	
+		let order = GSMineParentOrderController()
+		order.hidesBottomBarWhenPushed = true
+		order.title = "全部订单"
+		viewForController(view: self)?.navigationController?.pushViewController(order, animated: true)
+	}
 }
 
 extension  GSMineOrderStateTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
@@ -96,10 +110,10 @@ extension  GSMineOrderStateTabCell:UICollectionViewDelegate,UICollectionViewDele
 		let icon:UIImageView = UIImageView(image: gigaImg(icons[indexPath.row]))
 		icon.contentMode = .scaleAspectFit
 		cell.contentView.addSubview(icon)
-		icon.snp.makeConstraints { (make) in
-			make.top.equalToSuperview()
-			make.centerX.equalToSuperview()
-			make.height.equalTo(Constant.screenWidth / 12)
+		icon.snp.makeConstraints {
+			$0.top.equalToSuperview()
+			$0.centerX.equalToSuperview()
+			$0.height.equalTo(Constant.screenWidth / 12)
 		}
  
 		let title:UILabel = UILabel()
@@ -108,11 +122,11 @@ extension  GSMineOrderStateTabCell:UICollectionViewDelegate,UICollectionViewDele
 		title.text = titles[indexPath.row]
 		title.numberOfLines = 2
 		cell.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.left.equalTo(icon.snp.left)
-			make.top.equalTo(icon.snp.bottom)
-			make.right.equalTo(icon.snp.right)
-			make.height.equalTo(40)
+		title.snp.makeConstraints {
+			$0.left.equalTo(icon.snp.left)
+			$0.top.equalTo(icon.snp.bottom)
+			$0.right.equalTo(icon.snp.right)
+			$0.height.equalTo(40)
 		}
 		
  

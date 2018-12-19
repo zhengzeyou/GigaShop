@@ -8,6 +8,48 @@
 
 import UIKit
 import RxSwift
+extension NSMutableAttributedString {
+	static func highLightText1(_ normal: String, highLight: String,normalfontValue:CGFloat,normalcolor:UIColor?,hightfontValue:CGFloat?,hightLightColor:UIColor?) -> NSMutableAttributedString {
+		
+ 		let attributedStrM : NSMutableAttributedString = NSMutableAttributedString()
+		let strings = normal.components(separatedBy: highLight)
+		
+		for i in 0..<strings.count {
+			
+			let item = strings[i]
+			let dict = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: normalfontValue),
+						NSAttributedString.Key.foregroundColor: normalcolor]
+			
+			let content = NSAttributedString(string: item, attributes: dict as [NSAttributedString.Key : Any])
+			attributedStrM.append(content)
+			
+			if i != strings.count - 1 {
+				let dict1 = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: hightfontValue ?? normalfontValue),
+							 NSAttributedString.Key.foregroundColor: hightLightColor]
+				
+				let content2 = NSAttributedString(string: highLight,attributes: dict1 as [NSAttributedString.Key : Any])
+				
+				attributedStrM.append(content2)
+			}
+			
+		}
+		return attributedStrM
+	}
+	
+	static func highLightText(_ normal: String, highLight: String,normalfontValue:CGFloat,normalcolor:UIColor?,hightfontValue:CGFloat?,hightLightColor:UIColor?) -> NSMutableAttributedString{
+		
+		let attributedStrM = highLightText1(normal,
+										   highLight: highLight,
+										   normalfontValue:  normalfontValue,
+										   normalcolor:normalcolor ?? .black,
+										   hightfontValue: hightfontValue,
+										   hightLightColor:hightLightColor ?? .red)
+		
+		return attributedStrM
+	}
+	
+}
+
 extension UIButton {
 	
 	@objc func set(image anImage: UIImage?, title: String,
@@ -57,8 +99,8 @@ extension UIButton {
 }
 
 extension UILabel {
-
-	static func getTextHeigh(content:String,font:CGFloat,width:CGFloat) -> CGFloat {
+	
+ 	static func getTextHeigh(content:String,font:CGFloat,width:CGFloat) -> CGFloat {
 		let normalText: String = content
 		let size = CGSize(width: width, height: CGFloat(MAXFLOAT))
 		let dic = NSDictionary(object: UIFont.systemFont(ofSize: font), forKey: NSAttributedString.Key.font as NSCopying)

@@ -32,14 +32,22 @@ class GSCategoryController: BaseController {
 	
 	private func loadCategoryData(){
 	
-		let provider = MoyaTargetType(paramter:["lang_type":"kor","div_code":"2","user_id":"","token":"","cateevent1":"","cateEvent2":""], method: .post, base: .categoryUri, path: .categoryUri)
+		let show = GSTips(view: view, mode: .loading)
+		
+ 		let provider = MoyaTargetType(paramter:["lang_type":"kor","div_code":"2","user_id":"","token":"","cateevent1":"","cateEvent2":""], method: .post, base: .categoryUri, path: .categoryUri)
 		provider.requestData(failerror: { (error) in
-			print("错误")
+			
+			let _ = GSTips(view: self.view, mode: .error)
 		}) { (categorymodel:CategorgyModel) in
+			
+			show.hide(animated: true)
+			self.indexView.isHidden = false
+			self.valueView.isHidden = false
 			let itemLevelModels:[itemlevelModel] = categorymodel.itemlevel ?? [itemlevelModel]()
 			self.maniItemModels = self.manipulationData(manData: itemLevelModels,flag: 0) as? [[[itemlevelModel]]]
 			self.indexView.reloadWithManiLevelModel(items: itemLevelModels)
 			self.valueView.reloadWithValueModel(item1: (self.maniItemModels?.first)!,item2:self.sectionTitles.first!)
+			
  		}
 	}
 
@@ -88,6 +96,7 @@ class GSCategoryController: BaseController {
 		
 		indexView = GSCateIndexCollectView()
 		indexView.delegate = self
+		indexView.isHidden = true
  		view.addSubview(indexView)
 		indexView.snp.makeConstraints { (make) in
 			make.bottom.left.top.equalToSuperview()
@@ -95,6 +104,7 @@ class GSCategoryController: BaseController {
 		}
 		
 		valueView = GSCateValueColllectView()
+		valueView.isHidden = true
 		view.addSubview(valueView)
 		valueView.snp.makeConstraints { (make) in
 			make.right.bottom.equalToSuperview().offset(-10)

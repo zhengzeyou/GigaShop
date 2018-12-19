@@ -19,6 +19,14 @@
 		D5128C2621A40F6F0045AC39 /* GSCategoryListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */; };
 		D5128C2821A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2721A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift */; };
 		D52BD60E21C49B1100435F7E /* ShopGigaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD60D21C49B1100435F7E /* ShopGigaModel.swift */; };
+		D52BD61021C883F600435F7E /* GSTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD60F21C883F600435F7E /* GSTips.swift */; };
+		D52BD61221C88AF300435F7E /* GSMineParentOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD61121C88AF300435F7E /* GSMineParentOrderController.swift */; };
+		D52BD61421C8C88F00435F7E /* GSMineAllOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD61321C8C88F00435F7E /* GSMineAllOrderController.swift */; };
+		D52BD61621C8CC6A00435F7E /* GSMineTableViewOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD61521C8CC6A00435F7E /* GSMineTableViewOrderCell.swift */; };
+		D52BD61821C8D13900435F7E /* GSMineSingleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD61721C8D13900435F7E /* GSMineSingleTableCell.swift */; };
+		D52BD61A21C8EC3200435F7E /* GSMineCollectionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD61921C8EC3200435F7E /* GSMineCollectionTableCell.swift */; };
+		D52BD61C21C9D4ED00435F7E /* GSDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD61B21C9D4ED00435F7E /* GSDefinition.swift */; };
+		D52BD61E21CA179000435F7E /* GSMineCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD61D21CA179000435F7E /* GSMineCollectionController.swift */; };
 		D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9421967281000C9E38 /* AppDelegate.swift */; };
 		D5F02B9721967281000C9E38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02B9621967281000C9E38 /* ViewController.swift */; };
 		D5F02B9A21967281000C9E38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5F02B9821967281000C9E38 /* Main.storyboard */; };
@@ -103,6 +111,14 @@
 		D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryListTableCell.swift; sourceTree = "<group>"; };
 		D5128C2721A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateListPopSetPriceView.swift; sourceTree = "<group>"; };
 		D52BD60D21C49B1100435F7E /* ShopGigaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopGigaModel.swift; sourceTree = "<group>"; };
+		D52BD60F21C883F600435F7E /* GSTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSTips.swift; sourceTree = "<group>"; };
+		D52BD61121C88AF300435F7E /* GSMineParentOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineParentOrderController.swift; sourceTree = "<group>"; };
+		D52BD61321C8C88F00435F7E /* GSMineAllOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineAllOrderController.swift; sourceTree = "<group>"; };
+		D52BD61521C8CC6A00435F7E /* GSMineTableViewOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineTableViewOrderCell.swift; sourceTree = "<group>"; };
+		D52BD61721C8D13900435F7E /* GSMineSingleTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineSingleTableCell.swift; sourceTree = "<group>"; };
+		D52BD61921C8EC3200435F7E /* GSMineCollectionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineCollectionTableCell.swift; sourceTree = "<group>"; };
+		D52BD61B21C9D4ED00435F7E /* GSDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSDefinition.swift; sourceTree = "<group>"; };
+		D52BD61D21CA179000435F7E /* GSMineCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineCollectionController.swift; sourceTree = "<group>"; };
 		D5F02B9121967281000C9E38 /* GigaShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GigaShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5F02B9421967281000C9E38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5F02B9621967281000C9E38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -327,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				D5F02BD321967951000C9E38 /* CMToolExtension.swift */,
+				D52BD61B21C9D4ED00435F7E /* GSDefinition.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -364,6 +381,9 @@
 			children = (
 				D5FC57B6219AAADB00AB19CF /* MineSubviews */,
 				D5F02BD921967AF8000C9E38 /* GSMineController.swift */,
+				D52BD61121C88AF300435F7E /* GSMineParentOrderController.swift */,
+				D52BD61321C8C88F00435F7E /* GSMineAllOrderController.swift */,
+				D52BD61D21CA179000435F7E /* GSMineCollectionController.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -384,6 +404,7 @@
 			isa = PBXGroup;
 			children = (
 				D5FC57A02199170400AB19CF /* CycleView */,
+				D52BD60F21C883F600435F7E /* GSTips.swift */,
 			);
 			path = ThPart;
 			sourceTree = "<group>";
@@ -414,6 +435,9 @@
 				D5FC57B7219AAB2700AB19CF /* GSMineOrderStateTabCell.swift */,
 				D5FC57B9219AAD3D00AB19CF /* GSMineTopView.swift */,
 				D5FC57BB219ABEB300AB19CF /* GSMineServeTabCell.swift */,
+				D52BD61521C8CC6A00435F7E /* GSMineTableViewOrderCell.swift */,
+				D52BD61721C8D13900435F7E /* GSMineSingleTableCell.swift */,
+				D52BD61921C8EC3200435F7E /* GSMineCollectionTableCell.swift */,
 			);
 			path = MineSubviews;
 			sourceTree = "<group>";
@@ -777,6 +801,7 @@
 				D52BD60E21C49B1100435F7E /* ShopGigaModel.swift in Sources */,
 				D5F02BE021967B2E000C9E38 /* GSHomeController.swift in Sources */,
 				D5FC5804219FFAA700AB19CF /* GSGoodSelectSizeView.swift in Sources */,
+				D52BD61621C8CC6A00435F7E /* GSMineTableViewOrderCell.swift in Sources */,
 				D5F02B9721967281000C9E38 /* ViewController.swift in Sources */,
 				D5F02BDC21967B08000C9E38 /* GSCartController.swift in Sources */,
 				D5F02BCD2196785B000C9E38 /* GSAccount.swift in Sources */,
@@ -794,6 +819,7 @@
 				D5F02BDE21967B1C000C9E38 /* GSCategoryController.swift in Sources */,
 				D5FC57A62199170400AB19CF /* CycleView.swift in Sources */,
 				D508B69921AB956A00FC3363 /* GSGoodLardCommentTabCell.swift in Sources */,
+				D52BD61221C88AF300435F7E /* GSMineParentOrderController.swift in Sources */,
 				D5FC57BF219ACAAA00AB19CF /* GSCartGoodTabCell.swift in Sources */,
 				D5F02BCF2196785B000C9E38 /* MoyaRequestResource.swift in Sources */,
 				D5128C2621A40F6F0045AC39 /* GSCategoryListTableCell.swift in Sources */,
@@ -807,18 +833,24 @@
 				D5FC57F8219C0A2000AB19CF /* GSCartCountView.swift in Sources */,
 				D5FC580821A2919500AB19CF /* GSGoodBuyAddShopCartView.swift in Sources */,
 				D5FC5802219E91CE00AB19CF /* GSGoodInfoTableCell.swift in Sources */,
+				D52BD61C21C9D4ED00435F7E /* GSDefinition.swift in Sources */,
 				D5FC57B8219AAB2700AB19CF /* GSMineOrderStateTabCell.swift in Sources */,
 				D5128C1921A2BCED0045AC39 /* GSGoodCommetTableCell.swift in Sources */,
 				D5FC57AE2199701D00AB19CF /* GSHomeMustTabCell.swift in Sources */,
+				D52BD61421C8C88F00435F7E /* GSMineAllOrderController.swift in Sources */,
 				D5F02BD421967952000C9E38 /* CMToolExtension.swift in Sources */,
 				D5128C1D21A3DD8A0045AC39 /* GSGoodCommentStar.swift in Sources */,
+				D52BD61A21C8EC3200435F7E /* GSMineCollectionTableCell.swift in Sources */,
 				D5FC57FD219D52A600AB19CF /* GSGoodDetailedMainController.swift in Sources */,
 				D5128C2421A406A20045AC39 /* GSCateListConditionView.swift in Sources */,
 				D5FC57B5219A6C1200AB19CF /* GSCateValueTabCell.swift in Sources */,
+				D52BD61821C8D13900435F7E /* GSMineSingleTableCell.swift in Sources */,
 				D5128C2821A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift in Sources */,
 				D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */,
 				D5F02BD12196785B000C9E38 /* ToModelExtensions.swift in Sources */,
 				D5FC57AC2199666200AB19CF /* GSHomeImagesTabCell.swift in Sources */,
+				D52BD61E21CA179000435F7E /* GSMineCollectionController.swift in Sources */,
+				D52BD61021C883F600435F7E /* GSTips.swift in Sources */,
 				D5F02BCB2196785B000C9E38 /* Constant.swift in Sources */,
 				D5FC57AA219955A700AB19CF /* GSHomeMonoTabCell.swift in Sources */,
 			);
@@ -1028,7 +1060,10 @@
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1045,7 +1080,10 @@
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1062,7 +1100,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1080,7 +1122,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1097,7 +1143,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1114,7 +1164,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

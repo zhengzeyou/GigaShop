@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import JRefresh
 class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate {
 	var placher:UITextField!
 	var search:UIButton!
@@ -70,7 +70,17 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 			make.left.bottom.right.equalToSuperview()
 			make.top.equalTo(condition.snp.bottom)
 		}
-		
+		listTableView.header = JRefreshStateHeader.headerWithRefreshingBlock({[weak self] in
+			guard self != nil else {return}
+			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+				self?.listTableView.header?.endRefreshing()
+			})
+		})
+		listTableView.header?.beginRefreshing()
+		listTableView.footer = JRefreshAutoStateFooter.footerWithRefreshingBlock({
+			
+		})
+
 		
 		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 		flowlayout.itemSize = CGSize(width:(Constant.screenWidth - 10) / 2 ,height: Constant.screenWidth / 2 + 100)

@@ -56,20 +56,21 @@ class GSHomeController: BaseController {
 	override func loadView()
 	{
 		super.loadView()
+		self.tabBarController?.tabBar.isTranslucent = false
  	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
 		navigationController?.navigationBar.shadowImage = UIImage()
-		self.navigationController?.navigationBar.alpha = 0
+		navigationController?.navigationBar.alpha = 0
 
 	}
 	override func viewWillDisappear(_ animated: Bool) {
 		super.viewWillDisappear(animated)
 		navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
 		navigationController?.navigationBar.shadowImage = nil
-		self.navigationController?.navigationBar.alpha = 1
+		navigationController?.navigationBar.alpha = 1
 
 	}
 
@@ -99,7 +100,7 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 		maintableview.register(GSHomeMonoTabCell.self, forCellReuseIdentifier: "section1")
 		maintableview.register(GSHomeImagesTabCell.self, forCellReuseIdentifier: "section2")
 		maintableview.register(GSHomeMustTabCell.self, forCellReuseIdentifier: "section3")
-
+		
 		topView = Part.top.singleView as? GSHomeTopView
 		maintableview.tableHeaderView = topView
 		view.addSubview(maintableview)
@@ -111,12 +112,15 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 	
 		maintableview.header = JRefreshStateHeader.headerWithRefreshingBlock({[weak self] in
 			guard self != nil else {return}
-			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
 				maintableview.header?.endRefreshing()
 			})
 		})
 		maintableview.header?.beginRefreshing()
 		
+		maintableview.footer = JRefreshAutoStateFooter.footerWithRefreshingBlock({
+			
+		})
  
 		
 		
@@ -157,7 +161,7 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 		case .showimages:
 			return 17*Constant.screenWidth/20 + 10
 		default:
-			return 3*(Constant.screenWidth / 2 + 100) + 30
+			return 3*(Constant.screenWidth / 2 + 100) + 40
  		}
 
  

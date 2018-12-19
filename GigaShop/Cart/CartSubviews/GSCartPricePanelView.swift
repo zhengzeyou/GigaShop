@@ -8,11 +8,39 @@
 
 import UIKit
 
+enum sceneEnum:Int {
+	case cart = 1
+	case collect
+}
+
 class GSCartPricePanelView: UIView {
 
 	var goCartBtn:UIButton!
 	var changeSelectState:((Bool) -> Void)?
 	var checkbtn:UIButton!
+	
+	var scene:sceneEnum?{
+		didSet{
+			switch scene!{
+			case .cart:
+				goCartBtn.setTitle("￥0.0，去结算", for: .normal)
+				checkbtn.addTarget(self, action: #selector(cartaction), for: .touchUpInside)
+
+				break
+				
+			case .collect:
+				goCartBtn.setTitle("删除", for: .normal)
+				checkbtn.addTarget(self, action: #selector(cartaction), for: .touchUpInside)
+				var rect =  goCartBtn.frame
+				rect.origin.x = Constant.screenWidth - 85
+				rect.size.width = 70
+				goCartBtn.frame = rect
+				break
+				
+			}
+
+		}
+	}
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		addSuvs()
@@ -37,8 +65,7 @@ class GSCartPricePanelView: UIView {
 		checkbtn.setTitle(" 全选", for: .normal)
  		checkbtn.setTitleColor(UIColor.black, for: .normal)
 		checkbtn.titleLabel?.font = .systemFont(ofSize: 15)
-		checkbtn.addTarget(self, action: #selector(checkaction), for: .touchUpInside)
-		self.addSubview(checkbtn)
+		addSubview(checkbtn)
 		checkbtn.snp.makeConstraints { (make) in
 			make.centerY.equalToSuperview()
 			make.height.equalTo(20)
@@ -47,15 +74,13 @@ class GSCartPricePanelView: UIView {
 			
 		}
 		
-		
 		goCartBtn = UIButton(frame: CGRect(x: Constant.screenWidth - 165, y: 7, width: 150, height: 36))
-		goCartBtn.setTitle("￥0.0，去结算", for: .normal)
-		goCartBtn.setTitleColor(UIColor.white, for: .normal)
+ 		goCartBtn.setTitleColor(UIColor.white, for: .normal)
 		goCartBtn.titleLabel?.font = .systemFont(ofSize: 13)
 		setGrandient(view: goCartBtn)
   		goCartBtn.layer.cornerRadius = 18
 		goCartBtn.layer.masksToBounds = true
- 		self.addSubview(goCartBtn)
+ 		addSubview(goCartBtn)
  
 
 	}
@@ -80,12 +105,22 @@ class GSCartPricePanelView: UIView {
 	}
 
 
-	@objc func checkaction(sender:UIButton){
+	@objc func cartaction(sender:UIButton){
+		
 		sender.isSelected = !sender.isSelected
 		guard self.changeSelectState != nil else {
 			return
 		}
 		self.changeSelectState!(sender.isSelected)
+	}
+	
+	@objc func collectionaction(sender:UIButton){
+		
+//		sender.isSelected = !sender.isSelected
+//		guard self.changeSelectState != nil else {
+//			return
+//		}
+//		self.changeSelectState!(sender.isSelected)
 	}
 
 }

@@ -11,7 +11,7 @@ import Kingfisher
 
 class GSCartGoodTabCell: UITableViewCell {
 	var picture:UIImageView!
-	var goodname:UILabel!
+	var goodname:QMUILabel!
 	var goodprice:UILabel!
  	let count:GSCartCountView = GSCartCountView()
 	var num:Int?
@@ -40,13 +40,13 @@ class GSCartGoodTabCell: UITableViewCell {
 
 	}
 	fileprivate func addSubviews(){
-		self.selectionStyle = .none
+		selectionStyle = .none
 
 		checkbtn = UIButton()
 		checkbtn.setImage( gigaImg( "icon_cart_unselected"), for: .normal)
 		checkbtn.setImage( gigaImg( "icon_cart_selected"), for: .selected)
 		checkbtn.addTarget(self, action: #selector(checkaction), for: .touchUpInside)
-		self.contentView.addSubview(checkbtn)
+		contentView.addSubview(checkbtn)
 		checkbtn.snp.makeConstraints { (make) in
 			make.centerY.equalToSuperview()
 			make.width.height.equalTo(20)
@@ -60,7 +60,7 @@ class GSCartGoodTabCell: UITableViewCell {
 		picture.layer.masksToBounds = true
 		picture.layer.borderColor = Constant.vcBgColor.cgColor
 		picture.layer.borderWidth = 1
-		self.contentView.addSubview(picture)
+		contentView.addSubview(picture)
 		picture.snp.makeConstraints { (make) in
 			make.centerY.equalToSuperview()
 			make.left.equalTo(checkbtn.snp.right).offset(10)
@@ -68,9 +68,10 @@ class GSCartGoodTabCell: UITableViewCell {
 		}
 		
 		
-		goodname = UILabel()
+		goodname = QMUILabel()
+		goodname.canPerformCopyAction = true
 		goodname.textColor = Constant.blackColor
-		self.contentView.addSubview(goodname)
+		contentView.addSubview(goodname)
 		goodname.snp.makeConstraints { (make) in
 			make.left.equalTo(picture.snp.right).offset(15)
 			make.top.equalTo(picture.snp.top)
@@ -80,7 +81,7 @@ class GSCartGoodTabCell: UITableViewCell {
 		
 		goodprice = UILabel()
  		goodprice.textColor = Constant.blackColor
-		self.contentView.addSubview(goodprice)
+		contentView.addSubview(goodprice)
 		goodprice.snp.makeConstraints { (make) in
 			make.left.equalTo(goodname.snp.left)
 			make.top.equalTo(goodname.snp.bottom)
@@ -94,7 +95,7 @@ class GSCartGoodTabCell: UITableViewCell {
 		let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapAction))
 		del.addGestureRecognizer(tap)
 		del.contentMode = .scaleAspectFit
-		self.contentView.addSubview(del)
+		contentView.addSubview(del)
 		del.snp.makeConstraints { (make) in
 			make.bottom.equalTo(picture.snp.bottom)
 			make.right.equalTo(-15)
@@ -110,7 +111,7 @@ class GSCartGoodTabCell: UITableViewCell {
 			}
 			self.changeCount(self.num!)
   		}
-		self.contentView.addSubview(count)
+		contentView.addSubview(count)
 		count.snp.makeConstraints { (make) in
 			make.left.equalTo(goodname.snp.left)
  			make.width.equalTo(90)
@@ -127,19 +128,19 @@ class GSCartGoodTabCell: UITableViewCell {
 	}
 	
 	func setSenderIsSelectState(isSelected:Bool){
-		self.checkbtn.isSelected = isSelected
+		checkbtn.isSelected = isSelected
 		guard self.changeCount != nil else {
 			return
 		}
-		self.changeCount(isSelected ? num! : 0)
+		changeCount(isSelected ? num! : 0)
 	}
 	
 	@objc func checkaction(sender:UIButton){
 		sender.isSelected = !sender.isSelected
-		guard self.changeCount != nil else {
+		guard changeCount != nil else {
 			return
 		}
-		self.changeCount(sender.isSelected ? num! : 0)
+		changeCount(sender.isSelected ? num! : 0)
 		
 
 	}

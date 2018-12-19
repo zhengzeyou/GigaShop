@@ -28,13 +28,16 @@ class GSCartCountView: UIView {
  
 				self.layer.cornerRadius = 3
 				self.layer.masksToBounds = true
-				self.layer.borderColor = Constant.vcBgColor.cgColor
 				self.layer.borderWidth = 1
+ 				self.layer.borderColor = Constant.vcBgColor.cgColor
+				minus.setImage( gigaImg( "icon_plus"), for: .normal)
+				plus.setImage( gigaImg("icon_minus"), for: .normal)
+				
+
 				break
 			case .showGray:
 				self.heightValue = 40
-				minus.setImage( gigaImg(""), for: .normal)
-				plus.setImage( gigaImg(""), for: .normal)
+				
 				minus.setTitle("-", for: .normal)
 				plus.setTitle("+", for: .normal)
 				minus.setTitleColor(Constant.greyColor, for: .normal)
@@ -80,7 +83,6 @@ class GSCartCountView: UIView {
   		minus = UIButton()
 		minus.tag = 0
 		minus.addTarget(self, action: #selector(numberaction), for: .touchUpInside)
-		minus.setImage( gigaImg( "icon_plus"), for: .normal)
 		self.addSubview(minus)
 		minus.snp.makeConstraints { (make) in
 			make.left.top.equalToSuperview()
@@ -90,7 +92,6 @@ class GSCartCountView: UIView {
 		plus = UIButton()
 		plus.tag = 1
 		plus.addTarget(self, action: #selector(numberaction), for: .touchUpInside)
-		plus.setImage( gigaImg("icon_minus"), for: .normal)
 		self.addSubview(plus)
 		plus.snp.makeConstraints { (make) in
 			make.right.top.equalToSuperview()

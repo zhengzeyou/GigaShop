@@ -134,6 +134,7 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 		tableview.contentInsetAdjustmentBehavior = .never
 
 		showPircePanel = GSCartPricePanelView()
+		showPircePanel.scene = .cart
 		showPircePanel.changeSelectState = {(state:Bool) -> Void in
 			defaultSelect = state
 			tableview.reloadData()

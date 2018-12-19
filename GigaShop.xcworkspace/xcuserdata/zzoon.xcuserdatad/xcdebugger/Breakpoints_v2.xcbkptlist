@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GigaShop/Category/GSCategoryController.swift"
-            timestampString = "566733819.578806"
+            timestampString = "566899069.9889131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "GSCateIndexCollectViewDidSelectedItemAtIndex(_:)"
             landmarkType = "7">
          </BreakpointContent>

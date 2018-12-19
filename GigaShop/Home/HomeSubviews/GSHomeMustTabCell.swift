@@ -44,6 +44,7 @@ class GSHomeMustTabCell: UITableViewCell {
 		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")
 		collectView.dataSource = self
 		collectView.delegate = self
+		collectView.isScrollEnabled = false
 		collectView.showsHorizontalScrollIndicator = false
 		self.contentView.addSubview(collectView)
 		collectView.snp.makeConstraints({ (make) in

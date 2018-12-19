@@ -10,5 +10,6 @@
 #define GigaShop_Bridging_Header_h
 
 #import <PYSearch/PYSearchViewController.h>
-
+#import <QMUIKit/QMUIKit.h>
+#import <TYPagerController/TYPagerController.h>
 #endif /* GigaShop_Bridging_Header_h */
