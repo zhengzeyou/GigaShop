@@ -27,7 +27,7 @@ class  GSMineServeTabCell: UITableViewCell {
 	
 	private func addSubviews(){
 		
-		let	title:UILabel = gigaLabel("我的服务",20,nil,nil)
+		let	title:UILabel = gigaLabel("我的服务",17,nil,nil)
   		self.contentView.addSubview(title)
 		title.snp.makeConstraints { (make) in
 			make.left.equalToSuperview().offset(15)

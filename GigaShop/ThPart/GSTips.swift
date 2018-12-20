@@ -12,8 +12,10 @@ enum showMode:Int {
 	case loading
 	case loadend
 	case error
-	
-	static let count: Int = 3
+	case collect
+	case cancelcollect
+		
+	static let count: Int = 5
 
 	init(offset:Int){
 		self.init(rawValue:offset)!
@@ -27,6 +29,11 @@ enum showMode:Int {
 			return "加载完成"
  		case .error:
 			return "加载出错"
+		case .collect:
+			return "收藏成功"
+		case .cancelcollect:
+			return "取消收藏"
+
   		}
 	}
 
@@ -43,7 +50,9 @@ class GSTips: QMUITips {
 		case .loadend:
 			showSucceed(mode.text)
 		case .error:
-			showError(mode.text, hideAfterDelay: 2)
+			showError(mode.text, hideAfterDelay: 1.5)
+		case .collect ,.cancelcollect:
+			show(withText: mode.text, hideAfterDelay: 1.5)
  		}
 		view.addSubview(self)
 	}

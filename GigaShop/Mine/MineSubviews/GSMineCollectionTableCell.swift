@@ -17,24 +17,28 @@ class GSMineCollectionTableCell: UITableViewCell {
 	var changeCount:((Int) -> Void)!
 	var isEdited:Bool? {
 		didSet{
-			switch isEdited {
-			case true:
+			UIView.animate(withDuration: 1) {
 				
-				imageview.snp.updateConstraints {
-					$0.left.equalTo(50)
-				}
-				break
-			case false:
-				imageview.snp.updateConstraints {
-					$0.left.equalTo(20)
-				}
+				switch self.isEdited {
+ 				case true:
+					self.imageview.snp.updateConstraints {
+						$0.left.equalTo(50)
+					}
+ 					break
+ 				case false:
+ 					self.imageview.snp.updateConstraints {
+ 						$0.left.equalTo(20)
 				
-				break
-			case .none:
-				break
-			case .some(_):
-				break
+					}
+ 					break
+				case .none:
+					break
+				case .some(_):
+					break
+				}
+		
 			}
+
 		}
 	}
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

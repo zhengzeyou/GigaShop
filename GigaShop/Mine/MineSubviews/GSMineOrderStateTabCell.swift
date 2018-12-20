@@ -30,7 +30,7 @@ class  GSMineOrderStateTabCell: UITableViewCell {
 		
 		let title:UILabel = UILabel()
  		title.text = "我的订单"
-		title.font = .systemFont(ofSize: 18)
+		title.font = .systemFont(ofSize: 17)
 		self.contentView.addSubview(title)
 		title.snp.makeConstraints {
 			$0.left.equalToSuperview().offset(15)

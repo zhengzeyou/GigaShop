@@ -59,14 +59,16 @@ class GSGoodInfoTableCell: UITableViewCell {
 		
 		marketPrice = UILabel()
 		marketPrice.textColor = Constant.greyColor
-		marketPrice.text = "市场价：￥1899.00"
-		marketPrice.font = .systemFont(ofSize: 14)
+ 		marketPrice.font = .systemFont(ofSize: 14)
 		bgView.addSubview(marketPrice)
 		marketPrice.snp.makeConstraints { (make) in
 			make.left.equalTo(currentPrice.snp.right).offset(15)
 			make.bottom.equalTo(goodName.snp.top).offset(-6)
 
 		}
+		let markpriceS = NSMutableAttributedString.init(string: "市场价：￥1899.00")
+		markpriceS.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSNumber.init(value: 1), range: NSRange(location: 4, length: markpriceS.length-4))
+		marketPrice.attributedText = markpriceS
 		
 		expressFee = UILabel()
 		expressFee.textColor = Constant.greyColor

@@ -31,7 +31,7 @@ class GSCateIndexCollectView: UIView {
 	
 	func reloadWithManiLevelModel(items:[itemlevelModel]){
  
-		items.flatMap({(model) -> [itemlevelModel] in
+ 		let _ = items.flatMap({(model) -> [itemlevelModel] in
 			if model.level2 == "*" {
  				leftItemModels.append(model)
 			}
@@ -104,6 +104,7 @@ extension GSCateIndexCollectView:UICollectionViewDelegate,UICollectionViewDelega
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		collectionView.scrollToItem(at: indexPath, at: .centeredVertically, animated: true)
 		delegate?.GSCateIndexCollectViewDidSelectedItemAtIndex(indexPath.row)
 
 	}

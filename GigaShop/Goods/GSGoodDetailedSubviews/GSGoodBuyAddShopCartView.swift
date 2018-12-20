@@ -30,6 +30,8 @@ class GSGoodBuyAddShopCartView: UIView {
 		collection.addTarget(self, action: #selector(btnaction), for: .touchUpInside)
 		collection.tag = 101
  		collection.setImage( gigaImg( "icon_bottom_collection"), for: .normal)
+		collection.setImage( gigaImg( "icon_bottom_collection_fill"), for: .selected)
+
 		collection.setTitle("收藏", for: .normal)
 		collection.setTitleColor(Constant.blackColor, for: .normal)
 		collection.titleLabel?.font = .systemFont(ofSize: 13)
@@ -110,6 +112,20 @@ class GSGoodBuyAddShopCartView: UIView {
 	
 	@objc private func btnaction(sender:UIButton){
 		switch sender.tag {
+			
+		case 101:
+			sender.isSelected = !sender.isSelected
+			switch sender.isSelected {
+			
+			case true:
+				let _ = GSTips(view: viewForController(view: self)?.view ?? self, mode: .collect)
+  				break
+			case false:
+				let _ = GSTips(view: viewForController(view: self)?.view ?? self, mode: .cancelcollect)
+ 				break
+			}
+			break
+			
 		case 102:
 			self.goodCount.isHidden = true
 			
@@ -131,6 +147,7 @@ class GSGoodBuyAddShopCartView: UIView {
 
 			self.viewForController(view: self)?.navigationController?.navigationBar.alpha = 1
 
+			break
 		case 103:
 			
 			let imageview:UIImageView = UIImageView()
@@ -158,6 +175,8 @@ class GSGoodBuyAddShopCartView: UIView {
 					
 				}
  			}
+			break
+
   		default:
 			break
 		}

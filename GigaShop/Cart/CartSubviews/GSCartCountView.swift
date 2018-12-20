@@ -30,8 +30,8 @@ class GSCartCountView: UIView {
 				self.layer.masksToBounds = true
 				self.layer.borderWidth = 1
  				self.layer.borderColor = Constant.vcBgColor.cgColor
-				minus.setImage( gigaImg( "icon_plus"), for: .normal)
-				plus.setImage( gigaImg("icon_minus"), for: .normal)
+				minus.setImage( gigaImg( "icon_minus"), for: .normal)
+				plus.setImage( gigaImg("icon_plus"), for: .normal)
 				
 
 				break

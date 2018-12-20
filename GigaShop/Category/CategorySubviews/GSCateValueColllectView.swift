@@ -33,8 +33,7 @@ class GSCateValueColllectView: UIView {
  	}
 
 	private func addSubviews(){
-		
-		tableview = UITableView(frame: .zero, style: .plain)
+ 		tableview = UITableView(frame: .zero, style: .plain)
 		tableview.delegate = self
 		tableview.dataSource = self
 		tableview.estimatedRowHeight = 0

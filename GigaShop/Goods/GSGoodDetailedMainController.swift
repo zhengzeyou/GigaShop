@@ -23,7 +23,7 @@ class GSGoodDetailedMainController: UIViewController {
 	var selectSizeView:GSGoodSelectSizeView!
 	var coverView:UIImageView!
 	var buyAddShopCartView:GSGoodBuyAddShopCartView!
-	
+	var suspendback:UIButton!
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.view.layer.backgroundColor = Constant.vcBgColor.cgColor
@@ -44,7 +44,31 @@ class GSGoodDetailedMainController: UIViewController {
 		
 	}
 	
+	@objc private func suspendbackaction(sender:UIButton){
+		
+		navigationController?.navigationBar.alpha = 1
+		navigationController?.popViewController(animated: true)
+        sender.removeFromSuperview()
+ 	}
+	
 	private func loadSubViews(){
+		
+		suspendback = UIButton(type: .custom)
+		suspendback.setImage(gigaImg("icon_back"), for: .normal)
+		suspendback.layer.cornerRadius = 15
+		suspendback.layer.masksToBounds = true
+ 		suspendback.backgroundColor = .black
+		suspendback.alpha = 0
+		UIView.animate(withDuration: 1) {
+			self.suspendback.alpha = 0.3
+ 		}
+		suspendback.addTarget(self, action: #selector(suspendbackaction), for: .touchUpInside)
+		UIApplication.shared.delegate?.window??.addSubview(suspendback)
+		suspendback.snp.makeConstraints {
+			$0.left.equalTo(15)
+			$0.top.equalTo(30)
+			$0.width.height.equalTo(30)
+		}
 		
 		titleView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 160, height: 44))
 		
@@ -315,11 +339,13 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 		
 		if scrollView == tableView {
  			if scrollView.offsetY > 10{
- 				self.navigationController?.navigationBar.alpha = abs(scrollView.offsetY)/100
-				
+ 				navigationController?.navigationBar.alpha = abs(scrollView.offsetY)/100
+				suspendback.alpha = 0
+
+
 			}else {
-				
-				self.navigationController?.navigationBar.alpha = 0
+				suspendback.alpha = 0.3
+ 				navigationController?.navigationBar.alpha = 0
  			}
 			
 			if (tableView.contentOffset.y - tableView.contentSize.height + Constant.screenHeight > 100 && scrollView.isDragging == false) {
