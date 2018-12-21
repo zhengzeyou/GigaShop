@@ -8,12 +8,14 @@
 
 import UIKit
 import HandyJSON
+
 //--------------商品分类界面的数据实体-------------------
 struct LeftBottomCateModel:HandyJSON{
 	var level1:String?
 	var level2:String?
 	var level_name:String?
  }
+
 struct itemlevelModel:HandyJSON{
 	var level1:String?
 	var level2:String?
@@ -36,6 +38,7 @@ struct eventtypeModel:HandyJSON{
 	var market_p:String?
 	var item_img_url:String?
  }
+
 struct bannerlistModel:HandyJSON{
 	var ad_title:String?
 	var ad_image:String?

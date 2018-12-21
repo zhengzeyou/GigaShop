@@ -7,20 +7,40 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		let tabBar:GSTabBarController = GSTabBarController()
 		self.window?.rootViewController = tabBar
 		self.window?.backgroundColor = UIColor.white
 		self.window?.makeKeyAndVisible()
-		
+		AppDelegate.configRealm()
 		return true
+	}
+	
+	// 配置数据库
+	public class func configRealm() {
+ 		let dbVersion : UInt64 = 2
+		let docPath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as String
+		let dbPath = docPath.appending("/defaultDB.realm")
+		let config = Realm.Configuration(fileURL: URL.init(string: dbPath), inMemoryIdentifier: nil, syncConfiguration: nil, encryptionKey: nil, readOnly: false, schemaVersion: dbVersion, migrationBlock: { (migration, oldSchemaVersion) in
+			
+		}, deleteRealmIfMigrationNeeded: false, shouldCompactOnLaunch: nil, objectTypes: nil)
+		Realm.Configuration.defaultConfiguration = config
+		Realm.asyncOpen { (realm, error) in
+			if let _ = realm {
+				print("Realm 服务器配置成功!")
+			}else if let error = error {
+				print("Realm 数据库配置失败：\(error.localizedDescription)")
+			}
+		}
 	}
 
 	func applicationWillResignActive(_ application: UIApplication) {

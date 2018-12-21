@@ -15,6 +15,7 @@ class GSCateValueColllectView: UIView {
 	var rowHeight:CGFloat = 3*Constant.screenWidth/8 - 30.0
 	override init(frame: CGRect) {
 		super.init(frame: frame)
+		addSubviews()
 
  	}
 	
@@ -24,7 +25,6 @@ class GSCateValueColllectView: UIView {
 
 	override func layoutSubviews() {
 		super.layoutSubviews()
- 		addSubviews()
  	}
 	func reloadWithValueModel(item1:[[itemlevelModel]],item2:[itemlevelModel]){
 		valueItems = item1
@@ -43,7 +43,7 @@ class GSCateValueColllectView: UIView {
 		tableview.tableFooterView = UIView()
 		tableview.showsVerticalScrollIndicator = false
 		tableview.separatorColor =  Constant.vcBgColor
-		self.addSubview(tableview)
+		addSubview(tableview)
 		tableview.snp.makeConstraints { (make) in
 			make.edges.equalToSuperview()
 		}

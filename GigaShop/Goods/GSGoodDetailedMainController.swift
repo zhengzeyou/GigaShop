@@ -371,7 +371,7 @@ extension GSGoodDetailedMainController {
  	@objc fileprivate func selectSizeAction(sender:UIButton){
 		sender.isSelected = !sender.isSelected
  
-			UIView.animate(withDuration: 0.5, animations: {
+			UIView.animate(withDuration: 0.3, animations: {
 				self.bgView.layer.backgroundColor = Constant.blackColor.cgColor
 				self.tableView.layer.transform = self.firstTransform()
 				self.selectSizeView = GSGoodSelectSizeView(frame: CGRect(x: 0, y: Constant.screenHeight, width: Constant.screenHeight, height: Constant.screenWidth))
@@ -393,7 +393,7 @@ extension GSGoodDetailedMainController {
 				window.addSubview(self.selectSizeView)
 				
  				window.addSubview(self.coverView)
-				UIView.animate(withDuration: 0.5) {
+				UIView.animate(withDuration: 0.3) {
 					self.tableView.transform = CGAffineTransform.init(scaleX: 0.9, y: 0.95)
 					self.selectSizeView.frame = CGRect(x: 0, y: Constant.screenHeight - Constant.screenWidth, width: Constant.screenWidth, height: Constant.screenWidth)
  				}

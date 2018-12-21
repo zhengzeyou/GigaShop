@@ -24,7 +24,7 @@ class GSMineParentOrderController: TYTabPagerController {
 			case .all:
 				return "全部"
 			case .paywait:
-				return "带付款"
+				return "待付款"
 			case .sendwait:
 				return "待发货"
 			case .receivewait:
