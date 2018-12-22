@@ -47,10 +47,10 @@ class GSCartGoodTabCell: UITableViewCell {
 		checkbtn.setImage( gigaImg( "icon_cart_selected"), for: .selected)
 		checkbtn.addTarget(self, action: #selector(checkaction), for: .touchUpInside)
 		contentView.addSubview(checkbtn)
-		checkbtn.snp.makeConstraints { (make) in
-			make.centerY.equalToSuperview()
-			make.width.height.equalTo(20)
-			make.left.equalTo(15)
+		checkbtn.snp.makeConstraints { 
+			$0.centerY.equalToSuperview()
+			$0.width.height.equalTo(20)
+			$0.left.equalTo(15)
 
  		}
 		
@@ -61,10 +61,10 @@ class GSCartGoodTabCell: UITableViewCell {
 		picture.layer.borderColor = Constant.vcBgColor.cgColor
 		picture.layer.borderWidth = 1
 		contentView.addSubview(picture)
-		picture.snp.makeConstraints { (make) in
-			make.centerY.equalToSuperview()
-			make.left.equalTo(checkbtn.snp.right).offset(10)
-			make.width.height.equalTo(90)
+		picture.snp.makeConstraints { 
+			$0.centerY.equalToSuperview()
+			$0.left.equalTo(checkbtn.snp.right).offset(10)
+			$0.width.height.equalTo(90)
 		}
 		
 		
@@ -72,21 +72,22 @@ class GSCartGoodTabCell: UITableViewCell {
 		goodname.canPerformCopyAction = true
 		goodname.textColor = Constant.blackColor
 		contentView.addSubview(goodname)
-		goodname.snp.makeConstraints { (make) in
-			make.left.equalTo(picture.snp.right).offset(15)
-			make.top.equalTo(picture.snp.top)
-			make.height.equalTo(30)
-			make.right.equalTo(-20)
+		goodname.snp.makeConstraints { 
+			$0.left.equalTo(picture.snp.right).offset(15)
+			$0.top.equalTo(picture.snp.top)
+			$0.height.equalTo(30)
+			$0.right.equalTo(-20)
 		}
+		
 		
 		goodprice = UILabel()
  		goodprice.textColor = Constant.blackColor
 		contentView.addSubview(goodprice)
-		goodprice.snp.makeConstraints { (make) in
-			make.left.equalTo(goodname.snp.left)
-			make.top.equalTo(goodname.snp.bottom)
-			make.height.equalTo(30)
-			make.right.equalTo(-20)
+		goodprice.snp.makeConstraints { 
+			$0.left.equalTo(goodname.snp.left)
+			$0.top.equalTo(goodname.snp.bottom)
+			$0.height.equalTo(30)
+			$0.right.equalTo(-20)
 		}
 
 		
@@ -96,10 +97,10 @@ class GSCartGoodTabCell: UITableViewCell {
 		del.addGestureRecognizer(tap)
 		del.contentMode = .scaleAspectFit
 		contentView.addSubview(del)
-		del.snp.makeConstraints { (make) in
-			make.bottom.equalTo(picture.snp.bottom)
-			make.right.equalTo(-15)
-			make.width.height.equalTo(15)
+		del.snp.makeConstraints { 
+			$0.bottom.equalTo(picture.snp.bottom)
+			$0.right.equalTo(-15)
+			$0.width.height.equalTo(15)
 		}
 		
 		count.mode = .showGrid
@@ -112,18 +113,26 @@ class GSCartGoodTabCell: UITableViewCell {
 			self.changeCount(self.num!)
   		}
 		contentView.addSubview(count)
-		count.snp.makeConstraints { (make) in
-			make.left.equalTo(goodname.snp.left)
- 			make.width.equalTo(90)
-			make.height.equalTo(30)
-			make.bottom.equalTo(-10)
+		count.snp.makeConstraints { 
+			$0.left.equalTo(goodname.snp.left)
+ 			$0.width.equalTo(90)
+			$0.height.equalTo(30)
+			$0.bottom.equalTo(-10)
 		}
-		
 		
 		
 
 	}
+	
 	@objc func tapAction(gesture:UITapGestureRecognizer){
+		let alert = UIAlertController(title: "删除该商品？", message: nil, preferredStyle: .alert)
+		let sure = UIAlertAction(title: "是", style: .default) { (action) in
+ 		}
+  		let cancel = UIAlertAction(title: "否", style: .cancel, handler: nil)
+ 		alert.addAction(cancel)
+		alert.addAction(sure)
+		
+		viewForController(view: self)?.present(alert, animated: true, completion: nil)
 		
 	}
 	

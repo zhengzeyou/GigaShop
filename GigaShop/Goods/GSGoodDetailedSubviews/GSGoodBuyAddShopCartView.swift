@@ -36,9 +36,9 @@ class GSGoodBuyAddShopCartView: UIView {
 		collection.setTitleColor(Constant.blackColor, for: .normal)
 		collection.titleLabel?.font = .systemFont(ofSize: 13)
  		self.addSubview(collection)
-		collection.snp.makeConstraints { (make) in
-			make.left.top.bottom.equalToSuperview()
-			make.width.equalTo(Constant.screenWidth/6)
+		collection.snp.makeConstraints { 
+			$0.left.top.bottom.equalToSuperview()
+			$0.width.equalTo(Constant.screenWidth/6)
 			
 		}
 		collection.titleEdgeInsets = UIEdgeInsets(top: (collection.imageView?.frame.size.height)!+15, left: -((collection.imageView?.bounds.size.width)!), bottom: 0,right: 0);
@@ -54,10 +54,10 @@ class GSGoodBuyAddShopCartView: UIView {
 		goCart.setTitleColor(Constant.blackColor, for: .normal)
 		goCart.titleLabel?.font = .systemFont(ofSize: 13)
 		self.addSubview(goCart)
-		goCart.snp.makeConstraints { (make) in
-			make.top.bottom.equalToSuperview()
-			make.width.equalTo(Constant.screenWidth/6)
-			make.left.equalTo(collection.snp.right)
+		goCart.snp.makeConstraints { 
+			$0.top.bottom.equalToSuperview()
+			$0.width.equalTo(Constant.screenWidth/6)
+			$0.left.equalTo(collection.snp.right)
 
 		}
 		goCart.titleEdgeInsets = UIEdgeInsets(top: (goCart.imageView?.frame.size.height)!+15, left: -((goCart.imageView?.bounds.size.width)!), bottom: 0,right: 0);
@@ -72,10 +72,10 @@ class GSGoodBuyAddShopCartView: UIView {
 		goodCount.layer.masksToBounds = true
 		goodCount.font = UIFont.systemFont(ofSize: 10)
 		goCart.addSubview(goodCount)
-		goodCount.snp.makeConstraints { (make) in
-			make.top.equalToSuperview().offset(1)
-			make.centerX.equalTo(goCart.snp.centerX).offset(17)
-			make.width.height.equalTo(18)
+		goodCount.snp.makeConstraints { 
+			$0.top.equalToSuperview().offset(1)
+			$0.centerX.equalTo(goCart.snp.centerX).offset(17)
+			$0.width.height.equalTo(18)
 		}
 
 		
@@ -86,10 +86,10 @@ class GSGoodBuyAddShopCartView: UIView {
 		addShopCart.setTitle("加入购物车", for: .normal)
  		addShopCart.backgroundColor = UIColor.colorFromHex(hex: 0xFFD700)
 		self.addSubview(addShopCart)
-		addShopCart.snp.makeConstraints { (make) in
-			make.top.bottom.equalToSuperview()
-			make.left.equalTo(goCart.snp.right)
-			make.width.equalTo(Constant.screenWidth/3)
+		addShopCart.snp.makeConstraints { 
+			$0.top.bottom.equalToSuperview()
+			$0.left.equalTo(goCart.snp.right)
+			$0.width.equalTo(Constant.screenWidth/3)
 			
 		}
 		
@@ -100,10 +100,10 @@ class GSGoodBuyAddShopCartView: UIView {
 		rightBuy.setTitle("立即购买", for: .normal)
  		rightBuy.backgroundColor = Constant.redColor
 		self.addSubview(rightBuy)
-		rightBuy.snp.makeConstraints { (make) in
-			make.top.bottom.equalToSuperview()
-			make.left.equalTo(addShopCart.snp.right)
-			make.width.equalTo(Constant.screenWidth/3)
+		rightBuy.snp.makeConstraints { 
+			$0.top.bottom.equalToSuperview()
+			$0.left.equalTo(addShopCart.snp.right)
+			$0.width.equalTo(Constant.screenWidth/3)
 			
 		}
 

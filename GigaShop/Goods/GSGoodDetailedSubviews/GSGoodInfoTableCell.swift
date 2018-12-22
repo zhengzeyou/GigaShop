@@ -31,19 +31,19 @@ class GSGoodInfoTableCell: UITableViewCell {
 		let bgView:UIView = UIView()
 		bgView.backgroundColor = UIColor.white
  		self.contentView.addSubview(bgView)
-		bgView.snp.makeConstraints { (make) in
-			make.left.right.bottom.equalToSuperview()
-			make.top.equalTo(10)
+		bgView.snp.makeConstraints { 
+			$0.left.right.bottom.equalToSuperview()
+			$0.top.equalTo(10)
 		}
 		goodName = UILabel()
 		goodName.numberOfLines = 0
 		goodName.textColor = Constant.blackColor
 		goodName.text = "碧蒙萱 bioemsan非离子迷迭洁面乳150ml化妆水100ml保湿霜70ml套装"
 		bgView.addSubview(goodName)
-		goodName.snp.makeConstraints { (make) in
-			make.left.equalTo(15)
- 			make.centerY.equalToSuperview()
-			make.right.equalTo(-5)
+		goodName.snp.makeConstraints { 
+			$0.left.equalTo(15)
+ 			$0.centerY.equalToSuperview()
+			$0.right.equalTo(-5)
 		}
 
 		currentPrice = UILabel()
@@ -51,9 +51,9 @@ class GSGoodInfoTableCell: UITableViewCell {
 		currentPrice.text = "￥1254.00"
 		currentPrice.font = .systemFont(ofSize: 20)
 		bgView.addSubview(currentPrice)
-		currentPrice.snp.makeConstraints { (make) in
-			make.left.equalTo(15)
-			make.bottom.equalTo(goodName.snp.top).offset(-6)
+		currentPrice.snp.makeConstraints { 
+			$0.left.equalTo(15)
+			$0.bottom.equalTo(goodName.snp.top).offset(-6)
 
 		}
 		
@@ -61,9 +61,9 @@ class GSGoodInfoTableCell: UITableViewCell {
 		marketPrice.textColor = Constant.greyColor
  		marketPrice.font = .systemFont(ofSize: 14)
 		bgView.addSubview(marketPrice)
-		marketPrice.snp.makeConstraints { (make) in
-			make.left.equalTo(currentPrice.snp.right).offset(15)
-			make.bottom.equalTo(goodName.snp.top).offset(-6)
+		marketPrice.snp.makeConstraints { 
+			$0.left.equalTo(currentPrice.snp.right).offset(15)
+			$0.bottom.equalTo(goodName.snp.top).offset(-6)
 
 		}
 		let markpriceS = NSMutableAttributedString.init(string: "市场价：￥1899.00")
@@ -75,9 +75,9 @@ class GSGoodInfoTableCell: UITableViewCell {
 		expressFee.text = "快递：￥20.00"
 		expressFee.font = .systemFont(ofSize: 14)
 		bgView.addSubview(expressFee)
-		expressFee.snp.makeConstraints { (make) in
-			make.left.equalTo(goodName.snp.left)
- 			make.top.equalTo(goodName.snp.bottom).offset(10)
+		expressFee.snp.makeConstraints { 
+			$0.left.equalTo(goodName.snp.left)
+ 			$0.top.equalTo(goodName.snp.bottom).offset(10)
 		}
 
 		
@@ -86,9 +86,9 @@ class GSGoodInfoTableCell: UITableViewCell {
 		haveSaled.text = "已售：67"
 		haveSaled.font = .systemFont(ofSize: 14)
 		bgView.addSubview(haveSaled)
-		haveSaled.snp.makeConstraints { (make) in
-			make.centerX.equalToSuperview()
-			make.top.equalTo(goodName.snp.bottom).offset(10)
+		haveSaled.snp.makeConstraints { 
+			$0.centerX.equalToSuperview()
+			$0.top.equalTo(goodName.snp.bottom).offset(10)
 		}
 		
 		address = UILabel()
@@ -96,9 +96,9 @@ class GSGoodInfoTableCell: UITableViewCell {
 		address.text = "韩国首尔"
 		address.font = .systemFont(ofSize: 14)
 		bgView.addSubview(address)
-		address.snp.makeConstraints { (make) in
-			make.right.equalToSuperview().offset(-15)
-			make.top.equalTo(goodName.snp.bottom).offset(10)
+		address.snp.makeConstraints { 
+			$0.right.equalToSuperview().offset(-15)
+			$0.top.equalTo(goodName.snp.bottom).offset(10)
 		}
 
 		

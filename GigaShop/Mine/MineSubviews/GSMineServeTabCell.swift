@@ -29,9 +29,9 @@ class  GSMineServeTabCell: UITableViewCell {
 		
 		let	title:UILabel = gigaLabel("我的服务",17,nil,nil)
   		self.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.left.equalToSuperview().offset(15)
-			make.top.equalToSuperview().offset(10)
+		title.snp.makeConstraints { 
+			$0.left.equalToSuperview().offset(15)
+			$0.top.equalToSuperview().offset(10)
 		}
 		
 		
@@ -49,9 +49,9 @@ class  GSMineServeTabCell: UITableViewCell {
 		collectView.delegate = self
 		collectView.showsHorizontalScrollIndicator = false
 		self.contentView.addSubview(collectView)
-		collectView.snp.makeConstraints({ (make) in
- 			make.bottom.left.right.equalToSuperview()
-			make.top.equalTo(50)
+		collectView.snp.makeConstraints({ 
+ 			$0.bottom.left.right.equalToSuperview()
+			$0.top.equalTo(50)
 		})
 		
 		
@@ -73,19 +73,19 @@ extension  GSMineServeTabCell:UICollectionViewDelegate,UICollectionViewDelegateF
  
 		let icon:UIImageView = gigaImageView("icon_" + icons[indexPath.row],nil,nil,nil)
  		cell.contentView.addSubview(icon)
-		icon.snp.makeConstraints { (make) in
-			make.top.equalToSuperview().offset(15)
-			make.centerX.equalToSuperview()
-			make.height.equalTo(Constant.screenWidth / 10)
+		icon.snp.makeConstraints { 
+			$0.top.equalToSuperview().offset(15)
+			$0.centerX.equalToSuperview()
+			$0.height.equalTo(Constant.screenWidth / 10)
 		}
 		
  		let	title:UILabel = gigaLabel(titles[indexPath.row],15,nil,nil)
 		cell.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.left.equalTo(icon.snp.left)
-			make.top.equalTo(icon.snp.bottom)
-			make.right.equalTo(icon.snp.right)
-			make.height.equalTo(40)
+		title.snp.makeConstraints { 
+			$0.left.equalTo(icon.snp.left)
+			$0.top.equalTo(icon.snp.bottom)
+			$0.right.equalTo(icon.snp.right)
+			$0.height.equalTo(40)
 		}
 		
 		

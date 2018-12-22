@@ -60,8 +60,8 @@ class GSCateIndexCollectView: UIView {
 		let defaultSelectCell = IndexPath(row: 0, section: 0)
 		collectView.selectItem(at: defaultSelectCell, animated: true, scrollPosition: UICollectionView.ScrollPosition.top)
   		self.addSubview(collectView)
-		collectView.snp.makeConstraints({ (make) in
- 			make.edges.equalToSuperview()
+		collectView.snp.makeConstraints({ 
+ 			$0.edges.equalToSuperview()
 		})
 		
 		
@@ -84,9 +84,9 @@ extension GSCateIndexCollectView:UICollectionViewDelegate,UICollectionViewDelega
 		let redline:UIView = UIView()
 		redline.backgroundColor = Constant.redColor
 		selectview.addSubview(redline)
-		redline.snp.makeConstraints { (make) in
-			make.left.top.bottom.equalToSuperview()
-			make.width.equalTo(4)
+		redline.snp.makeConstraints { 
+			$0.left.top.bottom.equalToSuperview()
+			$0.width.equalTo(4)
 		}
 		
 		let model = leftItemModels[indexPath.row]
@@ -94,8 +94,8 @@ extension GSCateIndexCollectView:UICollectionViewDelegate,UICollectionViewDelega
  		title.textColor = Constant.blackColor
 		title.text = model.level_name
  		cell.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.center.equalToSuperview()
+		title.snp.makeConstraints { 
+			$0.center.equalToSuperview()
 		}
 		
 		

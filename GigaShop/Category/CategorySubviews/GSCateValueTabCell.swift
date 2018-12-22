@@ -41,15 +41,15 @@ class GSCateValueTabCell: UITableViewCell {
 		bg.layer.masksToBounds = true
 		bg.backgroundColor = UIColor.white
 		self.addSubview(bg)
-		bg.snp.makeConstraints { (make) in
-			make.left.top.right.equalToSuperview()
-			make.bottom.equalTo(-10)
+		bg.snp.makeConstraints { 
+			$0.left.top.right.equalToSuperview()
+			$0.bottom.equalTo(-10)
 		}
 		
 		title = UILabel()
 		bg.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.left.top.height.equalTo(15)
+		title.snp.makeConstraints { 
+			$0.left.top.height.equalTo(15)
 		}
 		
 		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -66,11 +66,11 @@ class GSCateValueTabCell: UITableViewCell {
 		collectView.delegate = self
 		collectView.isScrollEnabled = false
 		bg.addSubview(collectView)
-		collectView.snp.makeConstraints({ (make) in
- 			make.left.equalTo(10)
-			make.bottom.equalToSuperview()
-			make.right.equalTo(-10)
-			make.top.equalTo(title.snp.bottom).offset(15)
+		collectView.snp.makeConstraints({ 
+ 			$0.left.equalTo(10)
+			$0.bottom.equalToSuperview()
+			$0.right.equalTo(-10)
+			$0.top.equalTo(title.snp.bottom).offset(15)
 		})
   	}
  }
@@ -90,9 +90,9 @@ extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFl
 		let logo:UIImageView = UIImageView()
 		logo.contentMode = .scaleAspectFit
 		cell.contentView.addSubview(logo)
-		logo.snp.makeConstraints { (make) in
-			make.top.centerX.equalToSuperview()
- 			make.height.width.equalTo(Constant.screenWidth/4 - 30)
+		logo.snp.makeConstraints { 
+			$0.top.centerX.equalToSuperview()
+ 			$0.height.width.equalTo(Constant.screenWidth/4 - 30)
 		}
 		logo.kf.setImage(with: URL(string:itemmodel.image_url! ),placeholder: defaultImage)
 
@@ -103,9 +103,9 @@ extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFl
 		title.textAlignment = .center
 		title.numberOfLines = 2
 		cell.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.top.equalTo(logo.snp.bottom).offset(5)
-			make.centerX.equalToSuperview()
+		title.snp.makeConstraints { 
+			$0.top.equalTo(logo.snp.bottom).offset(5)
+			$0.centerX.equalToSuperview()
 		}
 
 		return cell

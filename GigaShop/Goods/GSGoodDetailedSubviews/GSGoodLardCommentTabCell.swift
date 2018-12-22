@@ -27,9 +27,9 @@ class GSGoodLardCommentTabCell: UITableViewCell {
 		bgView.layer.contents = 5
 		bgView.layer.masksToBounds = true
 		self.contentView.addSubview(bgView)
-		bgView.snp.makeConstraints { (make) in
- 			make.left.top.equalTo(15)
-			make.right.bottom.equalTo(-15)
+		bgView.snp.makeConstraints { 
+ 			$0.left.top.equalTo(15)
+			$0.right.bottom.equalTo(-15)
 		}
 		
 		let str:String = "商家回复: 你好，关于护肤品有裂痕的问题 。是因为在生产过程中造成的，真的很抱歉，护肤品建议不要放在阳关直射的d地方，常温是25摄氏度以下。对于你提出的问题我我们以后会督促生产。对你的影响深表抱歉"

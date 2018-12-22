@@ -105,8 +105,8 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 		maintableview.tableHeaderView = topView
 		view.addSubview(maintableview)
  		maintableview.contentInsetAdjustmentBehavior = .never
-  		maintableview.snp.makeConstraints { (make) in
-			make.edges.equalToSuperview()
+  		maintableview.snp.makeConstraints { 
+			$0.edges.equalToSuperview()
  		}
  
 	

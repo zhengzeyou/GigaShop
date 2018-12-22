@@ -42,8 +42,8 @@ class GSGoodPicBrowerView: UIView {
 			sections = sections! + 1
 		}
 		
-		picCollectView?.snp.makeConstraints({ (make) in
-			make.edges.equalToSuperview()
+		picCollectView?.snp.makeConstraints({ 
+			$0.edges.equalToSuperview()
 		})
 
 	}
@@ -68,15 +68,15 @@ extension GSGoodPicBrowerView:UICollectionViewDelegate,UICollectionViewDelegateF
 		
 		let bg:UIView = UIView()
  		cell.contentView.addSubview(bg)
-		bg.snp.makeConstraints { (make) in
-			make.left.top.equalToSuperview().offset(5)
-			make.right.bottom.equalToSuperview().offset(-5)
+		bg.snp.makeConstraints { 
+			$0.left.top.equalToSuperview().offset(5)
+			$0.right.bottom.equalToSuperview().offset(-5)
 			
 		}
 		let icon:UIImageView = UIImageView()
 		bg.addSubview(icon)
-		icon.snp.updateConstraints { (make) in
-			make.edges.equalToSuperview()
+		icon.snp.updateConstraints { 
+			$0.edges.equalToSuperview()
 		}
 		icon.kf.setImage(with:URL(string:self.dataArray[indexPath.row])!)
 		

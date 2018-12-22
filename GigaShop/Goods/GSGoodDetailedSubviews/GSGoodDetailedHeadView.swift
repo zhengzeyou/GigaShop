@@ -95,8 +95,8 @@ extension GSGoodDetailedHeadView:UICollectionViewDelegate,UICollectionViewDelega
 
 		}
  		cell.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.center.equalToSuperview()
+		title.snp.makeConstraints { 
+			$0.center.equalToSuperview()
 		}
 		return cell
 	}

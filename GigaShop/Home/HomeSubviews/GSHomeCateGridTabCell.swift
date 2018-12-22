@@ -44,9 +44,9 @@ class GSHomeCateGridTabCell: UITableViewCell {
 		collectView.delegate = self
 		collectView.showsHorizontalScrollIndicator = false
 		self.contentView.addSubview(collectView)
-		collectView.snp.makeConstraints { (make) in
-			make.left.bottom.right.equalToSuperview()
-			make.top.equalTo(30)
+		collectView.snp.makeConstraints { 
+			$0.left.bottom.right.equalToSuperview()
+			$0.top.equalTo(30)
 		}
 		
 	}

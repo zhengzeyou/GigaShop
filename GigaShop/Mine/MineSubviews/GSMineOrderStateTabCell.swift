@@ -133,6 +133,11 @@ extension  GSMineOrderStateTabCell:UICollectionViewDelegate,UICollectionViewDele
 		return cell
 	}
 	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let vc = GSMineAllOrderController()
+		vc.navigationItem.title = titles[indexPath.row]
+	    viewForController(view: self)?.navigationController?.pushViewController(vc, animated: true)
+	}
 	
 	
 }

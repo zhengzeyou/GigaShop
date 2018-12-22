@@ -49,9 +49,9 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		self.view.backgroundColor = Constant.vcBgColor
 		condition = GSCateListConditionView()
 		self.view.addSubview(condition)
-		condition.snp.makeConstraints { (make) in
-			make.left.top.right.equalToSuperview()
-			make.height.equalTo(60)
+		condition.snp.makeConstraints { 
+			$0.left.top.right.equalToSuperview()
+			$0.height.equalTo(60)
 		}
 		
 		listTableView = UITableView(frame: .zero, style: .plain)
@@ -66,9 +66,9 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		listTableView.layer.borderWidth = 1
 		listTableView.register(GSCategoryListTableCell.self, forCellReuseIdentifier: "infoCell")
 		self.view.addSubview(listTableView)
-		listTableView.snp.makeConstraints { (make) in
-			make.left.bottom.right.equalToSuperview()
-			make.top.equalTo(condition.snp.bottom)
+		listTableView.snp.makeConstraints { 
+			$0.left.bottom.right.equalToSuperview()
+			$0.top.equalTo(condition.snp.bottom)
 		}
 		listTableView.header = JRefreshStateHeader.headerWithRefreshingBlock({[weak self] in
 			guard self != nil else {return}
@@ -98,9 +98,9 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
  		listCollectView.showsHorizontalScrollIndicator = false
 		listCollectView.isHidden = true
 		self.view.addSubview(listCollectView)
-		listCollectView.snp.makeConstraints({ (make) in
-			make.left.bottom.right.equalToSuperview()
-			make.top.equalTo(condition.snp.bottom)
+		listCollectView.snp.makeConstraints({ 
+			$0.left.bottom.right.equalToSuperview()
+			$0.top.equalTo(condition.snp.bottom)
 		})
 		
  	}
@@ -127,10 +127,10 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
  
 		let searchIcon:UIImageView = UIImageView(image:  gigaImg( "icon_search_around"))
 		search.addSubview(searchIcon)
-		searchIcon.snp.makeConstraints { (make) in
-			make.left.equalTo(12)
-			make.centerY.equalToSuperview()
-			make.width.height.equalTo(18)
+		searchIcon.snp.makeConstraints { 
+			$0.left.equalTo(12)
+			$0.centerY.equalToSuperview()
+			$0.width.height.equalTo(18)
 		}
 		
 		let del:UIButton = UIButton()
@@ -138,10 +138,10 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		del.setImage( gigaImg( "icon_delete_search"), for: .normal)
 		del.addTarget(self, action: #selector(btnAcion), for: .touchUpInside)
 		search.addSubview(del)
-		del.snp.makeConstraints { (make) in
-			make.right.equalTo(-10)
-			make.centerY.equalToSuperview()
-			make.width.height.equalTo(24)
+		del.snp.makeConstraints { 
+			$0.right.equalTo(-10)
+			$0.centerY.equalToSuperview()
+			$0.width.height.equalTo(24)
 		}
 		
 		placher = UITextField()
@@ -149,10 +149,10 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		placher.placeholder = "输入关键字"
  		placher.textColor = Constant.blackColor
 		search.addSubview(placher)
-		placher.snp.makeConstraints { (make) in
-			make.left.equalTo(searchIcon.snp.right).offset(10)
-			make.right.equalTo(del.snp.left).offset(-10)
-			make.centerY.equalToSuperview()
+		placher.snp.makeConstraints { 
+			$0.left.equalTo(searchIcon.snp.right).offset(10)
+			$0.right.equalTo(del.snp.left).offset(-10)
+			$0.centerY.equalToSuperview()
 		}
 
 	}
@@ -253,10 +253,10 @@ extension GSCategoryListController:UICollectionViewDelegate,UICollectionViewDele
 		}
 		let logo:UIImageView = UIImageView()
 		cell.contentView.addSubview(logo)
-		logo.snp.makeConstraints { (make) in
-			make.top.left.equalToSuperview()
-			make.right.equalTo(-2)
-			make.height.equalTo(Constant.screenWidth / 2)
+		logo.snp.makeConstraints { 
+			$0.top.left.equalToSuperview()
+			$0.right.equalTo(-2)
+			$0.height.equalTo(Constant.screenWidth / 2)
 		}
 		logo.kf.setImage(with: URL(string: "https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBhTF7Fo4uif_!!4120736425.jpg"))
 		
@@ -266,11 +266,11 @@ extension GSCategoryListController:UICollectionViewDelegate,UICollectionViewDele
 		title.text = "碧蒙萱 bioemsan非离子迷迭洁面乳150ml化妆水100ml保湿霜70ml套装"
 		title.numberOfLines = 2
 		cell.contentView.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.left.equalTo(logo.snp.left)
-			make.top.equalTo(logo.snp.bottom).offset(5)
-			make.right.equalTo(logo.snp.right)
-			make.height.equalTo(40)
+		title.snp.makeConstraints { 
+			$0.left.equalTo(logo.snp.left)
+			$0.top.equalTo(logo.snp.bottom).offset(5)
+			$0.right.equalTo(logo.snp.right)
+			$0.height.equalTo(40)
 		}
 		
 		let price:UILabel = UILabel()
@@ -278,11 +278,11 @@ extension GSCategoryListController:UICollectionViewDelegate,UICollectionViewDele
 		price.text = "￥1800.00"
 		price.font = UIFont.systemFont(ofSize: 15)
 		cell.contentView.addSubview(price)
-		price.snp.makeConstraints { (make) in
-			make.left.equalTo(logo.snp.left)
-			make.top.equalTo(title.snp.bottom).offset(10)
-			make.right.equalTo(logo.snp.right)
-			make.height.equalTo(15)
+		price.snp.makeConstraints { 
+			$0.left.equalTo(logo.snp.left)
+			$0.top.equalTo(title.snp.bottom).offset(10)
+			$0.right.equalTo(logo.snp.right)
+			$0.height.equalTo(15)
 		}
 		
 		return cell

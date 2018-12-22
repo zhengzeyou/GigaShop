@@ -132,18 +132,18 @@ class GSCategoryController: BaseController {
 		indexView.delegate = self
 		indexView.isHidden = true
  		view.addSubview(indexView)
-		indexView.snp.makeConstraints { (make) in
-			make.bottom.left.top.equalToSuperview()
-  			make.width.equalTo(Constant.screenWidth/4)
+		indexView.snp.makeConstraints { 
+			$0.bottom.left.top.equalToSuperview()
+  			$0.width.equalTo(Constant.screenWidth/4)
 		}
 		
 		valueView = GSCateValueColllectView()
 		valueView.isHidden = true
 		view.addSubview(valueView)
-		valueView.snp.makeConstraints { (make) in
-			make.right.bottom.equalToSuperview().offset(-10)
-  			make.top.equalTo(10)
-			make.left.equalTo(indexView.snp.right).offset(10)
+		valueView.snp.makeConstraints { 
+			$0.right.bottom.equalToSuperview().offset(-10)
+  			$0.top.equalTo(10)
+			$0.left.equalTo(indexView.snp.right).offset(10)
  		}
 		
 	}

@@ -61,11 +61,11 @@ class GSGoodCommentTableView: UIView {
 		let defaultSelectCell = IndexPath(row: 0, section: 0)
 		headCollectView.selectItem(at: defaultSelectCell, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
 		headView.addSubview(headCollectView)
-		headCollectView.snp.makeConstraints { (make) in
-			make.left.equalTo(15)
-			make.center.equalToSuperview()
-			make.right.equalTo(-15)
-			make.height.equalTo(30)
+		headCollectView.snp.makeConstraints { 
+			$0.left.equalTo(15)
+			$0.center.equalToSuperview()
+			$0.right.equalTo(-15)
+			$0.height.equalTo(30)
 		}
 
 		
@@ -84,8 +84,8 @@ class GSGoodCommentTableView: UIView {
 
  		tableView.separatorColor = UIColor.white
  		self.addSubview(tableView)
-		tableView.snp.makeConstraints { (make) in
-			make.edges.equalToSuperview()
+		tableView.snp.makeConstraints { 
+			$0.edges.equalToSuperview()
  		}
 
 	}
@@ -164,8 +164,8 @@ extension GSGoodCommentTableView:UICollectionViewDelegate,UICollectionViewDelega
 		title.tag = indexPath.row + 1
 		title.font = .systemFont(ofSize: 14)
 		cell.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.edges.equalToSuperview()
+		title.snp.makeConstraints { 
+			$0.edges.equalToSuperview()
 		}
 		
 		if indexPath.row == 0 {

@@ -14,6 +14,13 @@ class GSMineAllOrderController: BaseController {
         super.viewDidLoad()
  		addTableView()
      }
+	override func loadView() {
+		super.loadView()
+		
+		navigationController?.navigationBar.tintColor = Constant.blackColor
+		navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+ 
+	}
 
 	private func addTableView(){
  		orderTableView = UITableView(frame: .zero, style: .plain)

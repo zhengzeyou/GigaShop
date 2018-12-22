@@ -47,8 +47,8 @@ class GSGoodSelectParamaSizeTabCell: UITableViewCell {
 		let param1title:UILabel = UILabel()
 		param1title.text = "参数一"
 		self.contentView.addSubview(param1title)
-		param1title.snp.makeConstraints { (make) in
-			make.top.left.height.equalTo(15)
+		param1title.snp.makeConstraints { 
+			$0.top.left.height.equalTo(15)
 		}
 		
 		param1CollectView = collectionView()
@@ -57,19 +57,19 @@ class GSGoodSelectParamaSizeTabCell: UITableViewCell {
 		let defaultSelectCell = IndexPath(row: 0, section: 0)
 		param1CollectView.selectItem(at: defaultSelectCell, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
 		self.contentView.addSubview(param1CollectView)
-		param1CollectView.snp.makeConstraints { (make) in
-			make.left.equalTo(param1title.snp.left)
-			make.top.equalTo(param1title.snp.bottom).offset(10)
-			make.right.equalTo(-15)
-			make.height.equalTo(68)
+		param1CollectView.snp.makeConstraints { 
+			$0.left.equalTo(param1title.snp.left)
+			$0.top.equalTo(param1title.snp.bottom).offset(10)
+			$0.right.equalTo(-15)
+			$0.height.equalTo(68)
 		}
 		
 		let param2title:UILabel = UILabel()
 		param2title.text = "参数二"
 		self.contentView.addSubview(param2title)
-		param2title.snp.makeConstraints { (make) in
-			make.left.height.equalTo(15)
-			make.top.equalTo(param1CollectView.snp.bottom).offset(15)
+		param2title.snp.makeConstraints { 
+			$0.left.height.equalTo(15)
+			$0.top.equalTo(param1CollectView.snp.bottom).offset(15)
 		}
 		
 		
@@ -78,11 +78,11 @@ class GSGoodSelectParamaSizeTabCell: UITableViewCell {
 		param2CollectView.dataSource = self
 		self.contentView.addSubview(param2CollectView)
 		param2CollectView.selectItem(at: defaultSelectCell, animated: true, scrollPosition: UICollectionView.ScrollPosition.centeredHorizontally)
-		param2CollectView.snp.makeConstraints { (make) in
-			make.left.equalTo(15)
-			make.top.equalTo(param2title.snp.bottom).offset(10)
-			make.right.equalTo(-15)
-			make.height.equalTo(68)
+		param2CollectView.snp.makeConstraints { 
+			$0.left.equalTo(15)
+			$0.top.equalTo(param2title.snp.bottom).offset(10)
+			$0.right.equalTo(-15)
+			$0.height.equalTo(68)
 		}
 
 	}
@@ -118,8 +118,8 @@ extension GSGoodSelectParamaSizeTabCell:UICollectionViewDelegate,UICollectionVie
   		title.tag = indexPath.row + 1
  		title.font = .systemFont(ofSize: 14)
  		cell.addSubview(title)
-		title.snp.makeConstraints { (make) in
-			make.edges.equalToSuperview()
+		title.snp.makeConstraints { 
+			$0.edges.equalToSuperview()
 		}
 		
 		if indexPath.row == 0 {

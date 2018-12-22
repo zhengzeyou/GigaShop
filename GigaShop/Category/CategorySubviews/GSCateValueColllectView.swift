@@ -44,8 +44,8 @@ class GSCateValueColllectView: UIView {
 		tableview.showsVerticalScrollIndicator = false
 		tableview.separatorColor =  Constant.vcBgColor
 		addSubview(tableview)
-		tableview.snp.makeConstraints { (make) in
-			make.edges.equalToSuperview()
+		tableview.snp.makeConstraints { 
+			$0.edges.equalToSuperview()
 		}
 	}
 

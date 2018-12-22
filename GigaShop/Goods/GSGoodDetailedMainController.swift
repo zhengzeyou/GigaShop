@@ -106,10 +106,10 @@ class GSGoodDetailedMainController: UIViewController {
 		collectView.dataSource = self
 		collectView.delegate = self
    		view.addSubview(collectView)
-		collectView.snp.makeConstraints { (make) in
-			make.left.top.equalToSuperview()
-			make.height.equalTo(Constant.screenHeight)
-			make.width.equalTo(Constant.screenWidth)
+		collectView.snp.makeConstraints { 
+			$0.left.top.equalToSuperview()
+			$0.height.equalTo(Constant.screenHeight)
+			$0.width.equalTo(Constant.screenWidth)
 		}
 
 	}
@@ -120,9 +120,9 @@ class GSGoodDetailedMainController: UIViewController {
 		bgView = UIView()
 		bgView.backgroundColor = Constant.vcBgColor
 		cell.contentView.addSubview(bgView)
-		bgView.snp.makeConstraints { (make) in
-			make.left.top.right.top.equalToSuperview()
-			make.height.equalTo(2 * Constant.screenHeight + (self.navigationController?.navigationBar.height)!+UIApplication.shared.statusBarFrame.height)
+		bgView.snp.makeConstraints { 
+			$0.left.top.right.top.equalToSuperview()
+			$0.height.equalTo(2 * Constant.screenHeight + (self.navigationController?.navigationBar.height)!+UIApplication.shared.statusBarFrame.height)
 		}
 		
 		
@@ -137,17 +137,17 @@ class GSGoodDetailedMainController: UIViewController {
 		tableView.separatorColor = Constant.vcBgColor
 		tableView.register(GSGoodInfoTableCell.self, forCellReuseIdentifier: "infoCell")
 		bgView.addSubview(tableView)
-		tableView.snp.makeConstraints { (make) in
-			make.left.top.right.equalToSuperview()
-			make.height.equalTo(Constant.screenHeight)
+		tableView.snp.makeConstraints { 
+			$0.left.top.right.equalToSuperview()
+			$0.height.equalTo(Constant.screenHeight)
 		}
 		
 		
 		buyAddShopCartView = GSGoodBuyAddShopCartView()
 		self.view.addSubview(buyAddShopCartView)
-		buyAddShopCartView.snp.makeConstraints { (make) in
-			make.height.equalTo(60)
-			make.left.bottom.right.equalToSuperview()
+		buyAddShopCartView.snp.makeConstraints { 
+			$0.height.equalTo(60)
+			$0.left.bottom.right.equalToSuperview()
 		}
 		
 		//轮播图加载
@@ -169,9 +169,9 @@ class GSGoodDetailedMainController: UIViewController {
 		webView = WKWebView()
 		webView.backgroundColor = UIColor.brown
 		bgView.addSubview(webView)
-		webView.snp.makeConstraints { (make) in
-			make.top.equalTo(tableView.snp.bottom).offset((self.navigationController?.navigationBar.height)!+UIApplication.shared.statusBarFrame.height)
-			make.left.bottom.right.equalToSuperview()
+		webView.snp.makeConstraints { 
+			$0.top.equalTo(tableView.snp.bottom).offset((self.navigationController?.navigationBar.height)!+UIApplication.shared.statusBarFrame.height)
+			$0.left.bottom.right.equalToSuperview()
  		}
 		let headers:JRefreshNormalHeader = JRefreshNormalHeader.headerWithRefreshingBlock {
 			self.webView.scrollView.header?.endRefreshing()
@@ -213,8 +213,8 @@ extension GSGoodDetailedMainController:UICollectionViewDelegate,UICollectionView
 			let comment:GSGoodCommentTableView = GSGoodCommentTableView()
 			cell.addSubview(comment)
 			comment.mode = .tableheadviewmode
-			comment.snp.makeConstraints { (make) in
-				make.edges.equalToSuperview()
+			comment.snp.makeConstraints { 
+				$0.edges.equalToSuperview()
  			}
 
 		default:
@@ -260,11 +260,11 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 			selectSize.backgroundColor = Constant.redColor
 			selectSize.addTarget(self, action: #selector(selectSizeAction), for: .touchUpInside)
 			cell.contentView.addSubview(selectSize)
-			selectSize.snp.makeConstraints { (make) in
-				make.centerY.equalToSuperview()
-				make.right.equalToSuperview().offset(-15)
-				make.width.equalTo(80)
-				make.height.equalTo(30)
+			selectSize.snp.makeConstraints { 
+				$0.centerY.equalToSuperview()
+				$0.right.equalToSuperview().offset(-15)
+				$0.width.equalTo(80)
+				$0.height.equalTo(30)
 			}
 			return cell
  
@@ -275,8 +275,8 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 			lab.text = "商品评价"
 			lab.textColor = Constant.blackColor
 			cell.contentView.addSubview(lab)
-			lab.snp.makeConstraints { (make) in
-				make.top.left.equalToSuperview().offset(15)
+			lab.snp.makeConstraints { 
+				$0.top.left.equalToSuperview().offset(15)
 			}
 			
 			let all:UIButton = UIButton()
@@ -286,19 +286,19 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 			all.setTitleColor(Constant.greyColor, for: .normal)
 			all.tag = 1
   			cell.contentView.addSubview(all)
-			all.snp.makeConstraints { (make) in
- 				make.right.equalTo(-15)
-				make.centerY.equalTo(lab.snp.centerY)
-				make.width.equalTo(70)
-				make.height.equalTo(20)
+			all.snp.makeConstraints { 
+ 				$0.right.equalTo(-15)
+				$0.centerY.equalTo(lab.snp.centerY)
+				$0.width.equalTo(70)
+				$0.height.equalTo(20)
 				
 			}
 
 			let comment:GSGoodCommentTableView = GSGoodCommentTableView()
 			cell.addSubview(comment)
-			comment.snp.makeConstraints { (make) in
-				make.top.equalTo(lab.snp.bottom)
-				make.left.bottom.right.equalToSuperview()
+			comment.snp.makeConstraints { 
+				$0.top.equalTo(lab.snp.bottom)
+				$0.left.bottom.right.equalToSuperview()
 			}
 			
 			return cell

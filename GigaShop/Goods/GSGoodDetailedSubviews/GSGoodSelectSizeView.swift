@@ -36,9 +36,9 @@ class GSGoodSelectSizeView: UIView {
 		logo.layer.borderColor = Constant.vcBgColor.cgColor
 		logo.layer.borderWidth = 1
 		self.addSubview(logo)
-		logo.snp.makeConstraints { (make) in
-			make.left.top.equalTo(20)
-			make.width.height.equalTo(Constant.screenWidth/4)
+		logo.snp.makeConstraints { 
+			$0.left.top.equalTo(20)
+			$0.width.height.equalTo(Constant.screenWidth/4)
 		}
 		
 		storeCount = UILabel()
@@ -46,9 +46,9 @@ class GSGoodSelectSizeView: UIView {
 		storeCount.textColor = Constant.greyColor
 		storeCount.font = .systemFont(ofSize: 15)
 		self.addSubview(storeCount)
-		storeCount.snp.makeConstraints { (make) in
-			make.left.equalTo(logo.snp.right).offset(10)
-			make.bottom.equalTo(logo.snp.bottom)
+		storeCount.snp.makeConstraints { 
+			$0.left.equalTo(logo.snp.right).offset(10)
+			$0.bottom.equalTo(logo.snp.bottom)
 			
 		}
 		
@@ -57,9 +57,9 @@ class GSGoodSelectSizeView: UIView {
 		price.textColor = Constant.redColor
 		price.font = .systemFont(ofSize: 20)
 		self.addSubview(price)
-		price.snp.makeConstraints { (make) in
-			make.left.equalTo(logo.snp.right).offset(10)
-			make.bottom.equalTo(storeCount.snp.top).offset(-5)
+		price.snp.makeConstraints { 
+			$0.left.equalTo(logo.snp.right).offset(10)
+			$0.bottom.equalTo(storeCount.snp.top).offset(-5)
 			
 		}
 		
@@ -67,10 +67,10 @@ class GSGoodSelectSizeView: UIView {
 		del.setImage( gigaImg( "icon_close_00"), for: .normal)
 		del.addTarget(self, action: #selector(delAction), for: .touchUpInside)
 		self.addSubview(del)
-		del.snp.makeConstraints { (make) in
-			make.top.equalTo(10)
-			make.right.equalTo(-10)
-			make.width.height.equalTo(40)
+		del.snp.makeConstraints { 
+			$0.top.equalTo(10)
+			$0.right.equalTo(-10)
+			$0.width.height.equalTo(40)
 		}
 		
 		
@@ -82,11 +82,11 @@ class GSGoodSelectSizeView: UIView {
 		self.sumbit.addTarget(self, action: #selector(delAction), for: .touchUpInside)
 		self.sumbit.setTitleColor(UIColor.white	, for: .normal)
 		self.addSubview(self.sumbit)
-		self.sumbit.snp.makeConstraints { (make) in
-			make.height.equalTo(50)
-			make.left.equalTo(30)
-			make.right.equalTo(-30)
-			make.bottom.equalTo(-20)
+		self.sumbit.snp.makeConstraints { 
+			$0.height.equalTo(50)
+			$0.left.equalTo(30)
+			$0.right.equalTo(-30)
+			$0.bottom.equalTo(-20)
 		}
 		
 	}
@@ -114,10 +114,10 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 		sizeTableView.register(GSGoodSelectParamaSizeTabCell.self, forCellReuseIdentifier: "paramID")
 		sizeTableView.separatorStyle = .none
 		self.addSubview(sizeTableView)
-		sizeTableView.snp.makeConstraints { (make) in
-			make.left.right.equalToSuperview()
-			make.top.equalTo(logo.snp.bottom).offset(5)
-			make.bottom.equalTo(sumbit.snp.top).offset(-5)
+		sizeTableView.snp.makeConstraints { 
+			$0.left.right.equalToSuperview()
+			$0.top.equalTo(logo.snp.bottom).offset(5)
+			$0.bottom.equalTo(sumbit.snp.top).offset(-5)
 
 		}
 	}
@@ -147,11 +147,11 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 			let line:UILabel = UILabel()
 			line.backgroundColor = Constant.vcBgColor
 			cell.contentView.addSubview(line)
-			line.snp.makeConstraints { (make) in
-				make.bottom.equalToSuperview()
-				make.height.equalTo(1)
-				make.left.equalTo(10)
-				make.right.equalTo(-10)
+			line.snp.makeConstraints { 
+				$0.bottom.equalToSuperview()
+				$0.height.equalTo(1)
+				$0.left.equalTo(10)
+				$0.right.equalTo(-10)
 			}
 			
 			return cell
@@ -166,11 +166,11 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 			
 			}
 			cell.contentView.addSubview(count)
-			count.snp.makeConstraints { (make) in
-				make.right.equalTo(-15)
-				make.width.equalTo(150)
-				make.height.equalTo(40)
-				make.top.equalTo(15)
+			count.snp.makeConstraints { 
+				$0.right.equalTo(-15)
+				$0.width.equalTo(150)
+				$0.height.equalTo(40)
+				$0.top.equalTo(15)
 			}
 
 		

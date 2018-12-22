@@ -127,9 +127,9 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 		tableview.tableFooterView = UIView()
 		tableview.register(GSCartGoodTabCell.self, forCellReuseIdentifier: "reused")
   		view.addSubview(tableview)
-		tableview.snp.makeConstraints { (make) in
-			make.left.right.top.equalToSuperview()
-			make.bottom.equalTo(-50)
+		tableview.snp.makeConstraints { 
+			$0.left.right.top.equalToSuperview()
+			$0.bottom.equalTo(-50)
 		}
 		tableview.contentInsetAdjustmentBehavior = .never
 
@@ -140,10 +140,10 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 			tableview.reloadData()
 		}
 		view.addSubview(showPircePanel)
-		showPircePanel.snp.makeConstraints { (make) in
-			make.left.right.equalToSuperview()
-			make.top.equalTo(tableview.snp.bottom)
-			make.height.equalTo(50)
+		showPircePanel.snp.makeConstraints { 
+			$0.left.right.equalToSuperview()
+			$0.top.equalTo(tableview.snp.bottom)
+			$0.height.equalTo(50)
 		}
 	}
 	
@@ -155,16 +155,16 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 		emptytitle.text = "购物车什么都没有~"
 		emptytitle.textColor = Constant.greyColor
 		view.addSubview(emptytitle)
-		emptytitle.snp.makeConstraints { (make) in
-			make.center.equalToSuperview()
+		emptytitle.snp.makeConstraints { 
+			$0.center.equalToSuperview()
 		}
 		
 		let emptyIcon:UIImageView = UIImageView(image:  gigaImg( "img_empty_cart"))
 		view.addSubview(emptyIcon)
-		emptyIcon.snp.makeConstraints { (make) in
-			make.bottom.equalTo(emptytitle.snp.top).offset(-10)
-			make.width.height.equalTo(emptytitle.snp.width)
-			make.centerX.equalToSuperview()
+		emptyIcon.snp.makeConstraints { 
+			$0.bottom.equalTo(emptytitle.snp.top).offset(-10)
+			$0.width.height.equalTo(emptytitle.snp.width)
+			$0.centerX.equalToSuperview()
 		}
 		
 		let emptybtn:UIButton = UIButton()
@@ -175,11 +175,11 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 		emptybtn.backgroundColor = Constant.redColor
 		emptybtn.addTarget(self, action: #selector(goShop), for: .touchUpInside)
 		view.addSubview(emptybtn)
-		emptybtn.snp.makeConstraints { (make) in
-			make.top.equalTo(emptytitle.snp.bottom).offset(20)
-			make.left.equalTo(emptytitle.snp.left).offset(10)
-			make.right.equalTo(emptytitle.snp.right).offset(-10)
-			make.height.equalTo(40)
+		emptybtn.snp.makeConstraints { 
+			$0.top.equalTo(emptytitle.snp.bottom).offset(20)
+			$0.left.equalTo(emptytitle.snp.left).offset(10)
+			$0.right.equalTo(emptytitle.snp.right).offset(-10)
+			$0.height.equalTo(40)
 			
 		}
 	}

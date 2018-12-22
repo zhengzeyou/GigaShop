@@ -66,11 +66,11 @@ class GSCartPricePanelView: UIView {
  		checkbtn.setTitleColor(UIColor.black, for: .normal)
 		checkbtn.titleLabel?.font = .systemFont(ofSize: 15)
 		addSubview(checkbtn)
-		checkbtn.snp.makeConstraints { (make) in
-			make.centerY.equalToSuperview()
-			make.height.equalTo(20)
-			make.width.equalTo(70)
- 			make.left.equalTo(25)
+		checkbtn.snp.makeConstraints { 
+			$0.centerY.equalToSuperview()
+			$0.height.equalTo(20)
+			$0.width.equalTo(70)
+ 			$0.left.equalTo(25)
 			
 		}
 		
