@@ -20,6 +20,7 @@ class GSStarView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	
 	@objc public func setStarValue(value:CGFloat,h:CGFloat){
 		starValue = value
 		createSuv(h:h)
