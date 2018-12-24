@@ -15,6 +15,7 @@ class GSCategoryController: BaseController {
 	var levelCounts:[itemlevelModel]?
 	var defaultRealmData:[itemlevelModel] = [itemlevelModel]()
 	lazy var sectionTitles:[[itemlevelModel]] = [[itemlevelModel]]()
+	typealias returnVoid = (([itemlevelModel]) -> Void)
  	override func loadView()
 	{
 		super.loadView()
@@ -31,16 +32,23 @@ class GSCategoryController: BaseController {
     }
 	
 	private func loadCategoryData(){
+		let manipulationDataClosure:returnVoid = { (data:[itemlevelModel]) -> Void in
+			
+			self.indexView.isHidden = false
+			self.valueView.isHidden = false
+			self.maniItemModels = self.manipulationData(manData: data,flag: 0) as? [[[itemlevelModel]]]
+			self.indexView.reloadWithManiLevelModel(items: data)
+			self.valueView.reloadWithValueModel(item1: (self.maniItemModels?.first)!,item2:self.sectionTitles.first!)
+
+			
+		}
 		
 		defaultRealmData = cateRealmModelRealmTool.getItemlevelModel()
 		if defaultRealmData.count != 0 {
-			self.indexView.isHidden = false
-			self.valueView.isHidden = false
-			self.maniItemModels = self.manipulationData(manData: defaultRealmData,flag: 0) as? [[[itemlevelModel]]]
-  			self.indexView.reloadWithManiLevelModel(items: defaultRealmData)
-			self.valueView.reloadWithValueModel(item1: (self.maniItemModels?.first)!,item2:self.sectionTitles.first!)
-		}
-		else {
+			
+			manipulationDataClosure(defaultRealmData)
+		
+		}else {
 			
 			let show = GSTips(view: view, mode: .loading)
 			let provider = MoyaTargetType(paramter:["lang_type":"kor","div_code":"2","user_id":"","token":"","cateevent1":"","cateEvent2":""], method: .post, base: .categoryUri, path: .categoryUri)
@@ -50,15 +58,12 @@ class GSCategoryController: BaseController {
 			}) { (categorymodel:CategorgyModel) in
 				
 				show.hide(animated: true)
-				self.indexView.isHidden = false
-				self.valueView.isHidden = false
 				let itemLevelModels:[itemlevelModel] = categorymodel.itemlevel ?? [itemlevelModel]()
 				if self.defaultRealmData.count < itemLevelModels.count {
 					self.saveRealmItemLevelModel(itemmodels: itemLevelModels)
 				}
-				self.maniItemModels = self.manipulationData(manData: itemLevelModels,flag: 0) as? [[[itemlevelModel]]]
-				self.indexView.reloadWithManiLevelModel(items: itemLevelModels)
-				self.valueView.reloadWithValueModel(item1: (self.maniItemModels?.first)!,item2:self.sectionTitles.first!)
+				manipulationDataClosure(itemLevelModels)
+
 				
 			}
 
@@ -106,8 +111,7 @@ class GSCategoryController: BaseController {
 					
 					itemlevel2Array.append(model2)
  				}
-//				(flag == 0 ? nil : self.saveRealmItemLevelModel(items: itemlevel2Array) )
- 			})
+  			})
 			
 			if flag == 0 {
 				let itemSecArray = manipulationData(manData: itemlevel2Array,flag:1)

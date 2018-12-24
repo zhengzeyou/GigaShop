@@ -51,10 +51,10 @@ class GSCateIndexCollectView: UIView {
 		
 		
 		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
-		collectView.backgroundColor =  UIColor.white
  		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")
 		collectView.showsVerticalScrollIndicator = false
-		collectView.dataSource = self
+		collectView.backgroundColor =  .white
+ 		collectView.dataSource = self
 		collectView.delegate = self
 		
 		let defaultSelectCell = IndexPath(row: 0, section: 0)

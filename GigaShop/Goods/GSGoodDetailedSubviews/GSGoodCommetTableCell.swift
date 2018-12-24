@@ -14,7 +14,8 @@ class GSGoodCommetTableCell: UITableViewCell {
 	var content:UILabel!
 	var time:UILabel!
 	var commentPic:GSGoodPicBrowerView!
-	var starView:UIImageView!
+ 	var starView:GSStarView!
+	
  	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		self.selectionStyle = .none
@@ -40,25 +41,25 @@ class GSGoodCommetTableCell: UITableViewCell {
 		avator.kf.setImage(with: URL(string: "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2902141346,3120927423&fm=27&gp=0.jpg"))
 	
 		name = UILabel()
-		name.text = "玛利亚"
+		name.text = "蒂玛西亚"
  		self.contentView.addSubview(name)
 		name.snp.makeConstraints { 
 			$0.centerY.equalTo(avator.snp.centerY)
 			$0.left.equalTo(avator.snp.right).offset(10)
 		}
 		
-		starView = UIImageView()
-		starView.contentMode = .scaleAspectFit
- 		starView.image =  gigaImg( "img_fourstars")
-		self.contentView.addSubview(starView)
-		starView.snp.makeConstraints { 
-			$0.right.equalTo(-15)
+		
+		starView = GSStarView()
+		starView.setStarValue(value: 3.3, h: 15)
+  		contentView.addSubview(starView)
+		starView.snp.makeConstraints {
+ 			$0.right.equalTo(-15)
 			$0.top.equalTo(avator.snp.centerY)
-			$0.width.equalTo(100)
-			$0.height.equalTo(20)
+			$0.width.equalTo(75)
+			$0.height.equalTo(15)
 		}
 		
-		let str:String = "今天是双十一,很高心来到了东京最出名的地标建筑,拍了一场有生以来最劲爆刺激的二人动作片,期待它和观众朋友们见面。💗"
+		let str:String = "今天是双十一,很高心来到了东京最出名的地标建筑,拍了一场有生以来最劲爆刺激的动作片,期待它和观众朋友们见面。💗"
 		let h:CGFloat = UILabel.getTextHeigh(content: str, font: 15, width: Constant.screenWidth - 30)
 
 		content = UILabel(frame: CGRect(x: 15, y: 60, width: Constant.screenWidth - 30, height: h))

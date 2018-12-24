@@ -54,6 +54,7 @@
 		D5F02BE72196BDDC000C9E38 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F02BE92196BDDC000C9E38 /* Localizable.strings */; };
 		D5F02BEE2196C18B000C9E38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F02BF02196C18B000C9E38 /* InfoPlist.strings */; };
 		D5F02BF52196C813000C9E38 /* GSHomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BF42196C813000C9E38 /* GSHomeTopView.swift */; };
+		D5F1769A21D082720047CF0C /* GSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1769921D082720047CF0C /* GSStarView.swift */; };
 		D5FC57A42199170400AB19CF /* CellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A12199170400AB19CF /* CellFlowLayout.swift */; };
 		D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A22199170400AB19CF /* CycleCell.swift */; };
 		D5FC57A62199170400AB19CF /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A32199170400AB19CF /* CycleView.swift */; };
@@ -178,6 +179,7 @@
 		D5F02BF12196C18C000C9E38 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D5F02BF22196C18E000C9E38 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D5F02BF42196C813000C9E38 /* GSHomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeTopView.swift; sourceTree = "<group>"; };
+		D5F1769921D082720047CF0C /* GSStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSStarView.swift; sourceTree = "<group>"; };
 		D5FC57A12199170400AB19CF /* CellFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellFlowLayout.swift; sourceTree = "<group>"; };
 		D5FC57A22199170400AB19CF /* CycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleCell.swift; sourceTree = "<group>"; };
 		D5FC57A32199170400AB19CF /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				D5FC57A02199170400AB19CF /* CycleView */,
+				D5F1769921D082720047CF0C /* GSStarView.swift */,
 				D52BD60F21C883F600435F7E /* GSTips.swift */,
 			);
 			path = ThPart;
@@ -882,6 +885,7 @@
 				D52BD61021C883F600435F7E /* GSTips.swift in Sources */,
 				D5F02BCB2196785B000C9E38 /* Constant.swift in Sources */,
 				D59B161F21CB8AAD00F9CDA5 /* GSRealmObject.swift in Sources */,
+				D5F1769A21D082720047CF0C /* GSStarView.swift in Sources */,
 				D5FC57AA219955A700AB19CF /* GSHomeMonoTabCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

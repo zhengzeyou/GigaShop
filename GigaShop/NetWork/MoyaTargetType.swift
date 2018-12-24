@@ -11,8 +11,7 @@ import Moya
 import RxSwift
 import HandyJSON
 
-
-//实现moya的TargetType协议
+ //实现moya的TargetType协议
 struct MoyaTargetType:TargetType{
 	
 	var baseURL: URL

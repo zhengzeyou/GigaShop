@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher.Swift
 
 class GSCateValueTabCell: UITableViewCell {
 	var title:UILabel!
@@ -60,7 +61,7 @@ class GSCateValueTabCell: UITableViewCell {
 		
 		
 		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
-		collectView.backgroundColor =  UIColor.white
+		collectView.backgroundColor =  .white
 		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")
 		collectView.dataSource = self
 		collectView.delegate = self
@@ -87,17 +88,18 @@ extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFl
 			view.removeFromSuperview()
 		}
 		let itemmodel = cateValueItems[indexPath.row]
-		let logo:UIImageView = UIImageView()
+		let logo:AnimatedImageView = AnimatedImageView()
 		logo.contentMode = .scaleAspectFit
 		cell.contentView.addSubview(logo)
 		logo.snp.makeConstraints { 
 			$0.top.centerX.equalToSuperview()
  			$0.height.width.equalTo(Constant.screenWidth/4 - 30)
 		}
+		
 		logo.kf.setImage(with: URL(string:itemmodel.image_url! ),placeholder: defaultImage)
 
 		let title:UILabel = UILabel()
-		title.font = UIFont.systemFont(ofSize: 12)
+		title.font = .systemFont(ofSize: 12)
 		title.textColor = Constant.blackColor
 		title.text = itemmodel.level_name
 		title.textAlignment = .center
@@ -114,7 +116,7 @@ extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFl
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let cateList:GSCategoryListController = GSCategoryListController()
 		cateList.hidesBottomBarWhenPushed = true
-		self.viewForController(view: self)?.navigationController?.pushViewController(cateList, animated: true)
+		viewForController(view: self)?.navigationController?.pushViewController(cateList, animated: true)
 
 	}
 	

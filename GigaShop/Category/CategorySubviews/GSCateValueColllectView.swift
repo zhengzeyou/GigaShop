@@ -30,6 +30,8 @@ class GSCateValueColllectView: UIView {
 		valueItems = item1
 		titlesItems = item2
 		tableview.reloadData()
+		tableview.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+
  	}
 
 	private func addSubviews(){
