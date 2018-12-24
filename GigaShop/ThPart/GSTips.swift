@@ -22,9 +22,10 @@ enum showMode:Int {
  	}
 	
 	var text:String?{
+		
 		switch self {
-		case .loading:
-			return "加载中..."
+ 		case .loading:
+			return "加载中"
 		case .loadend:
 			return "加载完成"
  		case .error:
@@ -33,12 +34,12 @@ enum showMode:Int {
 			return "收藏成功"
 		case .cancelcollect:
 			return "取消收藏"
-
-  		}
+   		}
+		
 	}
-
 	
-}
+	
+  }
 
 class GSTips: QMUITips {
 	

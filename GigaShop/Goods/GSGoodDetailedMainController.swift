@@ -126,13 +126,7 @@ class GSGoodDetailedMainController: UIViewController {
 		}
 		
 		
-		tableView = UITableView(frame: .zero, style: .grouped)
-		tableView.delegate = self
-		tableView.dataSource = self
-		tableView.estimatedRowHeight = 0
- 		tableView.estimatedSectionFooterHeight = 0
-		tableView.estimatedSectionHeaderHeight = 0
-		tableView.contentInsetAdjustmentBehavior = .never
+		tableView = addTableView(.grouped,self)
   		tableView.backgroundColor = Constant.vcBgColor
 		tableView.separatorColor = Constant.vcBgColor
 		tableView.register(GSGoodInfoTableCell.self, forCellReuseIdentifier: "infoCell")

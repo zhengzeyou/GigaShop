@@ -72,17 +72,10 @@ class GSGoodCommentTableView: UIView {
 	}
 	
 	private func addSuvs(){
-		tableView = UITableView(frame: .zero, style: .plain)
-		tableView.delegate = self
-		tableView.dataSource = self
-		tableView.estimatedRowHeight = 0
-		tableView.estimatedSectionFooterHeight = 0
-		tableView.estimatedSectionHeaderHeight = 0
-//		tableView.contentInsetAdjustmentBehavior = .never
+		tableView = addTableView(.plain,self)
 		tableView.register(GSGoodCommetTableCell.self , forCellReuseIdentifier: "reused")
 		tableView.register(GSGoodLardCommentTabCell.self , forCellReuseIdentifier: "lard")
-
- 		tableView.separatorColor = UIColor.white
+  		tableView.separatorColor = .white
  		self.addSubview(tableView)
 		tableView.snp.makeConstraints { 
 			$0.edges.equalToSuperview()

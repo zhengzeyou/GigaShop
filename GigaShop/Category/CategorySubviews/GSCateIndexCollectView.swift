@@ -12,8 +12,7 @@ protocol GSCateIndexCollectViewDelegate : class {
 }
 class GSCateIndexCollectView: UIView {
 	var collectView:UICollectionView!
-	let titles:[String] = ["潮流服装","箱包配饰","母婴用品","水果时蔬","家具用品","运动装备","家居家饰","数码电子","家用电器","更多分类"]
-	var leftItemModels:[itemlevelModel] = [itemlevelModel]()
+ 	var leftItemModels:[itemlevelModel] = [itemlevelModel]()
  	weak var delegate : GSCateIndexCollectViewDelegate?
 	
 	override init(frame: CGRect) {
@@ -41,7 +40,7 @@ class GSCateIndexCollectView: UIView {
 
 	}
 	private func addSubviews(){
-		self.backgroundColor = UIColor.white
+		backgroundColor = .white
 
  		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 		flowlayout.itemSize = CGSize(width:Constant.screenWidth/4.0, height:60.0)
@@ -53,13 +52,13 @@ class GSCateIndexCollectView: UIView {
 		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
  		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")
 		collectView.showsVerticalScrollIndicator = false
-		collectView.backgroundColor =  .white
+		collectView.backgroundColor = .white
  		collectView.dataSource = self
 		collectView.delegate = self
 		
 		let defaultSelectCell = IndexPath(row: 0, section: 0)
 		collectView.selectItem(at: defaultSelectCell, animated: true, scrollPosition: UICollectionView.ScrollPosition.top)
-  		self.addSubview(collectView)
+  		addSubview(collectView)
 		collectView.snp.makeConstraints({ 
  			$0.edges.equalToSuperview()
 		})
@@ -75,6 +74,7 @@ extension GSCateIndexCollectView:UICollectionViewDelegate,UICollectionViewDelega
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		
 		let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reused", for: indexPath)
  
 		let selectview:UIView = UIView()

@@ -118,14 +118,8 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 	
 	
 	fileprivate func nonEmptyCart(){
-		tableview = UITableView(frame: .zero, style: .grouped)
-		tableview.delegate = self
-		tableview.dataSource = self
-		tableview.estimatedRowHeight = 0
-		tableview.estimatedSectionFooterHeight = 0
-		tableview.estimatedSectionHeaderHeight = 0
-		tableview.tableFooterView = UIView()
-		tableview.register(GSCartGoodTabCell.self, forCellReuseIdentifier: "reused")
+		tableview = addTableView(.plain,self)
+  		tableview.register(GSCartGoodTabCell.self, forCellReuseIdentifier: "reused")
   		view.addSubview(tableview)
 		tableview.snp.makeConstraints { 
 			$0.left.right.top.equalToSuperview()

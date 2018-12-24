@@ -50,3 +50,17 @@ var gigaImageView:(String?,CGFloat?,CGFloat?,UIColor?) -> UIImageView = {(imagen
 	
 	}
 
+var addTableView:(UITableView.Style,AnyObject) -> UITableView = { (style:UITableView.Style,viewController:AnyObject) -> UITableView in
+
+	let tableview = UITableView(frame: .zero, style: style)
+	tableview.delegate = viewController as? UITableViewDelegate
+	tableview.dataSource = viewController as? UITableViewDataSource
+	tableview.estimatedRowHeight = 0
+	tableview.estimatedSectionFooterHeight = 0
+	tableview.estimatedSectionHeaderHeight = 0
+	tableview.tableFooterView = UIView()
+	tableview.separatorColor =  Constant.vcBgColor
+ 	tableview.contentInsetAdjustmentBehavior = .never
+
+ 	return tableview
+}

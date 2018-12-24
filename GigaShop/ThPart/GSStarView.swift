@@ -1,9 +1,9 @@
 //
 //  commentStarView.swift
-//  Portal
+//  GigaShop
 //
-//  Created by dlwpdlr on 2018/6/21.
-//  Copyright © 2018年 linpeng. All rights reserved.
+//  Created by ozawa on 2018/12/18.
+//  Copyright © 2018 GIGA Korea. All rights reserved.
 //
 
 import UIKit
@@ -45,7 +45,8 @@ class GSStarView: UIView {
 		}
 		
 		for i in 0...4 {
-  			let yellowstar:UIImageView = UIImageView(image: UIImage(named: "icon_bottom_collection_fill"))
+			
+   			let yellowstar:UIImageView = UIImageView(image:gigaImg("icon_bottom_collection_fill"))
 			yellowstar.contentMode = .scaleAspectFit
 			yellowStarBG.addSubview(yellowstar)
 			yellowstar.snp.makeConstraints {
@@ -53,7 +54,8 @@ class GSStarView: UIView {
 				$0.left.equalTo(i*Int(h + disValue))
 				$0.width.height.equalTo(h)
 			}
- 			let defaultstar:UIImageView = UIImageView(image:UIImage(named: "icon_bottom_collection"))
+			
+ 			let defaultstar:UIImageView = UIImageView(image:gigaImg("icon_bottom_collection"))
 			defaultstar.contentMode = .scaleAspectFit
 			defaultStarBG.addSubview(defaultstar)
 			defaultstar.snp.makeConstraints {

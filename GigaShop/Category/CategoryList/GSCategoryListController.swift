@@ -49,24 +49,19 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		self.view.backgroundColor = Constant.vcBgColor
 		condition = GSCateListConditionView()
 		self.view.addSubview(condition)
-		condition.snp.makeConstraints { 
+		condition.snp.makeConstraints {
 			$0.left.top.right.equalToSuperview()
 			$0.height.equalTo(60)
 		}
 		
-		listTableView = UITableView(frame: .zero, style: .plain)
-		listTableView.delegate = self
-		listTableView.dataSource = self
-		listTableView.estimatedRowHeight = 0
-		listTableView.estimatedSectionFooterHeight = 0
-		listTableView.estimatedSectionHeaderHeight = 0
-		listTableView.contentInsetAdjustmentBehavior = .never
+		listTableView = addTableView(.plain,self)
+ 		listTableView.contentInsetAdjustmentBehavior = .never
  		listTableView.separatorColor = UIColor.colorFromHex(hex: 0xe6e6e6)
 		listTableView.layer.borderColor = Constant.vcBgColor.cgColor
 		listTableView.layer.borderWidth = 1
 		listTableView.register(GSCategoryListTableCell.self, forCellReuseIdentifier: "infoCell")
-		self.view.addSubview(listTableView)
-		listTableView.snp.makeConstraints { 
+		view.addSubview(listTableView)
+		listTableView.snp.makeConstraints {
 			$0.left.bottom.right.equalToSuperview()
 			$0.top.equalTo(condition.snp.bottom)
 		}
@@ -97,8 +92,8 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		listCollectView.layer.borderWidth = 1
  		listCollectView.showsHorizontalScrollIndicator = false
 		listCollectView.isHidden = true
-		self.view.addSubview(listCollectView)
-		listCollectView.snp.makeConstraints({ 
+		view.addSubview(listCollectView)
+		listCollectView.snp.makeConstraints({
 			$0.left.bottom.right.equalToSuperview()
 			$0.top.equalTo(condition.snp.bottom)
 		})
@@ -127,7 +122,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
  
 		let searchIcon:UIImageView = UIImageView(image:  gigaImg( "icon_search_around"))
 		search.addSubview(searchIcon)
-		searchIcon.snp.makeConstraints { 
+		searchIcon.snp.makeConstraints {
 			$0.left.equalTo(12)
 			$0.centerY.equalToSuperview()
 			$0.width.height.equalTo(18)
@@ -138,7 +133,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		del.setImage( gigaImg( "icon_delete_search"), for: .normal)
 		del.addTarget(self, action: #selector(btnAcion), for: .touchUpInside)
 		search.addSubview(del)
-		del.snp.makeConstraints { 
+		del.snp.makeConstraints {
 			$0.right.equalTo(-10)
 			$0.centerY.equalToSuperview()
 			$0.width.height.equalTo(24)
@@ -149,7 +144,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		placher.placeholder = "输入关键字"
  		placher.textColor = Constant.blackColor
 		search.addSubview(placher)
-		placher.snp.makeConstraints { 
+		placher.snp.makeConstraints {
 			$0.left.equalTo(searchIcon.snp.right).offset(10)
 			$0.right.equalTo(del.snp.left).offset(-10)
 			$0.centerY.equalToSuperview()
@@ -253,7 +248,7 @@ extension GSCategoryListController:UICollectionViewDelegate,UICollectionViewDele
 		}
 		let logo:UIImageView = UIImageView()
 		cell.contentView.addSubview(logo)
-		logo.snp.makeConstraints { 
+		logo.snp.makeConstraints {
 			$0.top.left.equalToSuperview()
 			$0.right.equalTo(-2)
 			$0.height.equalTo(Constant.screenWidth / 2)
@@ -266,7 +261,7 @@ extension GSCategoryListController:UICollectionViewDelegate,UICollectionViewDele
 		title.text = "碧蒙萱 bioemsan非离子迷迭洁面乳150ml化妆水100ml保湿霜70ml套装"
 		title.numberOfLines = 2
 		cell.contentView.addSubview(title)
-		title.snp.makeConstraints { 
+		title.snp.makeConstraints {
 			$0.left.equalTo(logo.snp.left)
 			$0.top.equalTo(logo.snp.bottom).offset(5)
 			$0.right.equalTo(logo.snp.right)
@@ -278,7 +273,7 @@ extension GSCategoryListController:UICollectionViewDelegate,UICollectionViewDele
 		price.text = "￥1800.00"
 		price.font = UIFont.systemFont(ofSize: 15)
 		cell.contentView.addSubview(price)
-		price.snp.makeConstraints { 
+		price.snp.makeConstraints {
 			$0.left.equalTo(logo.snp.left)
 			$0.top.equalTo(title.snp.bottom).offset(10)
 			$0.right.equalTo(logo.snp.right)

@@ -23,7 +23,7 @@ class GSGoodSelectSizeView: UIView {
 		self.layer.cornerRadius = 10
 		self.layer.masksToBounds = true
 		addSubViews()
-		addTableView()
+		addTableViews()
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -103,15 +103,10 @@ class GSGoodSelectSizeView: UIView {
 
 extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 	
-	fileprivate func addTableView(){
-		sizeTableView = UITableView(frame: .zero, style: .plain)
-		sizeTableView.delegate = self
-		sizeTableView.dataSource = self
-		sizeTableView.estimatedRowHeight = 0
-		sizeTableView.estimatedSectionFooterHeight = 0
-		sizeTableView.estimatedSectionHeaderHeight = 0
-		sizeTableView.tableFooterView = UIView()
-		sizeTableView.register(GSGoodSelectParamaSizeTabCell.self, forCellReuseIdentifier: "paramID")
+	fileprivate func addTableViews(){
+		
+		sizeTableView = addTableView(.plain , self)
+ 		sizeTableView.register(GSGoodSelectParamaSizeTabCell.self, forCellReuseIdentifier: "paramID")
 		sizeTableView.separatorStyle = .none
 		self.addSubview(sizeTableView)
 		sizeTableView.snp.makeConstraints { 

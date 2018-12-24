@@ -50,14 +50,8 @@ class GSMineCollectionController: UIViewController {
 		
 		view.backgroundColor = Constant.vcBgColor
 		
-		listTableView = UITableView(frame: .zero, style: .plain)
-		listTableView.delegate = self
-		listTableView.dataSource = self
- 		listTableView.estimatedRowHeight = 0
-		listTableView.estimatedSectionFooterHeight = 0
-		listTableView.estimatedSectionHeaderHeight = 0
-		listTableView.contentInsetAdjustmentBehavior = .never
-		listTableView.separatorColor = UIColor.colorFromHex(hex: 0xe6e6e6)
+		listTableView = addTableView(.plain,self)
+ 		listTableView.separatorColor = UIColor.colorFromHex(hex: 0xe6e6e6)
 		listTableView.layer.borderColor = Constant.vcBgColor.cgColor
 		listTableView.layer.borderWidth = 1
 		listTableView.register(GSMineCollectionTableCell.self, forCellReuseIdentifier: "infoCell")

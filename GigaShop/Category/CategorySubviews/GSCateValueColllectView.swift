@@ -35,16 +35,9 @@ class GSCateValueColllectView: UIView {
  	}
 
 	private func addSubviews(){
- 		tableview = UITableView(frame: .zero, style: .plain)
-		tableview.delegate = self
-		tableview.dataSource = self
-		tableview.estimatedRowHeight = 0
-		tableview.estimatedSectionFooterHeight = 0
-		tableview.estimatedSectionHeaderHeight = 0
-		tableview.register(GSCateValueTabCell.self, forCellReuseIdentifier: "tablecell")
-		tableview.tableFooterView = UIView()
+		tableview = addTableView(.plain,self)
+ 		tableview.register(GSCateValueTabCell.self, forCellReuseIdentifier: "tablecell")
 		tableview.showsVerticalScrollIndicator = false
-		tableview.separatorColor =  Constant.vcBgColor
 		addSubview(tableview)
 		tableview.snp.makeConstraints { 
 			$0.edges.equalToSuperview()
@@ -52,6 +45,8 @@ class GSCateValueColllectView: UIView {
 	}
 
 }
+
+
 extension GSCateValueColllectView:UITableViewDelegate,UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return valueItems.count
@@ -69,9 +64,5 @@ extension GSCateValueColllectView:UITableViewDelegate,UITableViewDataSource {
 		let sections = ceil(CGFloat(indexItems.count)/3.0)
 		return sections*rowHeight + 40.0
  	}
-	
 
-	
-	
-	
 }

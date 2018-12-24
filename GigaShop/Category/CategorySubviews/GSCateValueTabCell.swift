@@ -10,18 +10,22 @@ import UIKit
 import Kingfisher.Swift
 
 class GSCateValueTabCell: UITableViewCell {
+	
 	var title:UILabel!
-	var collectView:UICollectionView!
-	var cateValueItems:[itemlevelModel] = [itemlevelModel]()
 	var titlemodel:itemlevelModel?
+	var collectView:UICollectionView!
+ 	var cateValueItems:[itemlevelModel] = [itemlevelModel]()
+
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		addSubviews()
 		
 	}
+	
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
+	
 	func reloadWithCateValueItemsModel(item1:[itemlevelModel],item2:itemlevelModel){
 		cateValueItems = item1
 		titlemodel = item2
@@ -41,7 +45,7 @@ class GSCateValueTabCell: UITableViewCell {
 		bg.layer.cornerRadius = 5
 		bg.layer.masksToBounds = true
 		bg.backgroundColor = UIColor.white
-		self.addSubview(bg)
+		addSubview(bg)
 		bg.snp.makeConstraints { 
 			$0.left.top.right.equalToSuperview()
 			$0.bottom.equalTo(-10)
@@ -59,8 +63,7 @@ class GSCateValueTabCell: UITableViewCell {
 		flowlayout.minimumInteritemSpacing = 1
 		flowlayout.scrollDirection = .vertical
 		
-		
-		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
+ 		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
 		collectView.backgroundColor =  .white
 		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")
 		collectView.dataSource = self
@@ -77,6 +80,7 @@ class GSCateValueTabCell: UITableViewCell {
  }
 
 extension GSCateValueTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return cateValueItems.count
 	}
