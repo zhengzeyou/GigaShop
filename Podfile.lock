@@ -266,6 +266,7 @@ PODS:
     - QMUIKit/QMUILog
   - QMUIKit/QMUIResources (2.7.6)
   - QMUIKit/QMUIWeakObjectContainer (2.7.6)
+  - ReachabilitySwift (4.2.1)
   - Result (3.2.4)
   - RxSwift (4.2.0)
   - SnapKit (4.0.0)
@@ -280,6 +281,7 @@ DEPENDENCIES:
   - PhotoBrowserSwift (~> 0.0.3)
   - PYSearch (~> 0.9.0)
   - QMUIKit (~> 2.7.6)
+  - ReachabilitySwift
   - SnapKit (~> 4.0.0)
   - TYPagerController (~> 2.1.2)
 
@@ -293,11 +295,12 @@ SPEC CHECKSUMS:
   PhotoBrowserSwift: 6442a91cd4fba0c95377e03b4b4b57fa330bf48a
   PYSearch: 55175e6046e2e1b5236a90c780351988e914a015
   QMUIKit: ab15c235c8377535c7448eeafbc7f79118ca8a24
+  ReachabilitySwift: 35720ffea59c1c76d15f885be77fd33e33985427
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   TYPagerController: 262556ecef99986d26ed77fb1288a198ed42f4af
 
-PODFILE CHECKSUM: 38b907e8a7f7b7ec504608e9c054278f049ab024
+PODFILE CHECKSUM: 1f1a965f152005b3d378359d6003cac6b7c4430d
 
 COCOAPODS: 1.4.0

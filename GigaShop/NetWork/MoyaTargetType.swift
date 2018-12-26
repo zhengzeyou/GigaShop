@@ -33,7 +33,7 @@ struct MoyaTargetType:TargetType{
 		self.method = method
 	}
 
- 	func requestData<M:HandyJSON>(failerror:((Error)->Void)?, completion:@escaping (_:M) -> Void ){
+ 	func requestData<M:HandyJSON>(completion:@escaping (_:M) -> Void ,failerror:((Error)->Void)? ){
 		var	provider = MoyaProvider<MoyaTargetType>()
 		DispatchQueue.global().async {
 			provider.rx.request(self).subscribe(onSuccess: { response in

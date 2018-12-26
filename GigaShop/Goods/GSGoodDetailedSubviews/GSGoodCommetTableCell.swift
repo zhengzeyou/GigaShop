@@ -32,7 +32,7 @@ class GSGoodCommetTableCell: UITableViewCell {
 		avator = UIImageView()
 		avator.layer.cornerRadius = 20
 		avator.layer.masksToBounds = true
-		self.contentView.addSubview(avator)
+		contentView.addSubview(avator)
 		avator.snp.makeConstraints { 
 			$0.left.equalTo(15)
 			$0.top.equalTo(10)
@@ -42,7 +42,7 @@ class GSGoodCommetTableCell: UITableViewCell {
 	
 		name = UILabel()
 		name.text = "蒂玛西亚"
- 		self.contentView.addSubview(name)
+ 		contentView.addSubview(name)
 		name.snp.makeConstraints { 
 			$0.centerY.equalTo(avator.snp.centerY)
 			$0.left.equalTo(avator.snp.right).offset(10)
@@ -71,7 +71,7 @@ class GSGoodCommetTableCell: UITableViewCell {
 		
 		
 		commentPic = GSGoodPicBrowerView()
-		self.contentView.addSubview(commentPic)
+		contentView.addSubview(commentPic)
 		commentPic.snp.makeConstraints { 
 			$0.top.equalTo(content.snp.bottom).offset(10)
 			$0.left.equalTo(content.snp.left)
@@ -84,7 +84,7 @@ class GSGoodCommetTableCell: UITableViewCell {
 		time.text = "2018-11-11"
 		time.textColor = Constant.greyColor
  		time.font = .systemFont(ofSize: 12)
-		self.contentView.addSubview(time)
+		contentView.addSubview(time)
 		time.snp.makeConstraints { 
 			$0.left.equalTo(avator.snp.left)
  			$0.top.equalTo(commentPic.snp.bottom).offset(15)

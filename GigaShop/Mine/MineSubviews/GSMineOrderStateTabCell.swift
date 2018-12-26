@@ -37,27 +37,17 @@ class  GSMineOrderStateTabCell: UITableViewCell {
 			$0.top.equalToSuperview().offset(10)
 		}
 		
-		let icon:UIImageView = UIImageView(image:gigaImg( "icon_arrow_all_order"))
-		icon.contentMode = .scaleAspectFit
-		self.contentView.addSubview(icon)
-		icon.snp.makeConstraints {
-			$0.centerY.equalTo(title.snp.centerY)
-			$0.width.height.equalTo(14)
-			$0.right.equalTo(-10)
-		}
  
-		
 		let allbtn:UIButton = UIButton()
- 		allbtn.setTitle("查看全部", for: .normal)
-		allbtn.titleLabel?.font = .systemFont(ofSize: 14)
-		allbtn.titleLabel?.textAlignment = .right
-		allbtn.setTitleColor( Constant.greyColor, for: .normal)
+		allbtn.set(image: gigaImg( "icon_arrow_all_order"), title: "查看全部", titlePosition: .left, additionalSpacing:-10, state: .normal)
+ 		allbtn.titleLabel?.font = .systemFont(ofSize: 14)
+ 		allbtn.setTitleColor( Constant.greyColor, for: .normal)
 		allbtn.addTarget(self, action: #selector(allOrders), for: .touchUpInside)
-		self.contentView.addSubview(allbtn)
+		contentView.addSubview(allbtn)
 		allbtn.snp.makeConstraints {
- 			$0.right.equalTo(icon.snp.left)
+ 			$0.right.equalTo(-15)
 			$0.centerY.equalTo(title.snp.centerY)
-			$0.width.equalTo(60)
+			$0.width.equalTo(85)
 			$0.height.equalTo(20)
 		}
 

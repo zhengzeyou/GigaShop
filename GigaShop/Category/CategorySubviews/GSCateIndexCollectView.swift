@@ -76,7 +76,10 @@ extension GSCateIndexCollectView:UICollectionViewDelegate,UICollectionViewDelega
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
 		let cell:UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "reused", for: indexPath)
- 
+		let _ = cell.contentView.subviews.map { (vi) in
+			vi.removeFromSuperview()
+		}
+
 		let selectview:UIView = UIView()
 		selectview.backgroundColor =  Constant.vcBgColor
 		cell.selectedBackgroundView = selectview

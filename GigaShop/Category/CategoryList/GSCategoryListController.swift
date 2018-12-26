@@ -55,8 +55,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		}
 		
 		listTableView = addTableView(.plain,self)
- 		listTableView.contentInsetAdjustmentBehavior = .never
- 		listTableView.separatorColor = UIColor.colorFromHex(hex: 0xe6e6e6)
+  		listTableView.separatorColor = UIColor.colorFromHex(hex: 0xe6e6e6)
 		listTableView.layer.borderColor = Constant.vcBgColor.cgColor
 		listTableView.layer.borderWidth = 1
 		listTableView.register(GSCategoryListTableCell.self, forCellReuseIdentifier: "infoCell")

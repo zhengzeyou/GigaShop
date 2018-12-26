@@ -31,6 +31,7 @@ class CycleView: UIView,UICollectionViewDelegate, UICollectionViewDataSource {
     weak var delegate : CycleViewDelegate?
     
     var mode : contentMode? = .scaleAspectFill
+	
  	var pgmode : pageMode? {
 		didSet{
 			switch pgmode ?? .pointCount {

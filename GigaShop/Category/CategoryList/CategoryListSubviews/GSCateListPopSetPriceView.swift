@@ -80,8 +80,10 @@ class GSCateListPopSetPriceView: UIView {
 			$0.height.equalTo(40)
 		}
 
+ 
 		let sumbit:UIButton = UIButton()
-		sumbit.addTarget(self, action: #selector(ok), for: .touchUpInside)
+//		sumbit.set(image: <#T##UIImage?#>, title: <#T##String#>, titlePosition: <#T##UIView.ContentMode#>, additionalSpacing: <#T##CGFloat#>, state: <#T##UIControl.State#>)
+ 		sumbit.addTarget(self, action: #selector(ok), for: .touchUpInside)
 		sumbit.backgroundColor = Constant.redColor
 		sumbit.layer.cornerRadius = 6
 		sumbit.layer.masksToBounds = true

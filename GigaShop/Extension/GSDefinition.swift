@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 var defaultImage:UIImage {
 	let image =  UIImage(named: "icon_category_clothing")?.withRenderingMode(.alwaysOriginal)
@@ -30,25 +31,37 @@ var gigaLabel:(String?,CGFloat?,UIColor?,NSTextAlignment?) -> UILabel = {(conten
 	
 }
 
-var gigaImageView:(String?,CGFloat?,CGFloat?,UIColor?) -> UIImageView = {(imagenamed:String?,cornerRadius:CGFloat?,borderWidth:CGFloat?,borColor:UIColor?) -> UIImageView in
+var gigaImageView:(String?,String?) -> UIImageView = {(imagenamed:String?,cachekey:String?) -> UIImageView in
 	
 	let imageview:UIImageView = UIImageView(frame: .zero)
- 	imageview.layer.cornerRadius = cornerRadius ?? 0
+ 	imageview.layer.cornerRadius = 4
 	imageview.layer.masksToBounds = true
-	imageview.layer.borderColor = borColor?.cgColor ?? UIColor.clear.cgColor
-	imageview.layer.borderWidth = borderWidth ?? 0
+	imageview.layer.borderColor = Constant.vcBgColor.cgColor
+	imageview.layer.borderWidth = 1
 	imageview.contentMode = .scaleAspectFit
 
 	let isUrl:Bool = imagenamed?.hasPrefix("http") ?? false
 	if isUrl {
-		
- 		imageview.kf.setImage(with: URL(string: imagenamed ?? "icon_category_clothing"), placeholder: defaultImage, options: nil, progressBlock: nil, completionHandler: nil)
- 	} else {
+		var imageCache = UIImageView.getCacheImage(cachekey ?? "")
+		if imageCache != nil {
+			imageview.image = imageCache
+		}else {
+			imageview.kf.setImage(with:URL(string: imagenamed!), placeholder: nil, options: [.cacheOriginalImage], progressBlock: { (receive, total) in
+				
+			}, completionHandler: { (image, error, cachetype, url) in
+				UIImageView.saveCacheImage(image!,cachekey ?? "")
+			})
+
+		}
+
+  	} else {
 		imageview.image = UIImage(named: imagenamed ?? "icon_category_clothing")?.withRenderingMode(.alwaysOriginal)
 	}
 	return imageview
 	
 	}
+
+
 
 var addTableView:(UITableView.Style,AnyObject) -> UITableView = { (style:UITableView.Style,viewController:AnyObject) -> UITableView in
 

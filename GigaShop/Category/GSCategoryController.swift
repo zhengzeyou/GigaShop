@@ -32,7 +32,8 @@ class GSCategoryController: BaseController {
     }
 	
 	private func loadCategoryData(){
-		let manipulationDataClosure:returnVoid = { (data:[itemlevelModel]) -> Void in
+	
+		let manipulationDataClosure:returnVoid = {(data:[itemlevelModel]) -> Void in
 			
 			self.indexView.isHidden = false
 			self.valueView.isHidden = false
@@ -40,8 +41,7 @@ class GSCategoryController: BaseController {
 			self.indexView.reloadWithManiLevelModel(items: data)
 			self.valueView.reloadWithValueModel(item1: (self.maniItemModels?.first)!,item2:self.sectionTitles.first!)
 
-			
-		}
+ 		}
 		
 		defaultRealmData = cateRealmModelRealmTool.getItemlevelModel()
 		if defaultRealmData.count != 0 {
@@ -52,11 +52,7 @@ class GSCategoryController: BaseController {
 			
 			let show = GSTips(view: view, mode: .loading)
 			let provider = MoyaTargetType(paramter:["lang_type":"kor","div_code":"2","user_id":"","token":"","cateevent1":"","cateEvent2":""], method: .post, base: .categoryUri, path: .categoryUri)
-			provider.requestData(failerror: { (error) in
-				let _ = GSTips(view: self.view, mode: .error)
-				
-			}) { (categorymodel:CategorgyModel) in
-				
+			provider.requestData(completion: { (categorymodel:CategorgyModel) in
 				show.hide(animated: true)
 				let itemLevelModels:[itemlevelModel] = categorymodel.itemlevel ?? [itemlevelModel]()
 				if self.defaultRealmData.count < itemLevelModels.count {
@@ -64,8 +60,9 @@ class GSCategoryController: BaseController {
 				}
 				manipulationDataClosure(itemLevelModels)
 
-				
-			}
+			}) { (error) in
+				let _ = GSTips(view: self.view, mode: .error)
+ 			}
 
 			
 		}
@@ -87,8 +84,7 @@ class GSCategoryController: BaseController {
 			tempRealms.append(model)
 			cateRealmModelRealmTool.insertItemlevelModel(by: model)
  		}
- 
-	}
+ 	}
 
 	private func manipulationData(manData:[itemlevelModel]?,flag:Int) -> [Array<Any>] {
 		

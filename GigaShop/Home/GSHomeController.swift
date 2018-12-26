@@ -76,36 +76,26 @@ class GSHomeController: BaseController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		addTableView()
+		addTableViews()
 
     }
 	
-
-
-
 }
 
 extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
-	 func addTableView(){
+	 func addTableViews(){
 		guard maintableview == nil else {
 			return
 		}
- 		maintableview = UITableView(frame: .zero, style: .grouped)
-		maintableview.delegate = self
-		maintableview.dataSource = self
-		maintableview.tableFooterView = UIView()
-		maintableview.estimatedSectionFooterHeight = 0
-		maintableview.estimatedSectionHeaderHeight = 0
-		maintableview.register(GSHomeCateGridTabCell.self, forCellReuseIdentifier: "section0")
+		maintableview = addTableView(.grouped,self)
+ 		maintableview.register(GSHomeCateGridTabCell.self, forCellReuseIdentifier: "section0")
 		maintableview.register(GSHomeMonoTabCell.self, forCellReuseIdentifier: "section1")
 		maintableview.register(GSHomeImagesTabCell.self, forCellReuseIdentifier: "section2")
 		maintableview.register(GSHomeMustTabCell.self, forCellReuseIdentifier: "section3")
-		
 		topView = Part.top.singleView as? GSHomeTopView
 		maintableview.tableHeaderView = topView
 		view.addSubview(maintableview)
- 		maintableview.contentInsetAdjustmentBehavior = .never
-  		maintableview.snp.makeConstraints { 
+   		maintableview.snp.makeConstraints {
 			$0.edges.equalToSuperview()
  		}
  

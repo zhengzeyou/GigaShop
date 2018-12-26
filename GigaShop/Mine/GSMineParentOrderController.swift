@@ -9,6 +9,11 @@
 import UIKit
 
 class GSMineParentOrderController: TYTabPagerController {
+	var currentIndex:Int?{
+ 		didSet{
+// 			tabBar.curIndex = currentIndex
+		}
+	}
 	enum pageType: Int {
 		case all
 		case paywait
@@ -59,13 +64,13 @@ class GSMineParentOrderController: TYTabPagerController {
 	
   		dataSource = self
 		delegate = self
-  		tabBar.layout.barStyle = TYPagerBarStyle.progressElasticView
+   		tabBar.layout.barStyle = TYPagerBarStyle.progressElasticView
  		tabBar.layout.cellWidth = Constant.screenWidth/CGFloat(pageType.count)
-  		tabBar.layout.normalTextFont = .systemFont(ofSize: 15)
+   		tabBar.layout.normalTextFont = .systemFont(ofSize: 15)
 		tabBar.layout.cellSpacing = 0
 		tabBar.layout.progressWidth = Constant.screenWidth/CGFloat(pageType.count + 1)
-		tabBarHeight = 60
-		reloadData()
+ 		tabBarHeight = 60
+ 		reloadData()
 		
      }
 	

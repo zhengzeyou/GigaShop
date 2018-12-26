@@ -45,6 +45,7 @@ class GSTips: QMUITips {
 	
 	init(view: UIView, mode:showMode) {
 		super.init(view: view)
+		
 		switch mode {
 		case .loading:
 			showLoading(mode.text)

@@ -16,6 +16,7 @@ target 'GigaShop' do
   pod 'PYSearch', '~> 0.9.0'
   pod 'TYPagerController', '~> 2.1.2'
   pod 'QMUIKit', '~> 2.7.6'
+  pod 'ReachabilitySwift'
 
   # Pods for GigaShop
 

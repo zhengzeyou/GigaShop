@@ -11,13 +11,13 @@ import UIKit
  
 class GSAddShopCartTool: NSObject {
 
-	/// 加入购物车的动画效果
-	///
-	/// - Parameters:
-	///   - goodsImage: 商品图片
-	///   - startPoint: 动画起点
-	///   - endPoint: 动画终点
-	///   - completion: 动画执行完成后的回调
+	/*加入购物车的动画效果
+ 	 - Parameters:
+	   - goodsImage: 商品图片
+	   - startPoint: 动画起点
+	   - endPoint: 动画终点
+	   - completion: 动画执行完成后的回调
+ 	*/
 	class func addToShoppingCartWithGoodsImage(goodsImage:UIImage,startPoint:CGPoint,endPoint:CGPoint,completion:@escaping (Bool)->Void){
 
 		let animationLayer:CAShapeLayer = CAShapeLayer()

@@ -7,12 +7,7 @@
 //
 
 import UIKit
-import Moya
-import RxSwift
-import HandyJSON
-
-//---------------------------------------Enum-----------------------------------
-
+ 
 enum MoyaBaseUriEnum:String{
 	
 	case mainUri
@@ -44,27 +39,3 @@ enum MoyaPathEnum:String{
 		}
 	}
 }
-
-
-//--------------------------------------Model-----------------------------------
-
-struct favShopModel:HandyJSON{
-	var level1:String?
-	var level2:String?
-	var level3:String?
-	var level_name:String?
-	var image_url:String?
-}
-
-struct mainModel:HandyJSON{
- 	var dataFav:[favShopModel]?
-	var data:[favShopModel]?
- 	var status:String?
-	var flag:String?
- 	var msg:String?
-
-	init() {}
-}
-
-
-

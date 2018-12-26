@@ -10,7 +10,7 @@ import UIKit
 import HandyJSON
 
 //--------------商品分类界面的数据实体-------------------
-struct LeftBottomCateModel:HandyJSON{
+struct  LeftBottomCateModel: HandyJSON{
 	var level1:String?
 	var level2:String?
 	var level_name:String?

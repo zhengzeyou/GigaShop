@@ -71,7 +71,7 @@ extension  GSMineServeTabCell:UICollectionViewDelegate,UICollectionViewDelegateF
 		}
 		
  
-		let icon:UIImageView = gigaImageView("icon_" + icons[indexPath.row],nil,nil,nil)
+		let icon:UIImageView = gigaImageView("icon_" + icons[indexPath.row],nil)
  		cell.contentView.addSubview(icon)
 		icon.snp.makeConstraints { 
 			$0.top.equalToSuperview().offset(15)

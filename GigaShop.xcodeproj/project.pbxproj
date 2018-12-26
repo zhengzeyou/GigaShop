@@ -55,6 +55,7 @@
 		D5F02BEE2196C18B000C9E38 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5F02BF02196C18B000C9E38 /* InfoPlist.strings */; };
 		D5F02BF52196C813000C9E38 /* GSHomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F02BF42196C813000C9E38 /* GSHomeTopView.swift */; };
 		D5F1769A21D082720047CF0C /* GSStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1769921D082720047CF0C /* GSStarView.swift */; };
+		D5F1769C21D22F210047CF0C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5F1769B21D22F210047CF0C /* SystemConfiguration.framework */; };
 		D5FC57A42199170400AB19CF /* CellFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A12199170400AB19CF /* CellFlowLayout.swift */; };
 		D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A22199170400AB19CF /* CycleCell.swift */; };
 		D5FC57A62199170400AB19CF /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FC57A32199170400AB19CF /* CycleView.swift */; };
@@ -180,6 +181,7 @@
 		D5F02BF22196C18E000C9E38 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		D5F02BF42196C813000C9E38 /* GSHomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeTopView.swift; sourceTree = "<group>"; };
 		D5F1769921D082720047CF0C /* GSStarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSStarView.swift; sourceTree = "<group>"; };
+		D5F1769B21D22F210047CF0C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D5FC57A12199170400AB19CF /* CellFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellFlowLayout.swift; sourceTree = "<group>"; };
 		D5FC57A22199170400AB19CF /* CycleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleCell.swift; sourceTree = "<group>"; };
 		D5FC57A32199170400AB19CF /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5F1769C21D22F210047CF0C /* SystemConfiguration.framework in Frameworks */,
 				D59B161721CB87B900F9CDA5 /* RealmSwift.framework in Frameworks */,
 				CF7B15FF7B1321EE45A736D4 /* Pods_GigaShop.framework in Frameworks */,
 				D59B161C21CB884400F9CDA5 /* Realm.framework in Frameworks */,
@@ -253,6 +256,7 @@
 		8DF6AA24A21CCBC53AA78B38 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D5F1769B21D22F210047CF0C /* SystemConfiguration.framework */,
 				D59B161A21CB883900F9CDA5 /* Realm.framework */,
 				D59B161021CB851000F9CDA5 /* RealmSwift.framework */,
 				E8C075BA595FD378A5D67E76 /* Pods_GigaShop.framework */,
@@ -667,6 +671,7 @@
 				"${BUILT_PRODUCTS_DIR}/PYSearch/PYSearch.framework",
 				"${BUILT_PRODUCTS_DIR}/PhotoBrowserSwift/PhotoBrowserSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -683,6 +688,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PYSearch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhotoBrowserSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QMUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",

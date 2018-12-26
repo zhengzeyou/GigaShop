@@ -8,6 +8,21 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
+
+extension UIImageView {
+	static func saveCacheImage(_ image:UIImage,_ key:String) -> Void {
+		let cache = KingfisherManager.shared.cache
+		cache.store(image, forKey: key)
+		
+	}
+	
+	static func getCacheImage(_ key:String) -> Image?{
+		let cache = KingfisherManager.shared.cache
+		let image = cache.retrieveImageInMemoryCache(forKey: key, options: [.cacheOriginalImage])
+		return image!
+	}
+}
 extension NSMutableAttributedString {
 	static func highLightText1(_ normal: String, highLight: String,normalfontValue:CGFloat,normalcolor:UIColor?,hightfontValue:CGFloat?,hightLightColor:UIColor?) -> NSMutableAttributedString {
 		

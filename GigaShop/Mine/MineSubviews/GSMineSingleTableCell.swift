@@ -25,7 +25,7 @@ class GSMineSingleTableCell: UITableViewCell {
 	
 	private func createSuv(){
 		selectionStyle = .none
-		picture = gigaImageView("https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBhTF7Fo4uif_!!4120736425.jpg",4,1,Constant.vcBgColor)
+		picture = gigaImageView("https://img.alicdn.com/imgextra/i1/4120736425/O1CN011xKhBhTF7Fo4uif_!!4120736425.jpg",nil)
  		contentView.addSubview(picture)
 		picture.snp.makeConstraints {
 			$0.left.top.equalTo(15)
