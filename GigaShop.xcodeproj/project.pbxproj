@@ -18,6 +18,11 @@
 		D5128C2421A406A20045AC39 /* GSCateListConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2321A406A20045AC39 /* GSCateListConditionView.swift */; };
 		D5128C2621A40F6F0045AC39 /* GSCategoryListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */; };
 		D5128C2821A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5128C2721A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift */; };
+		D521293221DEF6D700E0B340 /* GSHomeWebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521293121DEF6D700E0B340 /* GSHomeWebController.swift */; };
+		D521293521DF033900E0B340 /* GSLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521293421DF033900E0B340 /* GSLoginController.swift */; };
+		D521293721DF034F00E0B340 /* GSRegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521293621DF034F00E0B340 /* GSRegisterController.swift */; };
+		D521293A21DF2B5100E0B340 /* GSInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521293921DF2B5100E0B340 /* GSInputView.swift */; };
+		D521293C21DF4A0E00E0B340 /* GSForgetPwdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D521293B21DF4A0E00E0B340 /* GSForgetPwdController.swift */; };
 		D52BD60E21C49B1100435F7E /* ShopGigaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD60D21C49B1100435F7E /* ShopGigaModel.swift */; };
 		D52BD61021C883F600435F7E /* GSTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD60F21C883F600435F7E /* GSTips.swift */; };
 		D52BD61221C88AF300435F7E /* GSMineParentOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52BD61121C88AF300435F7E /* GSMineParentOrderController.swift */; };
@@ -132,6 +137,11 @@
 		D5128C2321A406A20045AC39 /* GSCateListConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateListConditionView.swift; sourceTree = "<group>"; };
 		D5128C2521A40F6F0045AC39 /* GSCategoryListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCategoryListTableCell.swift; sourceTree = "<group>"; };
 		D5128C2721A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSCateListPopSetPriceView.swift; sourceTree = "<group>"; };
+		D521293121DEF6D700E0B340 /* GSHomeWebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSHomeWebController.swift; sourceTree = "<group>"; };
+		D521293421DF033900E0B340 /* GSLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSLoginController.swift; sourceTree = "<group>"; };
+		D521293621DF034F00E0B340 /* GSRegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSRegisterController.swift; sourceTree = "<group>"; };
+		D521293921DF2B5100E0B340 /* GSInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSInputView.swift; sourceTree = "<group>"; };
+		D521293B21DF4A0E00E0B340 /* GSForgetPwdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSForgetPwdController.swift; sourceTree = "<group>"; };
 		D52BD60D21C49B1100435F7E /* ShopGigaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopGigaModel.swift; sourceTree = "<group>"; };
 		D52BD60F21C883F600435F7E /* GSTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSTips.swift; sourceTree = "<group>"; };
 		D52BD61121C88AF300435F7E /* GSMineParentOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GSMineParentOrderController.swift; sourceTree = "<group>"; };
@@ -285,6 +295,25 @@
 			path = CategoryListSubviews;
 			sourceTree = "<group>";
 		};
+		D521293321DF030200E0B340 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D521293821DF2B1700E0B340 /* GSLoginSubviews */,
+				D521293421DF033900E0B340 /* GSLoginController.swift */,
+				D521293621DF034F00E0B340 /* GSRegisterController.swift */,
+				D521293B21DF4A0E00E0B340 /* GSForgetPwdController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D521293821DF2B1700E0B340 /* GSLoginSubviews */ = {
+			isa = PBXGroup;
+			children = (
+				D521293921DF2B5100E0B340 /* GSInputView.swift */,
+			);
+			path = GSLoginSubviews;
+			sourceTree = "<group>";
+		};
 		D5F02B8821967281000C9E38 = {
 			isa = PBXGroup;
 			children = (
@@ -317,9 +346,10 @@
 				D5F02BC72196785B000C9E38 /* NetWork */,
 				D5F02BD521967A50000C9E38 /* Home */,
 				D5F02BD621967A59000C9E38 /* Category */,
+				D5FC57FB219D525200AB19CF /* Goods */,
 				D5F02BD721967A72000C9E38 /* Cart */,
 				D5F02BD821967A96000C9E38 /* Mine */,
-				D5FC57FB219D525200AB19CF /* Goods */,
+				D521293321DF030200E0B340 /* Login */,
 				D5F02B9421967281000C9E38 /* AppDelegate.swift */,
 				D5F02B9621967281000C9E38 /* ViewController.swift */,
 				D5F02B9821967281000C9E38 /* Main.storyboard */,
@@ -387,6 +417,7 @@
 			children = (
 				D5F02BF32196C7D2000C9E38 /* HomeSubviews */,
 				D5F02BDF21967B2E000C9E38 /* GSHomeController.swift */,
+				D521293121DEF6D700E0B340 /* GSHomeWebController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -674,6 +705,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Siren/Siren.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 				"${BUILT_PRODUCTS_DIR}/TYPagerController/TYPagerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -690,6 +722,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Siren.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TYPagerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -842,9 +875,11 @@
 				D5F02BDC21967B08000C9E38 /* GSCartController.swift in Sources */,
 				D5F02BCD2196785B000C9E38 /* GSAccount.swift in Sources */,
 				D5F02B9521967281000C9E38 /* AppDelegate.swift in Sources */,
+				D521293521DF033900E0B340 /* GSLoginController.swift in Sources */,
 				D5FC57FA219D119000AB19CF /* GSCartPricePanelView.swift in Sources */,
 				D5FC57A42199170400AB19CF /* CellFlowLayout.swift in Sources */,
 				D5FC580621A0090D00AB19CF /* GSGoodSelectParamaSizeTabCell.swift in Sources */,
+				D521293A21DF2B5100E0B340 /* GSInputView.swift in Sources */,
 				D5F02BCE2196785B000C9E38 /* GSTabBarController.swift in Sources */,
 				D5F02BCC2196785B000C9E38 /* BaseController.swift in Sources */,
 				D5FC57A82199281800AB19CF /* GSHomeCateGridTabCell.swift in Sources */,
@@ -869,6 +904,7 @@
 				D5FC57F8219C0A2000AB19CF /* GSCartCountView.swift in Sources */,
 				D5FC580821A2919500AB19CF /* GSGoodBuyAddShopCartView.swift in Sources */,
 				D5FC5802219E91CE00AB19CF /* GSGoodInfoTableCell.swift in Sources */,
+				D521293C21DF4A0E00E0B340 /* GSForgetPwdController.swift in Sources */,
 				D52BD61C21C9D4ED00435F7E /* GSDefinition.swift in Sources */,
 				D5FC57B8219AAB2700AB19CF /* GSMineOrderStateTabCell.swift in Sources */,
 				D5128C1921A2BCED0045AC39 /* GSGoodCommetTableCell.swift in Sources */,
@@ -881,12 +917,14 @@
 				D5128C2421A406A20045AC39 /* GSCateListConditionView.swift in Sources */,
 				D5FC57B5219A6C1200AB19CF /* GSCateValueTabCell.swift in Sources */,
 				D52BD61821C8D13900435F7E /* GSMineSingleTableCell.swift in Sources */,
+				D521293221DEF6D700E0B340 /* GSHomeWebController.swift in Sources */,
 				D5128C2821A4EE6C0045AC39 /* GSCateListPopSetPriceView.swift in Sources */,
 				D5FC57A52199170400AB19CF /* CycleCell.swift in Sources */,
 				D5F02BD12196785B000C9E38 /* ToModelExtensions.swift in Sources */,
 				D5FC57AC2199666200AB19CF /* GSHomeImagesTabCell.swift in Sources */,
 				D52BD61E21CA179000435F7E /* GSMineCollectionController.swift in Sources */,
 				D52BD61021C883F600435F7E /* GSTips.swift in Sources */,
+				D521293721DF034F00E0B340 /* GSRegisterController.swift in Sources */,
 				D5F02BCB2196785B000C9E38 /* Constant.swift in Sources */,
 				D59B161F21CB8AAD00F9CDA5 /* GSRealmObject.swift in Sources */,
 				D5F1769A21D082720047CF0C /* GSStarView.swift in Sources */,
@@ -1102,7 +1140,10 @@
 				);
 				INFOPLIST_FILE = GigaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1123,7 +1164,10 @@
 				);
 				INFOPLIST_FILE = GigaShop/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1140,7 +1184,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1158,7 +1206,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1175,7 +1227,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1192,7 +1248,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RY4WY3W6MH;
 				INFOPLIST_FILE = GigaShopUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.gigait.GigaShopUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

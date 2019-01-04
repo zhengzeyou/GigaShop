@@ -16,7 +16,7 @@ target 'GigaShop' do
   pod 'TYPagerController', '~> 2.1.2'
   pod 'QMUIKit', '~> 2.7.6'
   pod 'Siren', '~> 3.4.3'
-
+  pod 'TPKeyboardAvoiding', '~> 1.3.2'
   # Pods for GigaShop
 
   target 'GigaShopTests' do

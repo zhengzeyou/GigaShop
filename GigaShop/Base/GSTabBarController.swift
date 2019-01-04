@@ -78,7 +78,7 @@ class GSTabBarController: UITabBarController {
 
 		delegate = self as UITabBarControllerDelegate;
 		
-		let home = GSHomeController()
+		let home = GSHomeWebController()
  		let homeNavi = UINavigationController(rootViewController: home)
 		
 		let cate = GSCategoryController()

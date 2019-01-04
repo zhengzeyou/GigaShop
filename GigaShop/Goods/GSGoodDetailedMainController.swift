@@ -24,6 +24,7 @@ class GSGoodDetailedMainController: UIViewController {
 	var coverView:UIImageView!
 	var buyAddShopCartView:GSGoodBuyAddShopCartView!
 	var suspendback:UIButton!
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		self.view.layer.backgroundColor = Constant.vcBgColor.cgColor

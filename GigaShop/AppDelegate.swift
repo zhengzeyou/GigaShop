@@ -17,9 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
 	
  	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-		let tabBar:GSTabBarController = GSTabBarController()
-		window?.rootViewController = tabBar
-		window?.makeKeyAndVisible()
+//		let tabBar:GSTabBarController = GSTabBarController()
+//		window?.rootViewController = tabBar
+//		window?.makeKeyAndVisible()
+		
+		GSAccount.sharedCMAccount().changeloginOutStatus(tokenStr: nil)
 		setSiren()
  		AppDelegate.configRealm()
 		return true

@@ -32,9 +32,10 @@ class GSAccount: NSObject {
 		
 		GSAccount.sharedCMAccount().token = tokenStr
  		guard GSAccount.sharedCMAccount().token != nil else {
-			
-//			UIApplication.shared.delegate?.window??.rootViewController = CMLoginController()
-//			UIApplication.shared.delegate?.window??.makeKeyAndVisible()
+			let login:GSLoginController = GSLoginController()
+			login.title = "登录"
+ 			UIApplication.shared.delegate?.window??.rootViewController = UINavigationController(rootViewController: login)
+			UIApplication.shared.delegate?.window??.makeKeyAndVisible()
 			
 			return ;
 		}

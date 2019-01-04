@@ -12,5 +12,5 @@
 #import <PYSearch/PYSearchViewController.h>
 #import <QMUIKit/QMUIKit.h>
 #import <TYPagerController/TYPagerController.h>
-
+#import <TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h>
 #endif /* GigaShop_Bridging_Header_h */
