@@ -9,7 +9,6 @@ PODS:
   - Moya/RxSwift (11.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - ObjectMapper (3.3.0)
   - PhotoBrowserSwift (0.0.3):
     - Kingfisher
   - PYSearch (0.9.0)
@@ -266,9 +265,9 @@ PODS:
     - QMUIKit/QMUILog
   - QMUIKit/QMUIResources (2.7.6)
   - QMUIKit/QMUIWeakObjectContainer (2.7.6)
-  - ReachabilitySwift (4.2.1)
   - Result (3.2.4)
   - RxSwift (4.2.0)
+  - Siren (3.4.3)
   - SnapKit (4.0.0)
   - TYPagerController (2.1.2)
 
@@ -277,11 +276,10 @@ DEPENDENCIES:
   - JRefresh (~> 1.4.0)
   - Kingfisher (~> 4.8.1)
   - Moya/RxSwift (~> 11.0)
-  - ObjectMapper (~> 3.3.0)
   - PhotoBrowserSwift (~> 0.0.3)
   - PYSearch (~> 0.9.0)
   - QMUIKit (~> 2.7.6)
-  - ReachabilitySwift
+  - Siren (~> 3.4.3)
   - SnapKit (~> 4.0.0)
   - TYPagerController (~> 2.1.2)
 
@@ -291,16 +289,15 @@ SPEC CHECKSUMS:
   JRefresh: b7351faf3a8890ddbd1bcaa738501cc1352c954f
   Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
   Moya: a725035953bc1c0eb1be505ab903984501d82440
-  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   PhotoBrowserSwift: 6442a91cd4fba0c95377e03b4b4b57fa330bf48a
   PYSearch: 55175e6046e2e1b5236a90c780351988e914a015
   QMUIKit: ab15c235c8377535c7448eeafbc7f79118ca8a24
-  ReachabilitySwift: 35720ffea59c1c76d15f885be77fd33e33985427
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  Siren: e3cf1a93fa0fa73c03452107e95e5c10768d1d08
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   TYPagerController: 262556ecef99986d26ed77fb1288a198ed42f4af
 
-PODFILE CHECKSUM: 1f1a965f152005b3d378359d6003cac6b7c4430d
+PODFILE CHECKSUM: a09202a150c997de5a3895acd3c30b1d3389710f
 
 COCOAPODS: 1.4.0

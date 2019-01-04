@@ -28,14 +28,11 @@ class  GSMineServeTabCell: UITableViewCell {
 	private func addSubviews(){
 		
 		let	title:UILabel = gigaLabel("我的服务",17,nil,nil)
-  		self.contentView.addSubview(title)
+  		contentView.addSubview(title)
 		title.snp.makeConstraints { 
 			$0.left.equalToSuperview().offset(15)
 			$0.top.equalToSuperview().offset(10)
 		}
-		
-		
-		
 		
 		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 		flowlayout.itemSize = CGSize(width:  Constant.screenWidth / 3.0 - 5.0 , height: Constant.screenWidth / 3.0  - 30.0)
@@ -43,12 +40,12 @@ class  GSMineServeTabCell: UITableViewCell {
 		flowlayout.minimumInteritemSpacing = 1
 		
 		collectView = UICollectionView(frame: .zero, collectionViewLayout: flowlayout)
-		collectView.backgroundColor =  UIColor.white
+		collectView.backgroundColor = .white
 		collectView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "reused")
 		collectView.dataSource = self
 		collectView.delegate = self
 		collectView.showsHorizontalScrollIndicator = false
-		self.contentView.addSubview(collectView)
+		contentView.addSubview(collectView)
 		collectView.snp.makeConstraints({ 
  			$0.bottom.left.right.equalToSuperview()
 			$0.top.equalTo(50)
@@ -60,16 +57,16 @@ class  GSMineServeTabCell: UITableViewCell {
 }
 
 extension  GSMineServeTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return titles.count
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reused", for: indexPath)
-		for view in cell.contentView.subviews {
-			view.removeFromSuperview()
+		for viw in cell.contentView.subviews {
+			viw.removeFromSuperview()
 		}
-		
  
 		let icon:UIImageView = gigaImageView("icon_" + icons[indexPath.row],nil)
  		cell.contentView.addSubview(icon)

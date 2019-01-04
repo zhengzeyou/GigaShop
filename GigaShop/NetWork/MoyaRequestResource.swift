@@ -16,9 +16,9 @@ enum MoyaBaseUriEnum:String{
 	var baseUri:URL{
 		switch self {
 		case .mainUri:
-			return URL(string: "http://mall.gigawon.co.kr:8800/api/")!
+			return URL(string: Constant.mallBaseUrl)!
 		case .categoryUri:
-			return URL(string: "http://mall.gigawon.co.kr:8800/api/")!
+			return URL(string: Constant.mallBaseUrl)!
 
 		}
 	}

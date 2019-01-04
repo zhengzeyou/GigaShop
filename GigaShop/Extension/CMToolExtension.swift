@@ -11,15 +11,15 @@ import RxSwift
 import Kingfisher
 
 extension UIImageView {
-	static func saveCacheImage(_ image:UIImage,_ key:String) -> Void {
+	static func saveCacheImage(_ image:UIImage,_ key:String?) -> Void {
 		let cache = KingfisherManager.shared.cache
-		cache.store(image, forKey: key)
+		cache.store(image, forKey: key!)
 		
 	}
 	
-	static func getCacheImage(_ key:String) -> Image?{
+	static func getCacheImage(_ key:String?) -> Image?{
 		let cache = KingfisherManager.shared.cache
-		let image = cache.retrieveImageInMemoryCache(forKey: key, options: [.cacheOriginalImage])
+		let image = cache.retrieveImageInMemoryCache(forKey: key!, options: [.cacheOriginalImage])
 		return image!
 	}
 }

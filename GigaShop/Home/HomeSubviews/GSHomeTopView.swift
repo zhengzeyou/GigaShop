@@ -12,7 +12,7 @@ class GSHomeTopView: UIView {
 	var bannerView:CycleView!
 	override init(frame: CGRect) {
 		super.init(frame: frame)
-		self.backgroundColor = Constant.redColor
+		backgroundColor = Constant.redColor
 		addSuv()
 	}
 	
@@ -34,7 +34,7 @@ extension GSHomeTopView:CycleViewDelegate {
 		search.layer.cornerRadius = 18
 		search.layer.masksToBounds = true
 		search.backgroundColor = UIColor.colorFromHex(hex: 0xc92728)
-		self.addSubview(search)
+		addSubview(search)
 		
 		let searchIcon:UIImageView = UIImageView(image:gigaImg("icon_search"))
 		search.addSubview(searchIcon)
@@ -53,8 +53,7 @@ extension GSHomeTopView:CycleViewDelegate {
 			$0.centerY.equalToSuperview()
 		}
 		
-		//轮播图加载
-		bannerView = CycleView(frame: CGRect(x: 15, y:90 , width: Constant.screenWidth - 30, height: 3*Constant.screenWidth/5.0-76.0))
+ 		bannerView = CycleView(frame: CGRect(x: 15, y:90 , width: Constant.screenWidth - 30, height: 3*Constant.screenWidth/5.0-76.0))
 		bannerView.delegate = self
 		bannerView.pgmode = .pointCount
 		bannerView.layer.cornerRadius = 3
@@ -62,9 +61,8 @@ extension GSHomeTopView:CycleViewDelegate {
 		bannerView.mode = .scaleAspectFill
 		bannerView.currentPageColor = Constant.redColor
 		bannerView.pageColor = Constant.greyColor
-		self.addSubview(bannerView)
-		//本地图片测试--加载网络图片,请用第三方库如SDWebImage等
-		bannerView.imageURLStringArr = ["img_02.png", "img_03.png", "img_04.png", "img_05.png"]
+		addSubview(bannerView)
+ 		bannerView.imageURLStringArr = ["img_02.png", "img_03.png", "img_04.png", "img_05.png"]
 
 	}
 

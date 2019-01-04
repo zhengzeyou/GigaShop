@@ -29,7 +29,7 @@ enum Part:Int {
 		case .mustbuy:
 			return "必买清单"
 		default:
-			return ""
+			return nil
  		}
 	}
 	
@@ -37,13 +37,7 @@ enum Part:Int {
 		switch self {
 		case .top:
 			return GSHomeTopView(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height:3*Constant.screenWidth/5.0 ))
-		case .category:
-			return nil
-		case .mono:
-			return nil
-		case .showimages:
-			return nil
-		case .mustbuy:
+		default:
 			return nil
 		}
 	}
@@ -51,12 +45,15 @@ enum Part:Int {
 }
 
 
+
 class GSHomeController: BaseController {
 	private var scrollView:UIScrollView!
+	
+	
 	override func loadView()
 	{
 		super.loadView()
-		self.tabBarController?.tabBar.isTranslucent = false
+		tabBarController?.tabBar.isTranslucent = false
  	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -107,8 +104,7 @@ extension GSHomeController:UITableViewDelegate,UITableViewDataSource {
 			})
 		})
 		maintableview.header?.beginRefreshing()
-		
-		maintableview.footer = JRefreshAutoStateFooter.footerWithRefreshingBlock({
+ 		maintableview.footer = JRefreshAutoStateFooter.footerWithRefreshingBlock({
 			
 		})
  

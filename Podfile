@@ -8,7 +8,6 @@ target 'GigaShop' do
   pod 'SnapKit', '~> 4.0.0'
   pod 'Moya/RxSwift', '~> 11.0'
   pod 'HandyJSON', '~> 4.2.0-beta1'
-  pod 'ObjectMapper', '~> 3.3.0'
   pod 'Kingfisher', '~> 4.8.1'
   pod 'PhotoBrowserSwift', '~> 0.0.3'
   pod 'JRefresh', '~> 1.4.0'
@@ -16,7 +15,7 @@ target 'GigaShop' do
   pod 'PYSearch', '~> 0.9.0'
   pod 'TYPagerController', '~> 2.1.2'
   pod 'QMUIKit', '~> 2.7.6'
-  pod 'ReachabilitySwift'
+  pod 'Siren', '~> 3.4.3'
 
   # Pods for GigaShop
 

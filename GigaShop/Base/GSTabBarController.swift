@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class GSTabBarController: UITabBarController {
 
 	enum Tab:Int {
@@ -24,6 +23,7 @@ class GSTabBarController: UITabBarController {
 		var image:UIImage?{
 			switch self {
 			case .home:
+	
 				return gigaImg("icon_bottom_homepage_n")
  			case .cate:
 				return gigaImg("icon_bottom_category_n")
@@ -41,6 +41,7 @@ class GSTabBarController: UITabBarController {
 		var selectimage:UIImage?{
 			switch self {
 			case .home:
+				
 				return gigaImg("icon_bottom_homepage_s")
 
  			case .cate:

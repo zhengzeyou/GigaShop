@@ -81,7 +81,7 @@ extension GSHomeMonoTabCell:UICollectionViewDelegate,UICollectionViewDelegateFlo
  		title.font = UIFont.systemFont(ofSize: 15)
 		title.textColor = Constant.blackColor
  		title.text = "COACH豆蔻迟女包经典波士顿包奢侈品"
-		title.numberOfLines = 2
+		title.numberOfLines = 0
  		cell.contentView.addSubview(title)
 		title.snp.makeConstraints {
 			$0.left.equalTo(logo.snp.left)

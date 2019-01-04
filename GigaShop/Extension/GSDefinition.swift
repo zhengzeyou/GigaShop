@@ -34,22 +34,18 @@ var gigaLabel:(String?,CGFloat?,UIColor?,NSTextAlignment?) -> UILabel = {(conten
 var gigaImageView:(String?,String?) -> UIImageView = {(imagenamed:String?,cachekey:String?) -> UIImageView in
 	
 	let imageview:UIImageView = UIImageView(frame: .zero)
- 	imageview.layer.cornerRadius = 4
-	imageview.layer.masksToBounds = true
-	imageview.layer.borderColor = Constant.vcBgColor.cgColor
-	imageview.layer.borderWidth = 1
 	imageview.contentMode = .scaleAspectFit
 
 	let isUrl:Bool = imagenamed?.hasPrefix("http") ?? false
 	if isUrl {
-		var imageCache = UIImageView.getCacheImage(cachekey ?? "")
+		var imageCache = UIImageView.getCacheImage(cachekey)
 		if imageCache != nil {
 			imageview.image = imageCache
 		}else {
 			imageview.kf.setImage(with:URL(string: imagenamed!), placeholder: nil, options: [.cacheOriginalImage], progressBlock: { (receive, total) in
 				
 			}, completionHandler: { (image, error, cachetype, url) in
-				UIImageView.saveCacheImage(image!,cachekey ?? "")
+				UIImageView.saveCacheImage(image!,cachekey)
 			})
 
 		}

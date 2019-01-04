@@ -13,6 +13,7 @@ class GSCateValueColllectView: UIView {
 	var valueItems:[[itemlevelModel]] = [[itemlevelModel]]()
 	var titlesItems:[itemlevelModel] = [itemlevelModel]()
 	var rowHeight:CGFloat = 3*Constant.screenWidth/8 - 30.0
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		addSubviews()
@@ -26,11 +27,13 @@ class GSCateValueColllectView: UIView {
 	override func layoutSubviews() {
 		super.layoutSubviews()
  	}
+	
 	func reloadWithValueModel(item1:[[itemlevelModel]],item2:[itemlevelModel]){
 		valueItems = item1
 		titlesItems = item2
 		tableview.reloadData()
 		tableview.scrollToRow(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+		
 
  	}
 
