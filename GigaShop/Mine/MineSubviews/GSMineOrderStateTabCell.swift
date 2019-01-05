@@ -12,7 +12,7 @@ import Kingfisher
 class  GSMineOrderStateTabCell: UITableViewCell {
 	var collectView:UICollectionView!
 	var data:NSArray = []
-	let titles:[String] = ["待付款","待发货","待收货","评价","退货/售后"]
+	let titles:[String] = ["待付款".localized(),"待发货".localized(),"待收货".localized(),"评价".localized(),"退货/售后".localized()]
 	let icons:[String] = ["icon_awaiting_payment","icon_awaiting_delivery","icon_awaiting_receive","icon_order_evaluate","icon_after_sale"]
 
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -29,7 +29,7 @@ class  GSMineOrderStateTabCell: UITableViewCell {
 	private func addSubviews(){
 		
 		let title:UILabel = UILabel()
- 		title.text = "我的订单"
+ 		title.text = "我的订单".localized()
 		title.font = .systemFont(ofSize: 17)
 		self.contentView.addSubview(title)
 		title.snp.makeConstraints {
@@ -39,7 +39,7 @@ class  GSMineOrderStateTabCell: UITableViewCell {
 		
  
 		let allbtn:UIButton = UIButton()
-		allbtn.set(image: gigaImg( "icon_arrow_all_order"), title: "查看全部", titlePosition: .left, additionalSpacing:-10, state: .normal)
+		allbtn.set(image: gigaImg( "icon_arrow_all_order"), title: "查看全部".localized(), titlePosition: .left, additionalSpacing:-10, state: .normal)
  		allbtn.titleLabel?.font = .systemFont(ofSize: 14)
  		allbtn.setTitleColor( Constant.greyColor, for: .normal)
 		allbtn.addTarget(self, action: #selector(allOrders), for: .touchUpInside)
@@ -81,7 +81,7 @@ extension GSMineOrderStateTabCell{
 	
 		let order = GSMineParentOrderController()
 		order.hidesBottomBarWhenPushed = true
-		order.title = "全部订单"
+		order.title = "全部订单".localized()
 		viewForController(view: self)?.navigationController?.pushViewController(order, animated: true)
 	}
 }

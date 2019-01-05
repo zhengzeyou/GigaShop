@@ -55,7 +55,7 @@ extension GSMineTableViewOrderCell:UITableViewDelegate,UITableViewDataSource{
 		}else if(indexPath.row == 2) {
 			
 			let cell = UITableViewCell()
-			let contents:String = "共2件商品，合计:￥4567.00(含运费￥20.00)"
+			let contents:String = "共".localized() + "2" + "件商品，合计:￥".localized() + "4567.00" + "(含运费￥".localized() + "20.00" + ")"
   			let contentlabel = UILabel()
 			contentlabel.attributedText = NSMutableAttributedString.highLightText(contents,
 																				  highLight: "￥4567.00",
@@ -73,7 +73,7 @@ extension GSMineTableViewOrderCell:UITableViewDelegate,UITableViewDataSource{
  
 		}else{
 			let cell = UITableViewCell()
- 			let waitlabel:UILabel = gigaLabel("等待买家付款",15,Constant.redColor,nil)
+ 			let waitlabel:UILabel = gigaLabel("等待买家付款".localized(),15,Constant.redColor,nil)
 			cell.contentView.addSubview(waitlabel)
 			waitlabel.snp.makeConstraints {
 				$0.left.equalTo(15)
@@ -82,7 +82,7 @@ extension GSMineTableViewOrderCell:UITableViewDelegate,UITableViewDataSource{
 			
 			goPay = UIButton()
 			goPay.titleLabel?.font = .systemFont(ofSize: 15)
-  			goPay.setTitle("去付款", for: .normal)
+  			goPay.setTitle("去付款".localized(), for: .normal)
 			goPay.setTitleColor(UIColor.black, for: .normal)
 			goPay.layer.cornerRadius = 15
 			goPay.layer.masksToBounds = true
@@ -100,7 +100,7 @@ extension GSMineTableViewOrderCell:UITableViewDelegate,UITableViewDataSource{
 			
 			cancelOrder = UIButton()
 			cancelOrder.titleLabel?.font = .systemFont(ofSize: 15)
-			cancelOrder.setTitle("取消订单", for: .normal)
+			cancelOrder.setTitle("取消订单".localized(), for: .normal)
 			cancelOrder.setTitleColor(UIColor.black, for: .normal)
 			cancelOrder.layer.cornerRadius = 15
 			cancelOrder.layer.masksToBounds = true

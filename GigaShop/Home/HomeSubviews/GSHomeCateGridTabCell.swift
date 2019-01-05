@@ -13,7 +13,7 @@ class GSHomeCateGridTabCell: UITableViewCell {
 	
 	var data:NSArray!
 	let images:[String] = ["clothing","bags","baby","fruits","commodity","sports","furniture","electronics","house_e","more"]
-	let titles:[String] = ["潮流服装","箱包配饰","母婴用品","水果时蔬","家具用品","运动装备","家居家饰","数码电子","家用电器","更多分类"]
+	let titles:[String] = ["潮流服装".localized(),"箱包配饰".localized(),"母婴用品".localized(),"水果时蔬".localized(),"家具用品".localized(),"运动装备".localized(),"家居家饰".localized(),"数码电子".localized(),"家用电器".localized(),"更多分类".localized()]
 
 	var collectView:UICollectionView!
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

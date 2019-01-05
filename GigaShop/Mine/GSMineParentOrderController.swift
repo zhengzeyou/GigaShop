@@ -27,15 +27,15 @@ class GSMineParentOrderController: TYTabPagerController {
 			switch self {
 			
 			case .all:
-				return "全部"
+				return "全部".localized()
 			case .paywait:
-				return "待付款"
+				return "待付款".localized()
 			case .sendwait:
-				return "待发货"
+				return "待发货".localized()
 			case .receivewait:
-				return "待收货"
+				return "待收货".localized()
 			case .commentwait:
-				return "待评价"
+				return "待评价".localized()
 
 			}
 		}

@@ -25,9 +25,9 @@ enum Part:Int {
 	var title:String? {
 		switch self {
 		case .mono:
-			return "人气单品"
+			return "人气单品".localized()
 		case .mustbuy:
-			return "必买清单"
+			return "必买清单".localized()
 		default:
 			return nil
  		}

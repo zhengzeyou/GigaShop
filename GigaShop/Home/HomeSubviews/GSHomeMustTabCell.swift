@@ -26,7 +26,7 @@ class GSHomeMustTabCell: UITableViewCell {
 	
 	private func addSubviews(){
 		
-		title.text = "必买清单"
+		title.text = "必买清单".localized()
 		self.contentView.addSubview(title)
 		title.snp.makeConstraints {
 			$0.left.equalToSuperview().offset(15)

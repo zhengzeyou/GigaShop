@@ -9,7 +9,7 @@
 import UIKit
 
 class GSCateListConditionView: UIView {
-	let titles:[String] = ["综合","人气","价格","价格区间"]
+	let titles:[String] = ["综合".localized(),"人气".localized(),"价格".localized(),"价格区间".localized()]
 	let icons:[String] = ["icon_pulldown_n","icon_pulldown_n","icon_price_arrow","icon_pulldown_n"]
 	var flag:Bool? = false
 	var pop:GSCateListPopSetPriceView!

@@ -23,6 +23,7 @@ class GSLoginController: BaseController {
 		super.viewWillAppear(animated)
 		navigationController?.navigationBar.backgroundColor = UIColor.white
  		edgesForExtendedLayout = .bottom
+		title = "登录".localized()
 
 	}
 
@@ -48,7 +49,7 @@ class GSLoginController: BaseController {
 		}
 		
 		inputPhone = GSInputView()
-		inputPhone.placeHolder = "输入手机号码"
+		inputPhone.placeHolder = "输入手机号码".localized()
 		scrollView.addSubview(inputPhone)
 		inputPhone.snp.makeConstraints {
 			$0.left.equalTo(30)
@@ -59,7 +60,7 @@ class GSLoginController: BaseController {
 		
 		inputPassword = GSInputView()
 		inputPassword.secureEntry = true
-		inputPassword.placeHolder = "输入账号密码"
+		inputPassword.placeHolder = "输入账号密码".localized()
 		scrollView.addSubview(inputPassword)
 		inputPassword.snp.makeConstraints {
 			$0.left.equalTo(30)
@@ -73,7 +74,7 @@ class GSLoginController: BaseController {
 		login.addTarget(self, action: #selector(action), for: .touchUpInside)
 		login.tag = buttonType.logintype.rawValue
  		login.backgroundColor = Constant.redColor
-		login.setTitle("登录", for: .normal)
+		login.setTitle("登录".localized(), for: .normal)
 		login.setTitleColor(Constant.vcBgColor, for: .normal)
 		scrollView.addSubview(login)
 		login.snp.makeConstraints {
@@ -87,7 +88,7 @@ class GSLoginController: BaseController {
 		register.addTarget(self, action: #selector(action), for: .touchUpInside)
  		register.tag = buttonType.registertype.rawValue
  		register.backgroundColor = Constant.vcBgColor
-		register.setTitle("注册", for: .normal)
+		register.setTitle("注册".localized(), for: .normal)
 		register.layer.borderColor = Constant.redColor.cgColor
 		register.layer.borderWidth = 1
 		register.setTitleColor(Constant.redColor, for: .normal)
@@ -102,7 +103,7 @@ class GSLoginController: BaseController {
 		forget.addTarget(self, action: #selector(action), for: .touchUpInside)
  		forget.tag = buttonType.forgetpassword.rawValue
 		forget.backgroundColor = Constant.vcBgColor
-		forget.setTitle("忘记密码？", for: .normal)
+		forget.setTitle("忘记密码？".localized(), for: .normal)
  		forget.setTitleColor(Constant.greyColor, for: .normal)
 		scrollView.addSubview(forget)
 		forget.snp.makeConstraints {
@@ -119,12 +120,12 @@ class GSLoginController: BaseController {
 		switch sender.tag {
 		case buttonType.registertype.rawValue:
 			let register:GSRegisterController = GSRegisterController()
-			register.title = "注册"
+			register.title = "注册".localized()
 			navigationController?.pushViewController(register, animated: true)
 			break
 		case buttonType.forgetpassword.rawValue:
 			let forget:GSForgetPwdController = GSForgetPwdController()
-			forget.title = "忘记密码"
+			forget.title = "忘记密码".localized()
 			navigationController?.pushViewController(forget, animated: true)
 			break
 

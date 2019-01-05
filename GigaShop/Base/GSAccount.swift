@@ -15,7 +15,7 @@ class GSAccount: NSObject {
 	var nick:String = ""
 	
 	static let instance: GSAccount = GSAccount()
- 	class func sharedCMAccount() -> GSAccount {
+ 	class func shared() -> GSAccount {
 		return instance
 	}
 	
@@ -25,15 +25,16 @@ class GSAccount: NSObject {
 		self.nick = nick
 		self.password = password
 		self.token = token
+		Constant.GSUserDefaults.set(self, forKey: "userInfo")
+		Constant.GSUserDefaults.synchronize()
 	}
 	
 
 	func changeloginOutStatus(tokenStr:String?){
 		
-		GSAccount.sharedCMAccount().token = tokenStr
- 		guard GSAccount.sharedCMAccount().token != nil else {
+		GSAccount.shared().token = tokenStr
+ 		guard token != nil else {
 			let login:GSLoginController = GSLoginController()
-			login.title = "登录"
  			UIApplication.shared.delegate?.window??.rootViewController = UINavigationController(rootViewController: login)
 			UIApplication.shared.delegate?.window??.makeKeyAndVisible()
 			

@@ -11,7 +11,7 @@ import UIKit
 class GSGoodDetailedHeadView: UIView {
 	var headcollectView:UICollectionView!
 	var buttomLine:UILabel!
-	let titles:[String] = ["商品","评价","详情"]
+	let titles:[String] = ["商品".localized(),"评价".localized(),"详情".localized()]
 	var clickIndexMap:((Int) -> Void)?
 
 	var currentIndex:Int?{

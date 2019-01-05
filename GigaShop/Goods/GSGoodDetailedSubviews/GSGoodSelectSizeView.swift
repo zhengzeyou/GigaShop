@@ -42,7 +42,7 @@ class GSGoodSelectSizeView: UIView {
 		}
 		
 		storeCount = UILabel()
-		storeCount.text = "库存2445件"
+		storeCount.text = "库存".localized() + "2445" + "件".localized()
 		storeCount.textColor = Constant.greyColor
 		storeCount.font = .systemFont(ofSize: 15)
 		self.addSubview(storeCount)
@@ -78,7 +78,7 @@ class GSGoodSelectSizeView: UIView {
 		self.sumbit.layer.cornerRadius = 25
 		self.sumbit.layer.masksToBounds = true
 		self.sumbit.backgroundColor = Constant.redColor
- 		self.sumbit.setTitle("确认", for: .normal)
+ 		self.sumbit.setTitle("确定".localized(), for: .normal)
 		self.sumbit.addTarget(self, action: #selector(delAction), for: .touchUpInside)
 		self.sumbit.setTitleColor(UIColor.white	, for: .normal)
 		self.addSubview(self.sumbit)
@@ -153,7 +153,7 @@ extension GSGoodSelectSizeView:UITableViewDelegate,UITableViewDataSource{
 
 		}else {
 			
-			cell.textLabel?.text = "购买数量"
+			cell.textLabel?.text = "购买数量".localized()
  
 			count.mode = .showGray
 			count.setNumberText(nums: 1)

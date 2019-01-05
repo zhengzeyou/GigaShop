@@ -32,7 +32,7 @@ class GSGoodBuyAddShopCartView: UIView {
  		collection.setImage( gigaImg( "icon_bottom_collection"), for: .normal)
 		collection.setImage( gigaImg( "icon_bottom_collection_fill"), for: .selected)
 
-		collection.setTitle("收藏", for: .normal)
+		collection.setTitle("收藏".localized(), for: .normal)
 		collection.setTitleColor(Constant.blackColor, for: .normal)
 		collection.titleLabel?.font = .systemFont(ofSize: 13)
  		self.addSubview(collection)
@@ -50,7 +50,7 @@ class GSGoodBuyAddShopCartView: UIView {
 		goCart.addTarget(self, action: #selector(btnaction), for: .touchUpInside)
 		goCart.tag = 102
    		goCart.setImage( gigaImg( "icon_bottom_cart"), for: .normal)
-		goCart.setTitle("购物车", for: .normal)
+		goCart.setTitle("购物车".localized(), for: .normal)
 		goCart.setTitleColor(Constant.blackColor, for: .normal)
 		goCart.titleLabel?.font = .systemFont(ofSize: 13)
 		self.addSubview(goCart)
@@ -83,7 +83,7 @@ class GSGoodBuyAddShopCartView: UIView {
 		addShopCart.addTarget(self, action: #selector(btnaction), for: .touchUpInside)
 		addShopCart.tag = 103
  		addShopCart.setTitleColor(UIColor.white, for: .normal)
-		addShopCart.setTitle("加入购物车", for: .normal)
+		addShopCart.setTitle("加入购物车".localized(), for: .normal)
  		addShopCart.backgroundColor = UIColor.colorFromHex(hex: 0xFFD700)
 		self.addSubview(addShopCart)
 		addShopCart.snp.makeConstraints { 
@@ -97,7 +97,7 @@ class GSGoodBuyAddShopCartView: UIView {
 		rightBuy.addTarget(self, action: #selector(btnaction), for: .touchUpInside)
 		rightBuy.tag = 104
  		rightBuy.setTitleColor(UIColor.white, for: .normal)
-		rightBuy.setTitle("立即购买", for: .normal)
+		rightBuy.setTitle("立即购买".localized(), for: .normal)
  		rightBuy.backgroundColor = Constant.redColor
 		self.addSubview(rightBuy)
 		rightBuy.snp.makeConstraints { 
@@ -140,7 +140,7 @@ class GSGoodBuyAddShopCartView: UIView {
 			}
  			if tempvc == nil {
 				let cartVC:GSCartController = GSCartController()
-				cartVC.navigationItem.title = "购物车"
+				cartVC.navigationItem.title = "购物车".localized()
   				self.viewForController(view: self)?.navigationController?.pushViewController(cartVC, animated: true)
 				
  			}

@@ -11,7 +11,7 @@ import UIKit
 class GSGoodCommentTableView: UIView {
 	var tableView:UITableView!
 	var headCollectView:UICollectionView!
-	var headTitles:[String] = ["全部(157)","有图(17)","最新"]
+	var headTitles:[String] = ["全部".localized() + "(157)","有图".localized() + "(17)","最新".localized()]
 	var collectionView:()->UICollectionView = {()->UICollectionView in
 		let flowlayout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 		flowlayout.itemSize = CGSize(width:(Constant.screenWidth - 30)/4.0-8, height:30.0)

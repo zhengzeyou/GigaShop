@@ -66,13 +66,13 @@ class GSGoodInfoTableCell: UITableViewCell {
 			$0.bottom.equalTo(goodName.snp.top).offset(-6)
 
 		}
-		let markpriceS = NSMutableAttributedString.init(string: "市场价：￥1899.00")
+		let markpriceS = NSMutableAttributedString.init(string: "市场价：".localized() + "￥1899.00")
 		markpriceS.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSNumber.init(value: 1), range: NSRange(location: 4, length: markpriceS.length-4))
 		marketPrice.attributedText = markpriceS
 		
 		expressFee = UILabel()
 		expressFee.textColor = Constant.greyColor
-		expressFee.text = "快递：￥20.00"
+		expressFee.text = "快递：".localized() + "￥20.00"
 		expressFee.font = .systemFont(ofSize: 14)
 		bgView.addSubview(expressFee)
 		expressFee.snp.makeConstraints { 
@@ -83,7 +83,7 @@ class GSGoodInfoTableCell: UITableViewCell {
 		
 		haveSaled = UILabel()
 		haveSaled.textColor = Constant.greyColor
-		haveSaled.text = "已售：67"
+		haveSaled.text = "已售：".localized() + "67"
 		haveSaled.font = .systemFont(ofSize: 14)
 		bgView.addSubview(haveSaled)
 		haveSaled.snp.makeConstraints { 

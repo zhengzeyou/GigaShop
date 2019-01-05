@@ -25,15 +25,15 @@ enum showMode:Int {
 		
 		switch self {
  		case .loading:
-			return "加载中"
+			return "加载中".localized()
 		case .loadend:
-			return "加载完成"
+			return "加载完成".localized()
  		case .error:
-			return "加载出错"
+			return "加载出错".localized()
 		case .collect:
-			return "收藏成功"
+			return "收藏成功".localized()
 		case .cancelcollect:
-			return "取消收藏"
+			return "取消收藏".localized()
    		}
 		
 	}

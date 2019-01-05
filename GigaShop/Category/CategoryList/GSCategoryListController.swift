@@ -140,7 +140,7 @@ class GSCategoryListController: UIViewController,PYSearchViewControllerDelegate 
 		
 		placher = UITextField()
 		placher.isUserInteractionEnabled = false
-		placher.placeholder = "输入关键字"
+		placher.placeholder = "输入关键字".localized()
  		placher.textColor = Constant.blackColor
 		search.addSubview(placher)
 		placher.snp.makeConstraints {

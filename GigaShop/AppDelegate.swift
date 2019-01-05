@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //		window?.rootViewController = tabBar
 //		window?.makeKeyAndVisible()
 		
-		GSAccount.sharedCMAccount().changeloginOutStatus(tokenStr: nil)
+		GSAccount.shared().changeloginOutStatus(tokenStr: nil)
 		setSiren()
  		AppDelegate.configRealm()
 		return true

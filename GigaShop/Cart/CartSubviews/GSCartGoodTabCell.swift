@@ -125,10 +125,10 @@ class GSCartGoodTabCell: UITableViewCell {
 	}
 	
 	@objc func tapAction(gesture:UITapGestureRecognizer){
-		let alert = UIAlertController(title: "删除该商品？", message: nil, preferredStyle: .alert)
-		let sure = UIAlertAction(title: "是", style: .default) { (action) in
+		let alert = UIAlertController(title: "删除该商品？".localized(), message: nil, preferredStyle: .alert)
+		let sure = UIAlertAction(title: "是".localized(), style: .default) { (action) in
  		}
-  		let cancel = UIAlertAction(title: "否", style: .cancel, handler: nil)
+  		let cancel = UIAlertAction(title: "否".localized(), style: .cancel, handler: nil)
  		alert.addAction(cancel)
 		alert.addAction(sure)
 		

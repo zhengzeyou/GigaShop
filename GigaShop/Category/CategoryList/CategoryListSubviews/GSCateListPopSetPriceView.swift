@@ -47,7 +47,7 @@ class GSCateListPopSetPriceView: UIView {
 		lowPrice.layer.cornerRadius = 6
 		lowPrice.layer.masksToBounds = true
  		lowPrice.textAlignment = .center
-		lowPrice.placeholder = "最低价"
+		lowPrice.placeholder = "最低价".localized()
 		lowPrice.backgroundColor = UIColor.colorFromHex(hex: 0xe2e2e2)
 		self.addSubview(lowPrice)
 		lowPrice.snp.makeConstraints {
@@ -58,7 +58,7 @@ class GSCateListPopSetPriceView: UIView {
 		}
 		
 		let lab:UILabel = UILabel()
-		lab.text = "至"
+		lab.text = "至".localized()
 		self.addSubview(lab)
 		lab.snp.makeConstraints {
 			$0.centerX.equalToSuperview()
@@ -70,7 +70,7 @@ class GSCateListPopSetPriceView: UIView {
 		highPrice.layer.cornerRadius = 6
 		highPrice.layer.masksToBounds = true
  		highPrice.textAlignment = .center
-		highPrice.placeholder = "最高价"
+		highPrice.placeholder = "最高价".localized()
 		highPrice.backgroundColor = UIColor.colorFromHex(hex: 0xe2e2e2)
 		self.addSubview(highPrice)
 		highPrice.snp.makeConstraints {
@@ -87,7 +87,7 @@ class GSCateListPopSetPriceView: UIView {
 		sumbit.backgroundColor = Constant.redColor
 		sumbit.layer.cornerRadius = 6
 		sumbit.layer.masksToBounds = true
-		sumbit.setTitle("确定", for: .normal)
+		sumbit.setTitle("确定".localized(), for: .normal)
 		sumbit.setTitleColor(UIColor.white, for: .normal)
 		self.addSubview(sumbit)
 		sumbit.snp.makeConstraints {

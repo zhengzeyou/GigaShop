@@ -16,7 +16,7 @@ class GSGoodDetailedMainController: UIViewController {
 	var webView:WKWebView!
 	var bgView:UIView!
 	var titleView:UIScrollView!
-	let titles:[String] = ["商品","评价","详情"]
+	let titles:[String] = ["商品".localized(),"评价".localized(),"详情".localized()]
 	var collectView:UICollectionView!
 	var segment:GSGoodDetailedHeadView!
 	var scrolleview:UIScrollView!
@@ -87,7 +87,7 @@ class GSGoodDetailedMainController: UIViewController {
  
 		let secondTitle:UILabel = UILabel(frame: CGRect(x: 0, y: 44, width: 160, height: 44))
 		secondTitle.textAlignment = .center
-		secondTitle.text = "商品详情"
+		secondTitle.text = "商品详情".localized()
 		titleView.addSubview(secondTitle)
  
 		self.navigationItem.titleView = titleView
@@ -157,7 +157,7 @@ class GSGoodDetailedMainController: UIViewController {
  		tableView.tableHeaderView = tableHeadView
 		
 		let tableFootView:UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: 30))
-		tableFootView.setTitle("下拉显示图文详情", for: .normal)
+		tableFootView.setTitle("下拉显示图文详情".localized(), for: .normal)
 		tableFootView.setTitleColor(Constant.greyColor, for: .normal)
  		tableView.tableFooterView = tableFootView
  
@@ -179,9 +179,9 @@ class GSGoodDetailedMainController: UIViewController {
 			})
 			} as! JRefreshNormalHeader
 		
-		headers.setTitle("下拉查看商品详情", .Idle)
-		headers.setTitle("释放查看商品详情", .Pulling)
-		headers.setTitle("正在进入商品详情", .Refreshing)
+		headers.setTitle("下拉查看商品详情".localized(), .Idle)
+		headers.setTitle("释放查看商品详情".localized(), .Pulling)
+		headers.setTitle("正在进入商品详情".localized(), .Refreshing)
 		webView.scrollView.header = headers
 		
 	}
@@ -243,11 +243,11 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 			
 		case 1:
 			let cell:UITableViewCell = UITableViewCell()
-			cell.textLabel?.text = "选择规格"
+			cell.textLabel?.text = "选择规格".localized()
 			
 			let selectSize:UIButton = UIButton()
 			selectSize.tag = indexPath.section
-			selectSize.setTitle("请选择", for: .normal)
+			selectSize.setTitle("请选择".localized(), for: .normal)
 			selectSize.titleLabel?.font = .systemFont(ofSize: 14)
 			selectSize.setTitleColor(UIColor.white, for: .normal)
 			selectSize.layer.cornerRadius = 15
@@ -267,7 +267,7 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 			let cell:UITableViewCell = UITableViewCell()
 			cell.selectionStyle = .none
 			let lab:UILabel = UILabel()
-			lab.text = "商品评价"
+			lab.text = "商品评价".localized()
 			lab.textColor = Constant.blackColor
 			cell.contentView.addSubview(lab)
 			lab.snp.makeConstraints { 
@@ -277,7 +277,7 @@ extension GSGoodDetailedMainController:UITableViewDelegate,UITableViewDataSource
 			let all:UIButton = UIButton()
 			all.addTarget(self, action: #selector(pushComment), for: .touchUpInside)
 			all.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-			all.setTitle("查看全部", for: .normal)
+			all.setTitle("查看全部".localized(), for: .normal)
 			all.setTitleColor(Constant.greyColor, for: .normal)
 			all.tag = 1
   			cell.contentView.addSubview(all)

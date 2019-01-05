@@ -54,7 +54,7 @@ class GSRegisterController: BaseController {
 		}
 		
 		inputPhone = GSInputView()
-		inputPhone.placeHolder = "输入手机号码"
+		inputPhone.placeHolder = "输入手机号码".localized()
 		scrollView.addSubview(inputPhone)
 		inputPhone.snp.makeConstraints {
 			$0.left.equalTo(30)
@@ -65,7 +65,7 @@ class GSRegisterController: BaseController {
 		
 		inputcode = GSInputView()
 		inputcode.secureEntry = true
-		inputcode.placeHolder = "输入短信验证码"
+		inputcode.placeHolder = "输入短信验证码".localized()
 		scrollView.addSubview(inputcode)
 		inputcode.snp.makeConstraints {
 			$0.left.equalTo(30)
@@ -76,7 +76,7 @@ class GSRegisterController: BaseController {
 		
 		getVerifyCode = UIButton()
 		getVerifyCode.titleLabel?.font=UIFont.systemFont(ofSize: 14)
-		getVerifyCode.setTitle("接受验证码", for: .normal)
+		getVerifyCode.setTitle("接受验证码".localized(), for: .normal)
 		getVerifyCode.setTitleColor(UIColor.colorFromHex(hex: 0x0072ff), for: .normal)
  		getVerifyCode.addTarget(self, action: #selector(getVerifyCodeBtn), for: .touchUpInside)
 		scrollView.addSubview(getVerifyCode)
@@ -92,7 +92,7 @@ class GSRegisterController: BaseController {
 		
 		inputPassword = GSInputView()
 		inputPassword.secureEntry = true
-		inputPassword.placeHolder = "设置账号密码"
+		inputPassword.placeHolder = "设置账号密码".localized()
 		scrollView.addSubview(inputPassword)
 		inputPassword.snp.makeConstraints {
 			$0.left.equalTo(30)
@@ -106,7 +106,7 @@ class GSRegisterController: BaseController {
 		registerlogin.addTarget(self, action: #selector(action), for: .touchUpInside)
 		registerlogin.tag = buttonType.registertype.rawValue
 		registerlogin.backgroundColor = Constant.redColor
-		registerlogin.setTitle("注册并登录", for: .normal)
+		registerlogin.setTitle("注册并登录".localized(), for: .normal)
 		registerlogin.setTitleColor(Constant.vcBgColor, for: .normal)
 		scrollView.addSubview(registerlogin)
 		registerlogin.snp.makeConstraints {
@@ -131,7 +131,7 @@ class GSRegisterController: BaseController {
 
 	@objc private func getVerifyCodeBtn(){
 		//		if (inputPhone.field.text?.count)! > 0 {
-		getVerifyCode.setTitle("还剩" + "60"+"s", for: .normal)
+		getVerifyCode.setTitle("还剩".localized() + "60"+"s", for: .normal)
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(reverseCountTime), userInfo: nil, repeats: true)
 		timer.fire()
 		
@@ -141,10 +141,10 @@ class GSRegisterController: BaseController {
 		
 		if countInt > 0{
 			getVerifyCode.isUserInteractionEnabled = false
-			getVerifyCode.setTitle("还剩" + String(self.countInt)+"s", for: .normal)
+			getVerifyCode.setTitle("还剩".localized() + String(self.countInt)+"s", for: .normal)
 			countInt = countInt-1
 		}else {
-			getVerifyCode.setTitle("发送短信" , for: .normal)
+			getVerifyCode.setTitle("发送短信".localized() , for: .normal)
 			countInt = 60
 			timer.invalidate()
 			getVerifyCode.isUserInteractionEnabled = true

@@ -52,7 +52,7 @@ class GSCartPricePanelView: UIView {
 	}
 	
 	func setPrice(totalprice:String){
-		goCartBtn.setTitle("￥" + totalprice + "，去结算", for: .normal)
+		goCartBtn.setTitle("￥" + totalprice + "，去结算".localized(), for: .normal)
 
 	}
 	
@@ -62,7 +62,7 @@ class GSCartPricePanelView: UIView {
 		checkbtn = UIButton()
 		checkbtn.setImage( gigaImg("icon_cart_unselected"), for: .normal)
 		checkbtn.setImage( gigaImg("icon_cart_selected"), for: .selected)
-		checkbtn.setTitle(" 全选", for: .normal)
+		checkbtn.setTitle(" 全选".localized(), for: .normal)
  		checkbtn.setTitleColor(UIColor.black, for: .normal)
 		checkbtn.titleLabel?.font = .systemFont(ofSize: 15)
 		addSubview(checkbtn)

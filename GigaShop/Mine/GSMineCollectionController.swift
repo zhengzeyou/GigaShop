@@ -23,8 +23,8 @@ class GSMineCollectionController: UIViewController {
 		navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
 		
 		let rightBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
- 		rightBtn.setTitle("管理", for: .normal)
-		rightBtn.setTitle("取消", for: .selected)
+ 		rightBtn.setTitle("管理".localized(), for: .normal)
+		rightBtn.setTitle("取消".localized(), for: .selected)
 		rightBtn.titleLabel?.font = .systemFont(ofSize: 14)
 		rightBtn.setTitleColor(Constant.blackColor, for: .normal)
 		rightBtn.addTarget(self, action: #selector(manager), for:.touchUpInside )

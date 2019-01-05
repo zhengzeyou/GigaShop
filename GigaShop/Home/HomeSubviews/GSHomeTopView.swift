@@ -45,7 +45,7 @@ extension GSHomeTopView:CycleViewDelegate {
 		}
 
 		let placher:UILabel = UILabel()
-		placher.text = "搜索商品名称"
+		placher.text = "搜索商品名称".localized()
 		placher.textColor = UIColor.colorFromHex(hex: 0xe35d5c)
 		search.addSubview(placher)
 		placher.snp.makeConstraints {

@@ -73,7 +73,7 @@ class GSMineTopView: UIView {
 		setting.layer.cornerRadius = Constant.screenWidth/20
 		setting.layer.masksToBounds = true
 		setting.alpha = 0.3
-		setting.setTitle("设置", for: .normal)
+		setting.setTitle("设置".localized(), for: .normal)
 		setting.setTitleColor(UIColor.white, for: .normal)
 		setting.backgroundColor = Constant.blackColor
 		setting.addTarget(self, action: #selector(settingAction), for: .touchUpInside)

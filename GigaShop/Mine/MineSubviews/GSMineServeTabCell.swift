@@ -12,7 +12,7 @@ import Kingfisher
 class  GSMineServeTabCell: UITableViewCell {
 	var collectView:UICollectionView!
 	var data:NSArray = []
-	let titles:[String] = ["我的收藏","我的评价","收货地址","联系客服"]
+	let titles:[String] = ["我的收藏".localized(),"我的评价".localized(),"收货地址".localized(),"联系客服".localized()]
 	let icons:[String] = ["collection","comments","address","contact_us"]
 	
 	override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -27,7 +27,7 @@ class  GSMineServeTabCell: UITableViewCell {
 	
 	private func addSubviews(){
 		
-		let	title:UILabel = gigaLabel("我的服务",17,nil,nil)
+		let	title:UILabel = gigaLabel("我的服务".localized(),17,nil,nil)
   		contentView.addSubview(title)
 		title.snp.makeConstraints { 
 			$0.left.equalToSuperview().offset(15)
@@ -94,7 +94,7 @@ extension  GSMineServeTabCell:UICollectionViewDelegate,UICollectionViewDelegateF
 		case 0:
 			let collectionVC = GSMineCollectionController()
 			collectionVC.hidesBottomBarWhenPushed = true
-			collectionVC.title = "商品收藏"
+			collectionVC.title = "商品收藏".localized()
 		    viewForController(view: self)?.navigationController?.pushViewController(collectionVC, animated: true)
 			
 		default:

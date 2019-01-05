@@ -26,7 +26,7 @@ class GSHomeMonoTabCell: UITableViewCell {
 	
  	private func addSubviews(){
 		
-		title.text = "人气单品"
+		title.text = "人气单品".localized()
  		self.contentView.addSubview(title)
 		title.snp.makeConstraints {
 			$0.left.equalToSuperview().offset(15)

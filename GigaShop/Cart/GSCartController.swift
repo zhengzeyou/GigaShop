@@ -146,7 +146,7 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 	
 	fileprivate func emptyCart(){
 		let emptytitle:UILabel = UILabel()
-		emptytitle.text = "购物车什么都没有~"
+		emptytitle.text = "购物车什么都没有~".localized()
 		emptytitle.textColor = Constant.greyColor
 		view.addSubview(emptytitle)
 		emptytitle.snp.makeConstraints { 
@@ -164,7 +164,7 @@ extension GSCartController:UITableViewDelegate,UITableViewDataSource{
 		let emptybtn:UIButton = UIButton()
 		emptybtn.layer.cornerRadius = 20
 		emptybtn.layer.masksToBounds = true
-		emptybtn.setTitle("去逛逛", for: .normal)
+		emptybtn.setTitle("去逛逛".localized(), for: .normal)
 		emptybtn.setTitleColor(UIColor.white, for: .normal)
 		emptybtn.backgroundColor = Constant.redColor
 		emptybtn.addTarget(self, action: #selector(goShop), for: .touchUpInside)

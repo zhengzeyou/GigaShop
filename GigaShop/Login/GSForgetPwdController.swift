@@ -20,13 +20,13 @@ enum lang:Int {
 	var title:String?{
 		switch self {
 		case .phone:
-			return "手机号"
+			return "手机号".localized()
 		case .code:
-			return "验证码"
+			return "验证码".localized()
 		case .newpwd:
-			return "新密码"
+			return "新密码".localized()
 		case .renewpwd:
-			return "新密码"
+			return "新密码".localized()
 
 		}
 	}
@@ -35,13 +35,13 @@ enum lang:Int {
 	var placher:String?{
 		switch self {
 		case .phone:
-			return "请输入注册时手机号"
+			return "请输入注册时手机号".localized()
 		case .code:
-			return "请输入短信验证码"
+			return "请输入短信验证码".localized()
 		case .newpwd:
-			return "请设置新密码"
+			return "请设置新密码".localized()
 		case .renewpwd:
-			return "请再次确认新密码"
+			return "请再次确认新密码".localized()
 		}
 
 	}
@@ -96,7 +96,7 @@ class GSForgetPwdController: UIViewController {
 		ok.layer.cornerRadius = 4
 		ok.layer.masksToBounds = true
 		ok.backgroundColor = Constant.redColor
-		ok.setTitle("确定", for: .normal)
+		ok.setTitle("确定".localized(), for: .normal)
 		ok.setTitleColor(Constant.vcBgColor, for: .normal)
 		tableview.addSubview(ok)
 		ok.snp.makeConstraints {
@@ -135,7 +135,7 @@ extension GSForgetPwdController:UITableViewDelegate,UITableViewDataSource{
 		if (indexPath.section, indexPath.row) == (0,1) {
 			getVerifyCode = UIButton()
 			getVerifyCode.titleLabel?.font=UIFont.systemFont(ofSize: 14)
-			getVerifyCode.setTitle("发送短信", for: .normal)
+			getVerifyCode.setTitle("发送短信".localized(), for: .normal)
 			getVerifyCode.setTitleColor(UIColor.colorFromHex(hex: 0x0072ff), for: .normal)
 			getVerifyCode.addTarget(self, action: #selector(getVerifyCodeBtn), for: .touchUpInside)
 			cell.contentView.addSubview(getVerifyCode)
@@ -174,7 +174,7 @@ extension GSForgetPwdController:UITableViewDelegate,UITableViewDataSource{
 	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		let lab:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: Constant.screenWidth, height: 60))
-		lab.text = section == 0 ? "    账号验证" : "    设置新密码"
+		lab.text = section == 0 ? "    账号验证".localized() : "    设置新密码".localized()
 		lab.textColor = Constant.greyColor
  		return lab
 	}
@@ -182,7 +182,7 @@ extension GSForgetPwdController:UITableViewDelegate,UITableViewDataSource{
 	
 	@objc private func getVerifyCodeBtn(){
 //		if (inputPhone.field.text?.count)! > 0 {
-			getVerifyCode.setTitle("还剩" + "60"+"s", for: .normal)
+			getVerifyCode.setTitle("还剩".localized() + "60"+"s", for: .normal)
 			timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(reverseCountTime), userInfo: nil, repeats: true)
 			timer.fire()
  
@@ -192,10 +192,10 @@ extension GSForgetPwdController:UITableViewDelegate,UITableViewDataSource{
 		
 		if countInt > 0{
 			getVerifyCode.isUserInteractionEnabled = false
-			getVerifyCode.setTitle("还剩" + String(self.countInt)+"s", for: .normal)
+			getVerifyCode.setTitle("还剩".localized() + String(self.countInt)+"s", for: .normal)
  			countInt = countInt-1
 		}else {
-			getVerifyCode.setTitle("发送短信" , for: .normal)
+			getVerifyCode.setTitle("发送短信".localized() , for: .normal)
 			countInt = 60
   			timer.invalidate()
  			getVerifyCode.isUserInteractionEnabled = true
