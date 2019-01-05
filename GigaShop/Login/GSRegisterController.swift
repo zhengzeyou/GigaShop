@@ -102,18 +102,15 @@ class GSRegisterController: BaseController {
 		}
 		
 		
-		let registerlogin:UIButton = UIButton(frame: .zero)
+		let registerlogin:UIButton = gigaButton("注册并登录",Constant.vcBgColor,Constant.redColor)
 		registerlogin.addTarget(self, action: #selector(action), for: .touchUpInside)
 		registerlogin.tag = buttonType.registertype.rawValue
-		registerlogin.backgroundColor = Constant.redColor
-		registerlogin.setTitle("注册并登录".localized(), for: .normal)
-		registerlogin.setTitleColor(Constant.vcBgColor, for: .normal)
-		scrollView.addSubview(registerlogin)
+ 		scrollView.addSubview(registerlogin)
 		registerlogin.snp.makeConstraints {
 			$0.left.equalTo(30)
 			$0.width.equalTo(Constant.screenWidth - 60)
 			$0.top.equalTo(inputPassword.snp.bottom).offset(60)
-			$0.height.equalTo(60)
+			$0.height.equalTo(50)
 		}
 		
  

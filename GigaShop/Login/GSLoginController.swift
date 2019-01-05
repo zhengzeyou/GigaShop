@@ -70,46 +70,38 @@ class GSLoginController: BaseController {
 		}
 
 		
-		let login:UIButton = UIButton(frame: .zero)
-		login.addTarget(self, action: #selector(action), for: .touchUpInside)
+		let login:UIButton = gigaButton("登录",Constant.vcBgColor,Constant.redColor)
+ 		login.addTarget(self, action: #selector(action), for: .touchUpInside)
 		login.tag = buttonType.logintype.rawValue
- 		login.backgroundColor = Constant.redColor
-		login.setTitle("登录".localized(), for: .normal)
-		login.setTitleColor(Constant.vcBgColor, for: .normal)
-		scrollView.addSubview(login)
+ 		scrollView.addSubview(login)
 		login.snp.makeConstraints {
 			$0.left.equalTo(30)
 			$0.width.equalTo(Constant.screenWidth - 60)
    			$0.top.equalTo(inputPassword.snp.bottom).offset(60)
-			$0.height.equalTo(60)
+			$0.height.equalTo(50)
 		}
 		
-		let register:UIButton = UIButton(frame: .zero)
+		let register:UIButton = gigaButton("注册",Constant.redColor,Constant.vcBgColor)
 		register.addTarget(self, action: #selector(action), for: .touchUpInside)
  		register.tag = buttonType.registertype.rawValue
- 		register.backgroundColor = Constant.vcBgColor
-		register.setTitle("注册".localized(), for: .normal)
-		register.layer.borderColor = Constant.redColor.cgColor
+  		register.layer.borderColor = Constant.redColor.cgColor
 		register.layer.borderWidth = 1
-		register.setTitleColor(Constant.redColor, for: .normal)
-		scrollView.addSubview(register)
+ 		scrollView.addSubview(register)
 		register.snp.makeConstraints {
 			$0.left.right.equalTo(login)
 			$0.top.equalTo(login.snp.bottom).offset(20)
-			$0.height.equalTo(60)
+			$0.height.equalTo(50)
 		}
 		
-		let forget:UIButton = UIButton(frame: .zero)
+		let forget:UIButton = gigaButton("忘记密码？",Constant.greyColor,Constant.vcBgColor)
 		forget.addTarget(self, action: #selector(action), for: .touchUpInside)
  		forget.tag = buttonType.forgetpassword.rawValue
-		forget.backgroundColor = Constant.vcBgColor
-		forget.setTitle("忘记密码？".localized(), for: .normal)
- 		forget.setTitleColor(Constant.greyColor, for: .normal)
 		scrollView.addSubview(forget)
 		forget.snp.makeConstraints {
-			$0.left.right.equalTo(login)
+			$0.centerX.equalToSuperview()
+			$0.width.equalTo(100)
 			$0.top.equalTo(register.snp.bottom)
-			$0.height.equalTo(60)
+			$0.height.equalTo(50)
 		}
 
 

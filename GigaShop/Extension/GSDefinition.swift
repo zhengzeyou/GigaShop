@@ -30,6 +30,14 @@ var gigaLabel:(String?,CGFloat?,UIColor?,NSTextAlignment?) -> UILabel = {(conten
 	return label
 	
 }
+var gigaButton:( _ :String, _ :UIColor, _ :UIColor) -> UIButton = { (title:String,textColor:UIColor, backColor:UIColor) in
+	let btn:UIButton = UIButton(frame: .zero)
+ 	btn.backgroundColor = backColor
+	btn.setTitle(title.localized(), for: .normal)
+	btn.setTitleColor(textColor, for: .normal)
+	return btn
+
+}
 
 var gigaImageView:(String?,String?) -> UIImageView = {(imagenamed:String?,cachekey:String?) -> UIImageView in
 	
@@ -70,6 +78,8 @@ var addTableView:(UITableView.Style,AnyObject) -> UITableView = { (style:UITable
 	tableview.tableFooterView = UIView()
 	tableview.separatorColor =  Constant.vcBgColor
  	tableview.contentInsetAdjustmentBehavior = .never
+	tableview.tableFooterView = UIView()
+	tableview.backgroundColor = Constant.vcBgColor
 
  	return tableview
 }

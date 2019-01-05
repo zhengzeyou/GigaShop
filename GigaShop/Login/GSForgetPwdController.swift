@@ -75,30 +75,19 @@ class GSForgetPwdController: UIViewController {
 	
 	private func addSuv(){
 		view.backgroundColor = Constant.vcBgColor
-		
-		tableview = UITableView(frame: .zero, style: .grouped)
-		tableview.estimatedRowHeight = 0
-		tableview.estimatedSectionFooterHeight = 0
-		tableview.estimatedSectionHeaderHeight = 0
-		tableview.delegate = self
-		tableview.dataSource = self
-		tableview.tableFooterView = UIView()
-		tableview.backgroundColor = Constant.vcBgColor
-		tableview.separatorColor = UIColor.colorFromHex(hex: 0xdddddd)
+		tableview = addTableView(.grouped,self)
+ 		tableview.separatorColor = UIColor.colorFromHex(hex: 0xdddddd)
 		tableview.isScrollEnabled = false
 	    view.addSubview(tableview)
 		tableview.snp.makeConstraints {
 			$0.edges.equalToSuperview()
 		}
 		
-		let ok:UIButton = UIButton(frame: .zero)
+		let ok:UIButton = gigaButton("确定",Constant.vcBgColor,Constant.redColor)
 //		ok.addTarget(self, action: #selector(action), for: .touchUpInside)
 		ok.layer.cornerRadius = 4
 		ok.layer.masksToBounds = true
-		ok.backgroundColor = Constant.redColor
-		ok.setTitle("确定".localized(), for: .normal)
-		ok.setTitleColor(Constant.vcBgColor, for: .normal)
-		tableview.addSubview(ok)
+ 		tableview.addSubview(ok)
 		ok.snp.makeConstraints {
 			$0.left.equalTo(30)
 			$0.width.equalTo(Constant.screenWidth - 60)
